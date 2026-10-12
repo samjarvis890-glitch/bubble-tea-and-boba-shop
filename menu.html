@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Menu — BOBA BLOOM | A Little Sip of Happiness</title>
+  <meta name="description" content="Explore our handcrafted bubble tea menu at Boba Bloom. From creamy classics and fruity refreshers to vibrant matcha, rich brown sugar specialties, and chewy toppings.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+  <!-- Instant Theme & Direction initialization to prevent layout/color flash -->
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem('boba_bloom_theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+        const savedDir = localStorage.getItem('boba_bloom_dir');
+        if (savedDir) {
+          document.documentElement.setAttribute('dir', savedDir);
+          document.documentElement.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google Fonts: Fredoka & Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/pages/menu.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="menu-page-body">
+
+  <!-- ========================================================================
+       GLOBAL NAVBAR (EXACTLY THE SAME AS HOME 1)
+       ======================================================================== -->
+  <header class="boba-navbar" role="banner">
+    <div class="boba-container boba-navbar-inner">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="boba-brand" aria-label="Boba Bloom Homepage">
+        <div class="boba-logo-icon" aria-hidden="true">
+          <i class="bi bi-cup-straw"></i>
+        </div>
+        <div class="boba-brand-text">
+          <span class="boba-brand-name">BOBA BLOOM</span>
+          <span class="boba-brand-descriptor">BUBBLE TEA & BOBA</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu (1281px+) -->
+      <nav class="boba-nav-menu" aria-label="Primary Navigation">
+        <div class="boba-nav-dropdown">
+          <a href="index.html" class="boba-nav-link" aria-haspopup="true" aria-expanded="false">
+            <span>HOME</span>
+            <i class="bi bi-chevron-down" style="font-size: 0.75rem;" aria-hidden="true"></i>
+          </a>
+          <div class="boba-dropdown-menu" role="menu">
+            <a href="index.html" class="boba-dropdown-link" role="menuitem">Home 1</a>
+            <a href="home2.html" class="boba-dropdown-link" role="menuitem">Home 2</a>
+          </div>
+        </div>
+        <a href="about.html" class="boba-nav-link">ABOUT</a>
+        <a href="menu.html" class="boba-nav-link active" aria-current="page">CATEGORIES</a>
+        <a href="customize.html" class="boba-nav-link">CUSTOMIZE DRINK</a>
+        <a href="about.html#our-story" class="boba-nav-link">BLOG</a>
+        <a href="contact.html" class="boba-nav-link">CONTACT</a>
+      </nav>
+
+      <!-- Right Side Controls & Actions -->
+      <div class="boba-nav-controls">
+        
+        <!-- Dark Mode Toggle Button -->
+        <button type="button" class="boba-icon-btn theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+
+        <!-- RTL / LTR Direction Toggle Button -->
+        <button type="button" class="boba-icon-btn rtl-toggle-btn" aria-label="Toggle text direction" title="RTL / LTR Toggle">
+          <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
+        </button>
+
+        <!-- Desktop Explore Menu CTA Button -->
+        <a href="contact.html#contact-form" class="boba-btn boba-btn-dark boba-navbar-cta">
+          <span>EXPLORE MENU</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Mobile/Tablet Hamburger Menu Toggle -->
+        <button type="button" class="boba-hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MOBILE & TABLET DRAWER MENU
+       ======================================================================== -->
+  <div class="boba-drawer-backdrop" aria-hidden="true"></div>
+  
+  <aside id="mobile-drawer" class="boba-drawer" aria-label="Mobile Navigation Drawer" aria-hidden="true">
+    <div class="boba-drawer-header">
+      <a href="index.html" class="boba-brand" aria-label="Boba Bloom Homepage">
+        <div class="boba-logo-icon" aria-hidden="true">
+          <i class="bi bi-cup-straw"></i>
+        </div>
+        <div class="boba-brand-text">
+          <span class="boba-brand-name">BOBA BLOOM</span>
+          <span class="boba-brand-descriptor">BUBBLE TEA & BOBA</span>
+        </div>
+      </a>
+      <button type="button" class="boba-drawer-close" aria-label="Close navigation menu">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+
+    <div class="boba-drawer-body">
+      <nav class="boba-drawer-nav" aria-label="Mobile Menu Links">
+        <!-- Home Dropdown -->
+        <div class="boba-drawer-dropdown">
+          <button type="button" class="boba-drawer-link boba-drawer-dropdown-btn" aria-expanded="false">
+            <span class="drawer-link-inner">
+              <i class="bi bi-house-door" aria-hidden="true"></i>
+              <span>HOME</span>
+            </span>
+            <i class="bi bi-chevron-down drawer-chevron" aria-hidden="true"></i>
+          </button>
+          <div class="boba-drawer-submenu">
+            <a href="index.html" class="boba-drawer-sublink">
+              <i class="bi bi-cup-straw" aria-hidden="true"></i>
+              <span>Home 1</span>
+            </a>
+            <a href="home2.html" class="boba-drawer-sublink">
+              <i class="bi bi-journal-album" aria-hidden="true"></i>
+              <span>Home 2</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- About -->
+        <a href="about.html" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-info-circle" aria-hidden="true"></i>
+            <span>ABOUT</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Categories -->
+        <a href="menu.html" class="boba-drawer-link active" aria-current="page">
+          <span class="drawer-link-inner">
+            <i class="bi bi-cup-straw" aria-hidden="true"></i>
+            <span>CATEGORIES</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Customize Drink -->
+        <a href="customize.html" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-cup-hot" aria-hidden="true"></i>
+            <span>CUSTOMIZE DRINK</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Blog -->
+        <a href="about.html#our-story" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-journal-text" aria-hidden="true"></i>
+            <span>BLOG</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Contact -->
+        <a href="contact.html" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            <span>CONTACT</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+      </nav>
+
+      <div class="boba-drawer-controls">
+        <span class="boba-drawer-controls-label">Theme &amp; Direction</span>
+        <div class="boba-drawer-toggle-group">
+          <button type="button" class="boba-icon-btn theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button type="button" class="boba-icon-btn rtl-toggle-btn" aria-label="Toggle text direction" title="RTL / LTR Toggle">
+            <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="boba-drawer-footer">
+      <a href="contact.html#contact-form" class="boba-btn boba-btn-primary boba-drawer-btn" style="width: 100%;">
+        <span>EXPLORE MENU</span>
+        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       MAIN CONTENT (EXACTLY SEVEN CONTENT SECTIONS)
+       ======================================================================== -->
+  <main id="main-content" class="menu-page-main">
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 1 — THE BOBA BLOOM MENU
+         Menu-board-inspired opening layout with category chips and scroll cue
+         ---------------------------------------------------------------------- -->
+    <section class="menu-hero-section" aria-labelledby="menu-hero-heading">
+      
+      <!-- Decorative background floating bubbles -->
+      <div class="boba-bubble boba-bubble-pink animate-float" style="width: 95px; height: 95px; top: 10%; inset-inline-start: 4%;" aria-hidden="true"></div>
+      <div class="boba-bubble boba-bubble-mango animate-float-delay" style="width: 65px; height: 65px; bottom: 12%; inset-inline-end: 5%;" aria-hidden="true"></div>
+      <div class="boba-bubble boba-bubble-matcha animate-float" style="width: 75px; height: 75px; top: 45%; inset-inline-end: 2%;" aria-hidden="true"></div>
+
+      <div class="boba-container menu-hero-container">
+        
+        <div class="menu-hero-board-grid">
+          
+          <!-- Left Column: Menu Board Panel -->
+          <div class="menu-hero-panel">
+            <div class="boba-eyebrow">
+              <i class="bi bi-cup-straw" aria-hidden="true"></i>
+              <span>THE BOBA BLOOM MENU</span>
+            </div>
+
+            <h1 id="menu-hero-heading" class="menu-hero-title">
+              A MENU FULL OF LITTLE HAPPY MOMENTS.
+            </h1>
+
+            <p class="menu-hero-lead">
+              “From creamy classics to fruity refreshers and playful toppings, discover a cup that matches your taste.”
+            </p>
+
+            <!-- Subtle Decorative Menu Index Chips -->
+            <div class="menu-hero-index-chips" aria-label="Menu categories preview">
+              <a href="#milk-tea" class="menu-index-chip">
+                <span>🧋 Milk Tea</span>
+              </a>
+              <a href="#fruit-tea" class="menu-index-chip">
+                <span>🍓 Fruit Tea</span>
+              </a>
+              <a href="#matcha" class="menu-index-chip">
+                <span>🍵 Matcha</span>
+              </a>
+              <a href="#brown-sugar" class="menu-index-chip">
+                <span>🍯 Brown Sugar</span>
+              </a>
+              <a href="#toppings" class="menu-index-chip">
+                <span>🍬 Toppings Bar</span>
+              </a>
+            </div>
+
+            <!-- Action CTAs -->
+            <div class="menu-hero-actions">
+              <a href="#milk-tea" class="boba-btn boba-btn-primary">
+                <span>EXPLORE THE DRINKS</span>
+                <i class="bi bi-arrow-down" aria-hidden="true"></i>
+              </a>
+              <a href="contact.html#contact-form" class="boba-btn boba-btn-outline">
+                <span>BUILD YOUR BOBA</span>
+                <i class="bi bi-sliders2" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Curated Assortment Photograph -->
+          <div class="menu-hero-visual">
+            <div class="menu-hero-photo-frame">
+              <img 
+                src="assets/images/menu/menu-cover.webp" 
+                alt="Curated assortment of freshly prepared colorful bubble tea drinks on a bright counter" 
+                class="menu-hero-photo"
+                width="1440" 
+                height="810"
+                fetchpriority="high"
+              >
+              <div class="menu-hero-badge">
+                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                <span>HANDCRAFTED FRESH DAILY</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         STICKY CATEGORY QUICK-NAV BAR
+         ---------------------------------------------------------------------- -->
+    <nav class="menu-category-nav-wrapper" id="categories" aria-label="Menu Category Filter Navigation">
+      <div class="boba-container">
+        <div class="menu-category-nav">
+          <a href="#milk-tea" class="menu-cat-link active">
+            <span>🧋 Milk Tea</span>
+          </a>
+          <a href="#fruit-tea" class="menu-cat-link">
+            <span>🍓 Fruit Tea</span>
+          </a>
+          <a href="#matcha" class="menu-cat-link">
+            <span>🍵 Matcha</span>
+          </a>
+          <a href="#brown-sugar" class="menu-cat-link">
+            <span>🍯 Brown Sugar</span>
+          </a>
+          <a href="#toppings" class="menu-cat-link">
+            <span>🍬 The Topping Bar</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 2 — MILK TEA FAVORITES
+         Refined printed-menu layout with feature photograph & clean item list
+         ---------------------------------------------------------------------- -->
+    <section id="milk-tea" class="menu-milktea-section" aria-labelledby="milktea-heading">
+      <div class="boba-container">
+        
+        <div class="menu-category-grid">
+          
+          <!-- Left Column: Feature Photograph -->
+          <div class="menu-category-visual">
+            <div class="menu-category-photo-frame">
+              <img 
+                src="assets/images/menu/menu-milk-tea.webp" 
+                alt="Classic and creamy strawberry milk tea with rich boba pearls" 
+                class="menu-category-photo"
+                width="1000" 
+                height="750"
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+          <!-- Right Column: Category Title & Item List -->
+          <div class="menu-category-content">
+            <div class="boba-eyebrow">
+              <i class="bi bi-cup-hot" aria-hidden="true"></i>
+              <span>CATEGORY 01</span>
+            </div>
+
+            <h2 id="milktea-heading" class="menu-section-title">
+              CREAMY CLASSICS.
+            </h2>
+
+            <p class="menu-section-lead">
+              “Smooth, comforting milk tea flavors for those moments when you want something familiar and lovely.”
+            </p>
+
+            <!-- Printed Menu Item List -->
+            <div class="printed-menu-list">
+              
+              <!-- Item 1 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Classic Milk Tea</h3>
+                    <span class="printed-item-tag">Black Tea Base</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    A familiar tea-and-milk combination brewed to a golden, balanced depth.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Classic Milk Tea">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Taro Milk Tea</h3>
+                    <span class="printed-item-tag">Sweet & Nutty</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    A creamy drink inspired by taro's distinctive flavor and comforting purple hue.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Taro Milk Tea">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Thai Milk Tea</h3>
+                    <span class="printed-item-tag">Spiced Brew</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    A tea-based drink with a rich, distinctive character and aromatic warmth.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Thai Milk Tea">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Honeydew Milk Tea</h3>
+                    <span class="printed-item-tag">Mellow Melon</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    A mellow milk-tea option with honeydew-inspired flavor and velvety sweetness.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Honeydew Milk Tea">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="menu-disclaimer-note">
+              <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
+              <span>Sample menu items. Flavor availability may vary by day and store location.</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 3 — FRUIT TEA REFRESHERS
+         Vibrant fruit tea composition: Peach & strawberry-pink accents
+         ---------------------------------------------------------------------- -->
+    <section id="fruit-tea" class="menu-fruittea-section" aria-labelledby="fruittea-heading">
+      <div class="boba-container">
+        
+        <div class="menu-category-grid-reversed">
+          
+          <!-- Left Column: Category Content & Item List -->
+          <div class="menu-category-content">
+            <div class="boba-eyebrow">
+              <i class="bi bi-brightness-high" aria-hidden="true"></i>
+              <span>CATEGORY 02</span>
+            </div>
+
+            <h2 id="fruittea-heading" class="menu-section-title">
+              FRUITY LITTLE REFRESHERS.
+            </h2>
+
+            <p class="menu-section-lead">
+              “Bright, colorful flavor inspiration for a refreshing change of pace.”
+            </p>
+
+            <!-- Printed Menu Item List -->
+            <div class="printed-menu-list">
+              
+              <!-- Item 1 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Strawberry Fruit Tea</h3>
+                    <span class="printed-item-tag">Sun-Ripened</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    A strawberry-inspired fruit tea with vibrant berry sweetness and jasmine tea clarity.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Strawberry Fruit Tea">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Mango Fruit Tea</h3>
+                    <span class="printed-item-tag">Tropical Sun</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    A tropical mango-inspired option packed with luscious sunshine and golden brightness.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Mango Fruit Tea">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Passion Fruit Tea</h3>
+                    <span class="printed-item-tag">Tangy & Crisp</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    A fruit tea with a vibrant, tangy flavor profile that awakens the senses.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Passion Fruit Tea">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Peach Fruit Tea</h3>
+                    <span class="printed-item-tag">Delicate Floral</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    A peach-inspired fruity refreshment with subtle aromatic notes and crisp finish.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Peach Fruit Tea">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="menu-disclaimer-note">
+              <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
+              <span>Pairs delightfully with fruit jellies and popping boba. Custom ice levels available.</span>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Fruit Tea Feature Visual -->
+          <div class="menu-category-visual">
+            <div class="menu-category-photo-frame">
+              <img 
+                src="assets/images/menu/menu-fruit-tea.webp" 
+                alt="Chilled mango fruit boba tea garnished with real fruit pieces and condensation" 
+                class="menu-category-photo"
+                width="1000" 
+                height="750"
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 4 — MATCHA & GREEN FAVORITES
+         Calm matcha aesthetic: Emerald green styling with pink accent
+         ---------------------------------------------------------------------- -->
+    <section id="matcha" class="menu-matcha-section" aria-labelledby="matcha-heading">
+      <div class="boba-container">
+        
+        <div class="menu-category-grid">
+          
+          <!-- Left Column: Realistic Matcha Drink Photograph -->
+          <div class="menu-category-visual">
+            <div class="menu-category-photo-frame">
+              <img 
+                src="assets/images/menu/menu-matcha.webp" 
+                alt="Layered vibrant green matcha latte with velvety milk and glossy boba pearls" 
+                class="menu-category-photo"
+                width="1000" 
+                height="750"
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+          <!-- Right Column: Vertical Editorial List -->
+          <div class="menu-category-content">
+            <div class="menu-matcha-accent-pill">
+              <i class="bi bi-flower2" aria-hidden="true"></i>
+              <span>CATEGORY 03 • GREEN TEA CRAFT</span>
+            </div>
+
+            <h2 id="matcha-heading" class="menu-section-title">
+              A LITTLE GREEN GOODNESS.
+            </h2>
+
+            <p class="menu-section-lead">
+              “Explore smooth, green matcha-inspired drinks with a distinctive flavor and a creamy or fruity twist.”
+            </p>
+
+            <!-- Printed Menu Item List -->
+            <div class="printed-menu-list">
+              
+              <!-- Item 1 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Matcha Milk Tea</h3>
+                    <span class="printed-item-tag">Classic Whisk</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    A creamy matcha-inspired drink balancing gentle earthy depth with smooth milk sweetness.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Matcha Milk Tea">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Strawberry Matcha</h3>
+                    <span class="printed-item-tag">Layered Favorite</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    A layered flavor combination inspired by sweet strawberry puree and velvety whisked matcha.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Strawberry Matcha">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Iced Matcha Latte</h3>
+                    <span class="printed-item-tag">Pure & Chilled</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    A chilled matcha-and-milk option, offering clean tea elegance with wholesome creaminess.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Iced Matcha Latte">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="menu-disclaimer-note">
+              <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
+              <span>Available with whole milk or dairy-free alternatives upon request.</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 5 — BROWN SUGAR & SPECIALTY SIPS
+         Dark plum and caramel editorial styling
+         ---------------------------------------------------------------------- -->
+    <section id="brown-sugar" class="menu-brownsugar-section" aria-labelledby="brownsugar-heading">
+      <div class="boba-container">
+        
+        <div class="menu-category-grid-reversed">
+          
+          <!-- Left Column: Specialty Menu List -->
+          <div class="menu-category-content">
+            <div class="boba-eyebrow">
+              <i class="bi bi-stars" aria-hidden="true"></i>
+              <span>CATEGORY 04</span>
+            </div>
+
+            <h2 id="brownsugar-heading" class="menu-section-title">
+              SWEET LITTLE INDULGENCES.
+            </h2>
+
+            <p class="menu-section-lead">
+              “For moments when a richer, more dessert-inspired drink sounds just right.”
+            </p>
+
+            <!-- Printed Menu Item List -->
+            <div class="printed-menu-list">
+              
+              <!-- Item 1 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Brown Sugar Milk Tea</h3>
+                    <span class="printed-item-tag">Tiger Marbling</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    Milk tea with brown-sugar-inspired flavor and warm, slow-simmered tapioca pearls.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Brown Sugar Milk Tea">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Brown Sugar Fresh Milk</h3>
+                    <span class="printed-item-tag">Velvety Swirl</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    A caffeine-free milk-based drink with rich caramel brown sugar syrup and pearls.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Brown Sugar Fresh Milk">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Taro Specialty</h3>
+                    <span class="printed-item-tag">Rich Texture</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    A creamy taro-inspired specialty infused with subtle vanilla notes and thick texture.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Taro Specialty">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="printed-menu-item">
+                <div class="printed-item-content">
+                  <div class="printed-item-header">
+                    <h3 class="printed-item-title">Seasonal Creation</h3>
+                    <span class="printed-item-tag">Rotating Feature</span>
+                  </div>
+                  <p class="printed-item-desc">
+                    A rotating feature drink offered during special seasons and flavor showcases.
+                  </p>
+                </div>
+                <div class="printed-item-action">
+                  <a href="customize.html" class="printed-customize-link" title="Customize Seasonal Creation">
+                    <span>Customize</span>
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="menu-specialty-card-note">
+              <i class="bi bi-gem" aria-hidden="true"></i>
+              <p>
+                Brown sugar drinks showcase our signature tiger-stripe syrup drizzle for a rich, layered sip.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Close-up Brown Sugar Photograph -->
+          <div class="menu-category-visual">
+            <div class="menu-category-photo-frame">
+              <img 
+                src="assets/images/menu/menu-brown-sugar.webp" 
+                alt="Close-up brown sugar bubble tea drink with caramel tiger marbling and glossy tapioca pearls" 
+                class="menu-category-photo"
+                width="1000" 
+                height="750"
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 6 — THE TOPPING BAR
+         Overhead flat lay of topping bowls & structured texture groupings
+         ---------------------------------------------------------------------- -->
+    <section id="toppings" class="menu-toppings-section" aria-labelledby="toppings-heading">
+      <div class="boba-container">
+        
+        <div class="menu-section-header text-center">
+          <div class="boba-eyebrow">
+            <i class="bi bi-circle-fill" aria-hidden="true"></i>
+            <span>TEXTURE & CUSTOMIZATION</span>
+          </div>
+          <h2 id="toppings-heading" class="menu-section-title">
+            A LITTLE EXTRA CHEW, A LITTLE EXTRA FUN.
+          </h2>
+          <p class="menu-section-lead">
+            “Choose from the toppings available at the shop to add your favorite texture to your drink.”
+          </p>
+        </div>
+
+        <!-- Overhead Flat Lay Showcase -->
+        <div class="menu-toppings-showcase">
+          <img 
+            src="assets/images/menu/menu-toppings.webp" 
+            alt="Overhead flat lay of fresh toppings including tapioca pearls, fruit jellies, and aloe in bowls" 
+            class="menu-toppings-photo"
+            width="1440" 
+            height="810"
+            loading="lazy"
+          >
+        </div>
+
+        <!-- Labeled Topping Grid -->
+        <div class="menu-toppings-grid">
+          
+          <!-- Topping 1 -->
+          <div class="menu-topping-card">
+            <div class="menu-topping-icon icon-pearls" aria-hidden="true">
+              <i class="bi bi-circle-fill"></i>
+            </div>
+            <h3 class="menu-topping-name">Tapioca Pearls</h3>
+            <p class="menu-topping-desc">
+              Slow-cooked brown sugar boba offering our signature soft, chewy bounce.
+            </p>
+          </div>
+
+          <!-- Topping 2 -->
+          <div class="menu-topping-card">
+            <div class="menu-topping-icon icon-popping" aria-hidden="true">
+              <i class="bi bi-record-circle"></i>
+            </div>
+            <h3 class="menu-topping-name">Popping Boba</h3>
+            <p class="menu-topping-desc">
+              Thin translucent spheres that burst with real fruit juice excitement on every sip.
+            </p>
+          </div>
+
+          <!-- Topping 3 -->
+          <div class="menu-topping-card">
+            <div class="menu-topping-icon icon-coconut" aria-hidden="true">
+              <i class="bi bi-square-fill"></i>
+            </div>
+            <h3 class="menu-topping-name">Coconut Jelly</h3>
+            <p class="menu-topping-desc">
+              Crisp and subtly sweet nata de coco cubes with an irresistibly firm texture.
+            </p>
+          </div>
+
+          <!-- Topping 4 -->
+          <div class="menu-topping-card">
+            <div class="menu-topping-icon icon-grass" aria-hidden="true">
+              <i class="bi bi-slash-square-fill"></i>
+            </div>
+            <h3 class="menu-topping-name">Grass Jelly</h3>
+            <p class="menu-topping-desc">
+              Silky, herbal, and traditional jelly providing a cool and mellow contrast.
+            </p>
+          </div>
+
+          <!-- Topping 5 -->
+          <div class="menu-topping-card">
+            <div class="menu-topping-icon icon-fruit" aria-hidden="true">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+            <h3 class="menu-topping-name">Fruit Jelly</h3>
+            <p class="menu-topping-desc">
+              Bright mango, lychee, or strawberry flavored jelly bites that add lively chew.
+            </p>
+          </div>
+
+          <!-- Topping 6 -->
+          <div class="menu-topping-card">
+            <div class="menu-topping-icon icon-aloe" aria-hidden="true">
+              <i class="bi bi-droplet-fill"></i>
+            </div>
+            <h3 class="menu-topping-name">Aloe Vera</h3>
+            <p class="menu-topping-desc">
+              Refreshing, tender aloe vera pieces that pair naturally with green and fruit teas.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Toppings Interactive CTA Banner -->
+        <div class="menu-toppings-cta-banner" id="deals">
+          <div class="menu-toppings-cta-text">
+            <h3>Ready to assemble your cup?</h3>
+            <p>Select your favorite base, sweetness level, ice preference, and topping combination.</p>
+          </div>
+          <a href="contact.html#contact-form" class="boba-btn boba-btn-primary">
+            <span>CUSTOMIZE YOUR DRINK</span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 7 — YOUR NEXT FAVORITE STARTS HERE
+         Unique horizontal closing composition with dual accessible CTAs
+         ---------------------------------------------------------------------- -->
+    <section id="menu-closing" class="menu-closing-section" aria-labelledby="closing-heading">
+      <div class="boba-container">
+        
+        <div class="menu-closing-card">
+          
+          <!-- Left Column: Inspiring Closing Narrative -->
+          <div class="menu-closing-content">
+            <div class="boba-eyebrow">
+              <i class="bi bi-cup-straw" aria-hidden="true"></i>
+              <span>TIME FOR HAPPINESS</span>
+            </div>
+
+            <h2 id="closing-heading" class="menu-closing-title">
+              FOUND SOMETHING YOU LOVE?
+            </h2>
+
+            <p class="menu-closing-desc">
+              “Choose a familiar favorite or try a new combination. Your next cup is waiting to be discovered.”
+            </p>
+
+            <div class="menu-closing-buttons">
+              <a href="contact.html#contact-form" class="boba-btn boba-btn-primary">
+                <span>CREATE YOUR BOBA</span>
+                <i class="bi bi-sliders2" aria-hidden="true"></i>
+              </a>
+              <a href="contact.html#contact-form" class="boba-btn boba-btn-dark">
+                <span>CONTACT US</span>
+                <i class="bi bi-chat-dots" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Celebratory Drink Lineup Photograph -->
+          <div class="menu-closing-visual">
+            <div class="menu-closing-photo-frame">
+              <img 
+                src="assets/images/menu/menu-closing.webp" 
+                alt="Colorful freshly crafted bubble tea drinks on an aesthetic sunlit cafe table" 
+                class="menu-closing-photo"
+                width="1440" 
+                height="810"
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER (EXACTLY THE SAME AS HOME 1)
+       ======================================================================== -->
+  <footer class="boba-footer" role="contentinfo">
+    <!-- Decorative subtle background bubble accents -->
+    <div class="boba-footer-bubble" style="width: 120px; height: 120px; bottom: -40px; right: 2%; background: radial-gradient(circle, rgba(255, 107, 138, 0.15), transparent 70%);" aria-hidden="true"></div>
+    <div class="boba-footer-bubble" style="width: 90px; height: 90px; top: -30px; left: 3%; background: radial-gradient(circle, rgba(255, 209, 102, 0.12), transparent 70%);" aria-hidden="true"></div>
+
+    <div class="boba-container">
+      
+      <div class="boba-footer-grid">
+        
+        <!-- COLUMN 1 — BRAND -->
+        <div class="boba-footer-brand">
+          <a href="index.html" class="boba-brand" aria-label="Boba Bloom Homepage">
+            <div class="boba-logo-icon" aria-hidden="true">
+              <i class="bi bi-cup-straw"></i>
+            </div>
+            <div class="boba-brand-text">
+              <span class="boba-brand-name">BOBA BLOOM</span>
+              <span class="boba-brand-descriptor">BUBBLE TEA & BOBA</span>
+            </div>
+          </a>
+          <p class="boba-footer-tagline">
+            A little sip of happiness.
+          </p>
+          <p class="boba-footer-desc">
+            Handcrafted bubble teas, playful flavors, and little moments of happiness.
+          </p>
+          <div class="boba-footer-social" aria-label="Follow Boba Bloom on social media">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="boba-social-btn" aria-label="Follow us on Instagram" title="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="boba-social-btn" aria-label="Follow us on Facebook" title="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- COLUMN 2 — EXPLORE -->
+        <div class="boba-footer-col">
+          <h3 class="boba-footer-heading">EXPLORE</h3>
+          <ul class="boba-footer-links">
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="customize.html">Customize Your Drink</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 3 — OUR DRINKS -->
+        <div class="boba-footer-col">
+          <h3 class="boba-footer-heading">OUR DRINKS</h3>
+          <ul class="boba-footer-links">
+            <li><a href="menu.html#milk-tea">Milk Tea</a></li>
+            <li><a href="menu.html#fruit-tea">Fruit Tea</a></li>
+            <li><a href="menu.html#matcha">Matcha</a></li>
+            <li><a href="menu.html#brown-sugar">Brown Sugar</a></li>
+            <li><a href="menu.html#toppings">Toppings</a></li>
+            <li><a href="menu.html#signature">Signature Drinks</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 4 — YOUR BOBA -->
+        <div class="boba-footer-col">
+          <h3 class="boba-footer-heading">YOUR BOBA</h3>
+          <ul class="boba-footer-links">
+            <li><a href="customize.html#drink-builder">Build Your Drink</a></li>
+            <li><a href="customize.html#sweetness">Sweetness Options</a></li>
+            <li><a href="customize.html#ice-level">Ice Levels</a></li>
+            <li><a href="customize.html#toppings">Toppings Guide</a></li>
+            <li><a href="customize.html#base">Tea Base Choices</a></li>
+            <li><a href="customize.html#dairy-free">Dairy-Free Options</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 5 — SAY HELLO -->
+        <div class="boba-footer-col">
+          <h3 class="boba-footer-heading">SAY HELLO</h3>
+          <ul class="boba-footer-links">
+            <li><a href="contact.html#contact-form">Contact Us</a></li>
+            <li><a href="contact.html#store-locator">Store Locator</a></li>
+            <li><a href="contact.html#faqs">FAQs</a></li>
+            <li><a href="contact.html#careers">Careers</a></li>
+            <li><a href="contact.html#catering">Catering & Events</a></li>
+            <li><a href="contact.html#feedback">Feedback & Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- FOOTER BOTTOM BAR -->
+      <div class="boba-footer-bottom">
+        <div class="boba-footer-copy">
+          &copy; 2026 BOBA BLOOM. ALL RIGHTS RESERVED.
+        </div>
+        <div class="boba-footer-tagline-bottom">
+          A LITTLE SIP OF HAPPINESS.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       ACCESSIBLE LOGIN MODAL
+       ======================================================================== -->
+  <div id="boba-login-modal" class="boba-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+    <div class="boba-modal-dialog">
+      <div class="boba-modal-header">
+        <div class="boba-modal-title-wrap">
+          <div class="boba-logo-icon" style="width: 36px; height: 36px; font-size: 1.15rem;" aria-hidden="true">
+            <i class="bi bi-cup-straw"></i>
+          </div>
+          <div>
+            <h2 id="login-modal-title" class="boba-modal-title">Welcome Back</h2>
+            <p class="boba-modal-subtitle">Sign in to your Boba Bloom account</p>
+          </div>
+        </div>
+        <button type="button" class="boba-modal-close" aria-label="Close login dialog">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <form id="boba-login-form" class="boba-modal-body" onsubmit="event.preventDefault(); alert('Signed in successfully! Welcome to Boba Bloom.'); document.getElementById('boba-login-modal').classList.remove('is-open');">
+        <div class="boba-form-group">
+          <label for="login-email" class="boba-form-label">Email or Username</label>
+          <div class="boba-input-wrapper">
+            <i class="bi bi-envelope boba-input-icon"></i>
+            <input type="text" id="login-email" class="boba-input-control" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <div class="boba-form-group">
+          <label for="login-password" class="boba-form-label">Password</label>
+          <div class="boba-input-wrapper">
+            <i class="bi bi-lock boba-input-icon"></i>
+            <input type="password" id="login-password" class="boba-input-control" placeholder="••••••••" required>
+          </div>
+        </div>
+
+        <div class="boba-login-options">
+          <label class="boba-checkbox-wrap">
+            <input type="checkbox" checked>
+            <span class="boba-checkbox-label" style="font-size: 0.85rem;">Remember me</span>
+          </label>
+          <a href="#" class="boba-forgot-link" onclick="event.preventDefault(); alert('Password reset instructions sent to your registered email.');">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="boba-btn boba-btn-primary boba-btn-submit" style="width: 100%;">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>SIGN IN</span>
+        </button>
+
+        <div class="boba-modal-footer-note">
+          <span>Don't have an account?</span>
+          <a href="#" onclick="event.preventDefault(); alert('Registration open! Welcome to Boba Bloom Rewards.');">Sign Up Free</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/menu.js"></script>
+</body>
+</html>

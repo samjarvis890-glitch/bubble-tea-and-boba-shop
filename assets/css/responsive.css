@@ -1,0 +1,418 @@
+/* ==========================================================================
+   BOBA BLOOM — RESPONSIVE STYLESHEET
+   Supports: 320px, 360px, 375px, 390px, 414px, 430px, 480px, 576px, 
+             768px, 820px, 834px, 1024px, 1280px, 1366px, 1440px, 1600px, 1920px
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TABLET & MOBILE GLOBAL NAVIGATION (Below 1281px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  /* On Mobile & Tablet view (<= 1280px), navbar collapses into hamburger menu.
+     Desktop nav menu and desktop login button are hidden from top bar. */
+  .boba-nav-menu,
+  .boba-navbar-cta,
+  .boba-navbar-login {
+    display: none !important;
+  }
+
+  /* Right side controls on mobile and tablet: Dark Mode Icon | RTL Icon | Hamburger Menu */
+  .boba-nav-controls .theme-toggle-btn,
+  .boba-nav-controls .rtl-toggle-btn {
+    display: flex !important;
+  }
+
+  /* Show Hamburger menu toggle button */
+  .boba-hamburger-btn {
+    display: flex !important;
+  }
+
+  /* Navbar height on mobile/tablet */
+  .boba-navbar {
+    height: 72px;
+  }
+
+  /* Responsive Brand Logo */
+  .boba-logo-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.25rem;
+  }
+
+  .boba-brand-name {
+    font-size: 1.2rem;
+  }
+
+  .boba-brand-descriptor {
+    font-size: 0.65rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   1B. TABLET & MOBILE SECTION HEADLINES & CTA BUTTONS CENTER ALIGNMENT
+   Requirement: On tab view (and mobile), all section headlines (eyebrow, title,
+   lead/subtitle) and CTA buttons across ALL pages must be center aligned!
+   -------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  /* Universal Section Headers */
+  .section-header,
+  .section-header-center,
+  .about-section-header,
+  .menu-section-header,
+  .custom-step-header,
+  .custom-hero-header,
+  .contact-section-header {
+    text-align: center !important;
+    margin-inline: auto !important;
+    align-items: center !important;
+  }
+
+  /* Universal Eyebrows, Pills & Badges */
+  .boba-eyebrow,
+  .contact-pill-eyebrow,
+  .contact-closing-eyebrow,
+  .custom-step-pill,
+  .cover-issue-tag,
+  .editorial-number,
+  .about-num-badge {
+    margin-inline: auto !important;
+    align-self: center !important;
+    display: inline-flex !important;
+    text-align: center !important;
+  }
+
+  /* Universal Section Titles */
+  .section-title,
+  .about-section-title,
+  .menu-section-title,
+  .custom-step-title,
+  .contact-section-title,
+  .hero-title,
+  .cover-title,
+  .about-hero-title,
+  .menu-hero-title,
+  .custom-hero-title,
+  .contact-hero-title,
+  .discovery-title,
+  .pause-title,
+  .about-closing-title,
+  .contact-closing-title,
+  .custom-closing-title,
+  .lifestyle-content-card .section-title,
+  .closing-cta-banner h2 {
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+
+  /* Universal Subtitles, Leads & Explanatory Paragraphs */
+  .section-subtitle,
+  .about-section-lead,
+  .menu-section-lead,
+  .custom-step-lead,
+  .contact-section-lead,
+  .hero-text,
+  .cover-desc,
+  .about-hero-story-text,
+  .menu-hero-lead,
+  .custom-hero-lead,
+  .contact-hero-desc,
+  .discovery-desc,
+  .pause-desc,
+  .lifestyle-content-card p,
+  .about-closing-desc,
+  .contact-closing-desc,
+  .custom-closing-desc,
+  .closing-cta-banner p {
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+
+  /* Universal CTA Button Groups & Containers */
+  .hero-btn-group,
+  .cover-cta-group,
+  .about-hero-actions,
+  .menu-hero-actions,
+  .custom-hero-actions,
+  .contact-hero-ctas,
+  .custom-nav-actions,
+  .custom-board-actions,
+  .discovery-btn-group,
+  .closing-cta-buttons,
+  .about-closing-buttons,
+  .menu-closing-buttons,
+  .custom-closing-buttons,
+  .contact-closing-ctas,
+  .signature-bottom-cta,
+  .pairing-bottom-cta,
+  .collection-footer-cta,
+  .contact-form-actions {
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+
+  /* Standalone CTA Buttons */
+  .custom-preview-content > .boba-btn,
+  .menu-toppings-cta-banner .boba-btn,
+  .contact-submit-btn,
+  .custom-nav-actions .boba-btn,
+  .cover-cta-group .boba-btn,
+  .hero-btn-group .boba-btn,
+  .discovery-btn-group .boba-btn {
+    align-self: center !important;
+    margin-inline: auto !important;
+  }
+
+  /* Page-Specific Content Wrapper Alignments */
+  /* --- HOME 1 (index.html) --- */
+  .hero-content,
+  .ingredients-content,
+  .custom-preview-content,
+  .lifestyle-content-card {
+    text-align: center !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .hero-note,
+  .lifestyle-highlight {
+    justify-content: center !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  /* --- HOME 2 (home2.html) --- */
+  .cover-text-panel,
+  .pause-content,
+  .discovery-content-box {
+    text-align: center !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .cover-curation-note,
+  .pause-sensory-chips {
+    justify-content: center !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  .cover-scroll-indicator {
+    align-self: center !important;
+    margin-inline: auto !important;
+  }
+
+  /* --- ABOUT PAGE (about.html) --- */
+  .about-hero-story-panel,
+  .about-story-content,
+  .about-philosophy-content,
+  .about-craft-content,
+  .about-experience-panel,
+  .about-closing-content {
+    text-align: center !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .about-hero-pillars {
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+
+  .about-hero-rule {
+    margin-inline: auto !important;
+  }
+
+  /* --- MENU PAGE (menu.html) --- */
+  .menu-hero-panel,
+  .menu-category-content,
+  .menu-closing-content {
+    text-align: center !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .menu-hero-index-chips {
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+
+  .menu-toppings-cta-banner {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* --- CUSTOMIZE PAGE (customize.html) --- */
+  .custom-step-tracker {
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+
+  .custom-base-selected-badge,
+  .sweetness-helper-box,
+  .custom-toppings-top-bar {
+    margin-inline: auto !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .custom-closing-content {
+    text-align: center !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* --- CONTACT PAGE (contact.html) --- */
+  .contact-hero-content,
+  .contact-hero-text,
+  .contact-lifestyle-content,
+  .contact-closing-content {
+    text-align: center !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .contact-hero-perks {
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+
+  .contact-form-card {
+    text-align: center !important;
+  }
+
+  .contact-form-card-title,
+  .contact-form-card-desc {
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+
+  .boba-checkbox-wrap {
+    text-align: start !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLET BREAKPOINTS (768px - 1023px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1199.98px) {
+  .boba-footer-grid {
+    grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .boba-footer-links a {
+    font-size: 0.88rem;
+  }
+
+  .boba-footer-desc {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .boba-container {
+    padding-inline: 1.25rem;
+  }
+
+  /* Footer 2-column balanced grid on tablet */
+  .boba-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .boba-footer-brand {
+    grid-column: span 2;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(248, 234, 240, 0.12);
+  }
+
+  .boba-footer-desc {
+    max-width: 520px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. MOBILE BREAKPOINTS (Below 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  .boba-container {
+    padding-inline: 1rem;
+  }
+
+  .boba-footer {
+    padding-top: 3.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .boba-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* Footer 1-column stacked on mobile */
+  .boba-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .boba-footer-brand {
+    grid-column: span 1;
+    border-bottom: 1px solid rgba(248, 234, 240, 0.12);
+    padding-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* Drawer full width on small mobile */
+  .boba-drawer {
+    max-width: 100%;
+  }
+
+  /* Buttons full width on mobile if needed */
+  .boba-btn-group-mobile-stack {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .boba-btn-group-mobile-stack .boba-btn {
+    width: 100%;
+  }
+
+  /* Icon sizes */
+  .boba-icon-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. ULTRA SMALL MOBILE (Below 380px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 379.98px) {
+  .boba-brand-descriptor {
+    display: none;
+  }
+
+  .boba-brand-name {
+    font-size: 1.05rem;
+  }
+
+  .boba-nav-controls {
+    gap: 0.4rem;
+  }
+}

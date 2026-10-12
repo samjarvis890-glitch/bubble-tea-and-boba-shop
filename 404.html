@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | BOBA BLOOM</title>
+  <meta name="description" content="Looks like this page was sipped away. Discover delicious bubble tea drinks and handcrafted boba at Boba Bloom.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+  <!-- Instant Theme & Direction initialization to prevent layout/color flash -->
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem('boba_bloom_theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+        const savedDir = localStorage.getItem('boba_bloom_dir');
+        if (savedDir) {
+          document.documentElement.setAttribute('dir', savedDir);
+          document.documentElement.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google Fonts: Fredoka & Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/pages/404.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       404 FULL-SCREEN STANDALONE PAGE (NO NAVBAR, NO FOOTER)
+       ======================================================================== -->
+  <div class="boba-404-page">
+
+    <!-- Decorative Floating Boba Accents -->
+    <div class="boba-bubble boba-bubble-strawberry animate-float" style="width: 80px; height: 80px; top: 10%; left: 8%; opacity: 0.35;" aria-hidden="true"></div>
+    <div class="boba-bubble boba-bubble-mango animate-float-delay" style="width: 100px; height: 100px; bottom: 12%; left: 10%; opacity: 0.3;" aria-hidden="true"></div>
+    <div class="boba-bubble boba-bubble-matcha animate-float" style="width: 90px; height: 90px; top: 15%; right: 10%; opacity: 0.35;" aria-hidden="true"></div>
+    <div class="boba-bubble boba-bubble-taro animate-float-delay" style="width: 75px; height: 75px; bottom: 18%; right: 8%; opacity: 0.3;" aria-hidden="true"></div>
+
+    <!-- 1. Top Bar: Brand Logo & Quick Utilities Only (No Menu Bar) -->
+    <header class="boba-404-topbar">
+      <a href="index.html" class="boba-404-brand" aria-label="Boba Bloom Homepage">
+        <div class="boba-logo-icon" aria-hidden="true">
+          <i class="bi bi-cup-straw"></i>
+        </div>
+        <div class="boba-brand-text">
+          <span class="boba-brand-name">BOBA BLOOM</span>
+          <span class="boba-brand-descriptor">BUBBLE TEA &amp; BOBA</span>
+        </div>
+      </a>
+
+      <!-- Quick Theme & RTL Toggles -->
+      <div class="boba-404-controls">
+        <button type="button" class="boba-icon-btn theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+        <button type="button" class="boba-icon-btn rtl-toggle-btn" aria-label="Toggle text direction" title="RTL / LTR Toggle">
+          <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- 2. Centered Hero Content -->
+    <main class="boba-404-main" id="main-content">
+      
+      <!-- 404 Display: 4 - Illustrated Boba Cup - 4 -->
+      <div class="boba-404-display" aria-label="404 Error: Page Not Found">
+        <span class="boba-404-digit">4</span>
+
+        <div class="boba-404-cup-wrap">
+          <svg class="boba-404-cup-svg" viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cute handcrafted boba cup">
+            <!-- Straw with stripes -->
+            <path d="M96 8 L116 3 L101 65 L81 65 Z" fill="#FF85A1" />
+            <path d="M102 23 L110 21 L106 33 L98 35 Z" fill="#FFFFFF" opacity="0.65" />
+            <path d="M93 43 L101 41 L97 53 L89 55 Z" fill="#FFFFFF" opacity="0.65" />
+
+            <!-- Cup Body Outer -->
+            <path d="M30 60 L45 180 Q46 195 65 195 L95 195 Q114 195 115 180 L130 60 Q130 50 120 50 L40 50 Q30 50 30 60 Z" fill="rgba(255, 255, 255, 0.75)" stroke="#342A32" stroke-width="4.5" stroke-linejoin="round"/>
+
+            <!-- Tea Liquid with gradient -->
+            <path d="M35 84 Q80 74 125 84 L113 178 Q112 190 95 190 L65 190 Q48 190 47 178 Z" fill="url(#bobaTeaGradient)" />
+
+            <!-- Cream / Foam Swirl -->
+            <path d="M35 84 Q60 98 80 84 Q100 70 125 84 L124 94 Q100 80 80 94 Q60 108 35 94 Z" fill="#FFF5EB" opacity="0.9" />
+
+            <!-- Kawaii Happy Face -->
+            <circle cx="65" cy="122" r="4.5" fill="#342A32" />
+            <circle cx="95" cy="122" r="4.5" fill="#342A32" />
+            <circle cx="67" cy="120" r="1.5" fill="#FFFFFF" />
+            <circle cx="97" cy="120" r="1.5" fill="#FFFFFF" />
+            <path d="M74 130 Q80 137 86 130" stroke="#342A32" stroke-width="3" stroke-linecap="round" fill="none" />
+
+            <!-- Blush Cheeks -->
+            <ellipse cx="57" cy="129" rx="4.5" ry="3" fill="#FF85A1" opacity="0.75" />
+            <ellipse cx="103" cy="129" rx="4.5" ry="3" fill="#FF85A1" opacity="0.75" />
+
+            <!-- Boba Tapioca Pearls at bottom -->
+            <circle cx="55" cy="173" r="8" fill="#26141F" />
+            <circle cx="75" cy="176" r="9" fill="#26141F" />
+            <circle cx="95" cy="172" r="8.5" fill="#26141F" />
+            <circle cx="65" cy="161" r="7.5" fill="#38212F" />
+            <circle cx="85" cy="163" r="8" fill="#38212F" />
+            <circle cx="103" cy="163" r="6.5" fill="#26141F" />
+            <circle cx="47" cy="164" r="6" fill="#38212F" />
+
+            <!-- Pearl Glint Highlights -->
+            <circle cx="53" cy="171" r="2.2" fill="#FFFFFF" opacity="0.55" />
+            <circle cx="73" cy="174" r="2.4" fill="#FFFFFF" opacity="0.55" />
+            <circle cx="93" cy="170" r="2.2" fill="#FFFFFF" opacity="0.55" />
+
+            <!-- Cup Lid -->
+            <ellipse cx="80" cy="52" rx="48" ry="10" fill="#FFE5D9" stroke="#342A32" stroke-width="4.5"/>
+
+            <!-- Definitions -->
+            <defs>
+              <linearGradient id="bobaTeaGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFC199" />
+                <stop offset="45%" stop-color="#DE9765" />
+                <stop offset="100%" stop-color="#935731" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <!-- Floating pearl particles -->
+          <div class="spilled-pearl pearl-float-1" aria-hidden="true"></div>
+          <div class="spilled-pearl pearl-float-2" aria-hidden="true"></div>
+          <div class="spilled-pearl pearl-float-3" aria-hidden="true"></div>
+        </div>
+
+        <span class="boba-404-digit">4</span>
+      </div>
+
+      <!-- Eyebrow Pill -->
+      <div class="boba-eyebrow boba-404-eyebrow">
+        <i class="bi bi-cup-straw" aria-hidden="true"></i>
+        <span>PAGE NOT FOUND · ERROR 404</span>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="boba-404-title">
+        OOPS! THIS CUP IS <span class="highlight-pink">EMPTY.</span>
+      </h1>
+
+      <!-- Friendly Description -->
+      <p class="boba-404-desc">
+        Looks like this page was sipped away or never brewed. Don't worry, there's always a fresh, sweet cup waiting for you!
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="boba-404-actions">
+        <a href="index.html" class="boba-btn boba-btn-primary">
+          <i class="bi bi-house-door-fill" aria-hidden="true"></i>
+          <span>BACK TO HOME</span>
+        </a>
+        <a href="contact.html#contact-form" class="boba-btn boba-btn-dark">
+          <span>EXPLORE MENU</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <!-- Quick Helpful Shortcuts -->
+      <div class="boba-404-quicklinks">
+        <span>Quick stops:</span>
+        <a href="menu.html">Categories</a>
+        <span class="dot-sep" aria-hidden="true">•</span>
+        <a href="customize.html">Customize Drink</a>
+        <span class="dot-sep" aria-hidden="true">•</span>
+        <a href="about.html">About Us</a>
+        <span class="dot-sep" aria-hidden="true">•</span>
+        <a href="contact.html">Contact</a>
+      </div>
+
+    </main>
+
+    <!-- 3. Minimal Single-Line Footer Note (No Full Footer, No Widgets) -->
+    <footer class="boba-404-footer">
+      <p class="boba-404-footer-text">
+        &copy; 2026 BOBA BLOOM &middot; A Little Sip of Happiness &middot; All Rights Reserved.
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

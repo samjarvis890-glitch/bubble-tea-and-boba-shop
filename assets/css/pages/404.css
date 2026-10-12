@@ -1,0 +1,329 @@
+/* ==========================================================================
+   BOBA BLOOM — 404 ERROR PAGE STYLESHEET
+   Full-screen, immersive, standalone 404 error page.
+   No navbar, no footer, fits the screen seamlessly.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. FULL SCREEN WRAPPER
+   -------------------------------------------------------------------------- */
+.boba-404-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: radial-gradient(circle at 50% 35%, var(--bg-surface-alt) 0%, var(--bg-main) 80%);
+  position: relative;
+  overflow-x: hidden;
+  padding: 1.25rem 1.5rem;
+  box-sizing: border-box;
+}
+
+@media (min-height: 640px) {
+  .boba-404-page {
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. TOP BAR (LOGO & CONTROLS ONLY - NO MENUS)
+   -------------------------------------------------------------------------- */
+.boba-404-topbar {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.boba-404-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: transform var(--transition-fast);
+}
+
+.boba-404-brand:hover {
+  transform: scale(1.03);
+}
+
+.boba-404-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. MAIN CENTER CONTAINER
+   -------------------------------------------------------------------------- */
+.boba-404-main {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: auto 0;
+  z-index: 10;
+  padding: 1rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. 404 DISPLAY (DIGITS + BOBA CUP)
+   -------------------------------------------------------------------------- */
+.boba-404-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  user-select: none;
+  position: relative;
+}
+
+.boba-404-digit {
+  font-family: var(--font-heading);
+  font-size: clamp(5.5rem, 15vw, 9.5rem);
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--color-pink);
+  text-shadow: 0 8px 24px rgba(255, 107, 138, 0.28);
+  letter-spacing: -2px;
+}
+
+[data-theme="dark"] .boba-404-digit {
+  color: var(--color-pink);
+  text-shadow: 0 8px 24px rgba(255, 107, 138, 0.4);
+}
+
+.boba-404-cup-wrap {
+  position: relative;
+  width: clamp(100px, 20vw, 150px);
+  height: clamp(130px, 26vw, 190px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boba-404-cup-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 12px 20px rgba(52, 42, 50, 0.12));
+  animation: bobaWiggle 4s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+[data-theme="dark"] .boba-404-cup-svg {
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.45));
+}
+
+@keyframes bobaWiggle {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  25% {
+    transform: rotate(-3deg) translateY(-4px);
+  }
+  50% {
+    transform: rotate(2deg) translateY(0);
+  }
+  75% {
+    transform: rotate(-2deg) translateY(-2px);
+  }
+}
+
+/* Floating / Spilled Pearls */
+.spilled-pearl {
+  position: absolute;
+  border-radius: 50%;
+  background: #2B1A24;
+  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+.pearl-float-1 {
+  width: 16px;
+  height: 16px;
+  bottom: 8px;
+  left: -12px;
+  animation: floatPearl1 3s ease-in-out infinite;
+}
+
+.pearl-float-2 {
+  width: 12px;
+  height: 12px;
+  bottom: 22px;
+  right: -10px;
+  animation: floatPearl2 3.5s ease-in-out infinite 0.5s;
+}
+
+.pearl-float-3 {
+  width: 10px;
+  height: 10px;
+  top: 30px;
+  right: -14px;
+  background: var(--color-pink);
+  animation: floatPearl1 4s ease-in-out infinite 1s;
+}
+
+@keyframes floatPearl1 {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.05);
+  }
+}
+
+@keyframes floatPearl2 {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(0.95);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. TEXT & CONTENT
+   -------------------------------------------------------------------------- */
+.boba-404-eyebrow {
+  margin-bottom: 0.75rem;
+}
+
+.boba-404-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3.8vw, 2.4rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.boba-404-title .highlight-pink {
+  color: var(--color-pink);
+}
+
+.boba-404-desc {
+  font-size: clamp(0.95rem, 1.8vw, 1.12rem);
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 540px;
+  margin: 0 auto 1.5rem auto;
+}
+
+/* --------------------------------------------------------------------------
+   6. ACTIONS & SHORTCUT LINKS
+   -------------------------------------------------------------------------- */
+.boba-404-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.boba-404-actions .boba-btn {
+  padding: 0.85rem 1.8rem;
+  font-size: 0.95rem;
+  border-radius: var(--radius-full);
+}
+
+.boba-404-quicklinks {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.boba-404-quicklinks a {
+  color: var(--color-pink);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color var(--transition-fast), text-decoration var(--transition-fast);
+}
+
+.boba-404-quicklinks a:hover {
+  color: var(--color-pink-hover);
+  text-decoration: underline;
+}
+
+.boba-404-quicklinks .dot-sep {
+  opacity: 0.5;
+}
+
+/* --------------------------------------------------------------------------
+   7. FOOTER NOTE (MINIMAL SINGLE LINE)
+   -------------------------------------------------------------------------- */
+.boba-404-footer {
+  width: 100%;
+  text-align: center;
+  padding-top: 0.75rem;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.boba-404-footer-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  opacity: 0.75;
+}
+
+/* --------------------------------------------------------------------------
+   8. RESPONSIVE FINE-TUNING
+   -------------------------------------------------------------------------- */
+@media (max-width: 576px) {
+  .boba-404-page {
+    padding: 1rem 1rem;
+  }
+
+  .boba-404-display {
+    gap: 0.25rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .boba-404-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .boba-404-actions .boba-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. DARK MODE & RTL REFINEMENTS
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .boba-404-cup-svg path[stroke="#342A32"],
+[data-theme="dark"] .boba-404-cup-svg ellipse[stroke="#342A32"] {
+  stroke: #F8EAF0;
+}
+
+[data-theme="dark"] .boba-404-cup-svg circle[fill="#342A32"] {
+  fill: #F8EAF0;
+}
+
+[data-theme="dark"] .boba-404-cup-svg path[stroke="#342A32"][fill="none"] {
+  stroke: #F8EAF0;
+}
+
+[dir="rtl"] .boba-404-actions .bi-arrow-right {
+  transform: scaleX(-1);
+}
+

@@ -1,0 +1,1227 @@
+/* ==========================================================================
+   BOBA BLOOM — CORE STYLESHEET & DESIGN SYSTEM
+   Tagline: A Little Sip of Happiness.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS VARIABLES & THEME TOKENS
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand Palette */
+  --color-pink: #FF6B8A;
+  --color-pink-hover: #ff5275;
+  --color-pink-light: #FFEBF0;
+  --color-matcha: #8CBF88;
+  --color-matcha-hover: #79ab75;
+  --color-matcha-light: #EBF5EA;
+  --color-mango: #FFD166;
+  --color-mango-hover: #fbc23d;
+  --color-mango-light: #FFF8E6;
+  --color-lavender: #C9B6E4;
+  --color-lavender-light: #F4EFFF;
+  --color-peach: #FFE5D9;
+  --color-peach-light: #FFF3ED;
+
+  /* Neutrals (Light Mode Default) */
+  --bg-main: #FFF9F0;
+  --bg-surface: #FFFFFF;
+  --bg-surface-alt: #FFF3ED;
+  --bg-card: #FFFFFF;
+  --bg-navbar: #FFF9F0;
+  --text-primary: #342A32;
+  --text-muted: #746873;
+  --text-on-dark: #FFFFFF;
+  --border-color: #F0DCE0;
+  --border-subtle: #F6E7EB;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(52, 42, 50, 0.05);
+  --shadow-md: 0 8px 24px rgba(52, 42, 50, 0.08);
+  --shadow-lg: 0 16px 36px rgba(52, 42, 50, 0.12);
+  --shadow-pink: 0 8px 20px rgba(255, 107, 138, 0.25);
+
+  /* Typography */
+  --font-heading: 'Fredoka', 'Baloo 2', 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Nunito', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Radii */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-full: 9999px;
+
+  /* Layout */
+  --container-max-width: 1280px;
+  --navbar-height: 82px;
+}
+
+/* --------------------------------------------------------------------------
+   DARK MODE OVERRIDES
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] {
+  --bg-main: #1C151B;
+  --bg-surface: #261D25;
+  --bg-surface-alt: #2D222C;
+  --bg-card: #281F27;
+  --bg-navbar: #1C151B;
+  --text-primary: #F8EAF0;
+  --text-muted: #C0B0BD;
+  --border-color: #433342;
+  --border-subtle: #3A2B39;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.5);
+  --shadow-pink: 0 8px 22px rgba(255, 107, 138, 0.18);
+  --color-pink-light: #3A242E;
+  --color-matcha-light: #233423;
+  --color-mango-light: #3D331B;
+  --color-lavender-light: #2F273D;
+  --color-peach: #362624;
+  --color-peach-light: #2C201F;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE ELEMENTS
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background-color: var(--bg-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Typography Classes */
+h1, h2, h3, h4, h5, h6, .heading-font {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* Container */
+.boba-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. BUTTONS & UI CONTROLS
+   -------------------------------------------------------------------------- */
+.boba-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.85rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  text-align: center;
+  transition: all var(--transition-bounce);
+  min-height: 48px;
+  min-width: 44px;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.boba-btn-pink,
+.boba-btn-primary {
+  background-color: var(--color-pink) !important;
+  color: #FFFFFF !important;
+  box-shadow: var(--shadow-pink);
+  border: 2px solid var(--color-pink) !important;
+}
+
+.boba-btn-pink:hover,
+.boba-btn-primary:hover {
+  background-color: var(--color-pink-hover) !important;
+  border-color: var(--color-pink-hover) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(255, 107, 138, 0.35);
+}
+
+.boba-btn-pink *,
+.boba-btn-primary * {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .boba-btn-pink,
+[data-theme="dark"] .boba-btn-primary {
+  background-color: var(--color-pink) !important;
+  color: #FFFFFF !important;
+  border-color: var(--color-pink) !important;
+  box-shadow: 0 8px 24px rgba(255, 107, 138, 0.45) !important;
+}
+
+[data-theme="dark"] .boba-btn-pink *,
+[data-theme="dark"] .boba-btn-primary * {
+  color: #FFFFFF !important;
+}
+
+.boba-btn-dark {
+  background-color: #342A32;
+  color: #FFFFFF;
+  border: 2px solid #342A32;
+}
+
+[data-theme="dark"] .boba-btn-dark {
+  background-color: var(--color-pink);
+  border-color: var(--color-pink);
+  color: #FFFFFF;
+}
+
+.boba-btn-dark:hover {
+  background-color: var(--color-pink);
+  border-color: var(--color-pink);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.boba-btn-secondary,
+.boba-btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .boba-btn-secondary,
+[data-theme="dark"] .boba-btn-outline {
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.boba-btn-secondary:hover,
+.boba-btn-outline:hover {
+  background-color: var(--bg-surface-alt);
+  border-color: var(--color-pink);
+  color: var(--color-pink);
+  transform: translateY(-2px);
+}
+
+.boba-btn-light {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .boba-btn-light {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.boba-btn-light:hover {
+  background-color: var(--color-pink);
+  border-color: var(--color-pink);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.boba-btn-sm {
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  min-height: 36px;
+}
+
+.boba-btn-outline-white {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.boba-btn-outline-white:hover {
+  background-color: #FFFFFF;
+  color: #342A32;
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Eyebrows and Badges */
+.boba-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-size: 0.825rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-pink);
+  background-color: var(--color-pink-light);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .boba-eyebrow {
+  color: #FFA1B5;
+  background-color: rgba(255, 107, 138, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   4. GLOBAL NAVBAR
+   -------------------------------------------------------------------------- */
+.boba-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--navbar-height);
+  background-color: var(--bg-navbar);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.boba-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Brand Logo */
+.boba-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.boba-logo-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--color-pink), var(--color-mango));
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 12px rgba(255, 107, 138, 0.25);
+  flex-shrink: 0;
+}
+
+.boba-brand-text {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+
+.boba-brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.boba-brand-descriptor {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-pink);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Nav Menu — Hidden on Mobile & Tablet (<= 1280px), Shown on Desktop (1281px+) */
+.boba-nav-menu {
+  display: none;
+  list-style: none;
+}
+
+@media (min-width: 1281px) {
+  .boba-nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+  }
+}
+
+.boba-nav-link {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  padding: 0.45rem 0.35rem;
+  position: relative;
+  transition: color var(--transition-fast);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.boba-nav-link:hover,
+.boba-nav-link.active {
+  color: var(--color-pink);
+}
+
+.boba-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-pink);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+.boba-nav-link:hover::after,
+.boba-nav-link.active::after {
+  width: 100%;
+}
+
+/* Nav Dropdowns (Desktop) */
+.boba-nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.boba-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 175px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all var(--transition-fast);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+[dir="rtl"] .boba-dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+.boba-nav-dropdown:hover .boba-dropdown-menu,
+.boba-nav-dropdown:focus-within .boba-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.boba-dropdown-link {
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 0.925rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.boba-dropdown-link:hover,
+.boba-dropdown-link.active {
+  background-color: var(--color-pink-light);
+  color: var(--color-pink);
+}
+
+/* Right Side Controls */
+.boba-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+.boba-icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all var(--transition-fast);
+}
+
+.boba-icon-btn:hover {
+  background-color: var(--color-pink-light);
+  color: var(--color-pink);
+  border-color: var(--color-pink);
+  transform: scale(1.05);
+}
+
+/* Top Navbar Desktop-only buttons (Hidden on Mobile & Tablet <= 1280px) */
+.boba-navbar-login,
+.boba-navbar-cta {
+  display: none !important;
+}
+
+/* Mobile & Tablet Hamburger Button (Visible on Mobile & Tablet <= 1280px) */
+.boba-hamburger-btn {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px;
+}
+
+@media (min-width: 1281px) {
+  .boba-navbar-login,
+  .boba-navbar-cta {
+    display: inline-flex !important;
+  }
+
+  .boba-hamburger-btn {
+    display: none !important;
+  }
+}
+
+.boba-hamburger-btn span {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: all var(--transition-normal);
+}
+
+.boba-hamburger-btn.is-active span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.boba-hamburger-btn.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.boba-hamburger-btn.is-active span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   5. MOBILE & TABLET DRAWER MENU
+   -------------------------------------------------------------------------- */
+.boba-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(30, 20, 28, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.boba-drawer-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.boba-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 380px;
+  height: 100vh;
+  height: 100dvh;
+  background-color: var(--bg-surface);
+  z-index: 1100;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-bounce);
+  overflow-y: auto;
+}
+
+[dir="rtl"] .boba-drawer {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.boba-drawer.is-open {
+  transform: translateX(0);
+}
+
+.boba-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.boba-drawer-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--bg-surface-alt);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: all var(--transition-fast);
+}
+
+.boba-drawer-close:hover {
+  background-color: var(--color-pink);
+  color: #FFFFFF;
+}
+
+.boba-drawer-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  flex: 1;
+}
+
+.boba-drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.boba-drawer-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.15rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background-color: transparent;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.drawer-link-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.drawer-link-inner i {
+  font-size: 1.15rem;
+  color: var(--color-pink);
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.boba-drawer-link:hover .drawer-link-inner i,
+.boba-drawer-link.active .drawer-link-inner i {
+  transform: scale(1.15);
+}
+
+.boba-drawer-link:hover,
+.boba-drawer-link.active {
+  background-color: var(--color-pink-light);
+  color: var(--color-pink);
+}
+
+/* Mobile & Tablet Drawer Submenu */
+.boba-drawer-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.boba-drawer-dropdown-btn {
+  width: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: start;
+}
+
+.boba-drawer-dropdown-btn .drawer-chevron {
+  transition: transform var(--transition-normal);
+}
+
+.boba-drawer-dropdown.is-expanded .boba-drawer-dropdown-btn .drawer-chevron {
+  transform: rotate(180deg);
+}
+
+.boba-drawer-submenu {
+  display: none;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-inline-start: 1.5rem;
+  padding-block: 0.35rem 0.5rem;
+}
+
+.boba-drawer-dropdown.is-expanded .boba-drawer-submenu {
+  display: flex;
+}
+
+.boba-drawer-sublink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.boba-drawer-sublink i {
+  color: var(--color-pink);
+  font-size: 0.95rem;
+}
+
+.boba-drawer-sublink:hover,
+.boba-drawer-sublink.active {
+  color: var(--color-pink);
+  background-color: var(--color-pink-light);
+  font-weight: 700;
+}
+
+.boba-drawer-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.boba-drawer-controls-label {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.boba-drawer-toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.boba-drawer-footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* --------------------------------------------------------------------------
+   5B. ACCESSIBLE LOGIN MODAL
+   -------------------------------------------------------------------------- */
+.boba-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(30, 20, 28, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.boba-modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.boba-modal-dialog {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 440px;
+  padding: 2.25rem 2rem;
+  transform: scale(0.95) translateY(12px);
+  transition: transform var(--transition-bounce);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.boba-modal-backdrop.is-open .boba-modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+.boba-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.boba-modal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.boba-modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+
+.boba-modal-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.boba-modal-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.boba-modal-close:hover {
+  background-color: var(--color-pink);
+  color: #FFFFFF;
+  border-color: var(--color-pink);
+}
+
+.boba-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.boba-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.boba-form-group .boba-form-label {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.boba-form-group .boba-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.boba-form-group .boba-input-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--color-pink);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+[dir="rtl"] .boba-form-group .boba-input-icon {
+  left: auto;
+  right: 1rem;
+}
+
+.boba-form-group .boba-input-control {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.6rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+}
+
+[dir="rtl"] .boba-form-group .boba-input-control {
+  padding: 0.75rem 2.6rem 0.75rem 1rem;
+}
+
+.boba-form-group .boba-input-control:focus {
+  border-color: var(--color-pink);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 107, 138, 0.2);
+}
+
+.boba-login-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-top: -0.25rem;
+}
+
+.boba-forgot-link {
+  color: var(--color-pink);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.boba-forgot-link:hover {
+  text-decoration: underline;
+}
+
+.boba-modal-footer-note {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.boba-modal-footer-note a {
+  color: var(--color-pink);
+  font-weight: 700;
+  text-decoration: none;
+  margin-inline-start: 0.35rem;
+}
+
+.boba-modal-footer-note a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   6. GLOBAL FOOTER
+   -------------------------------------------------------------------------- */
+.boba-footer {
+  background-color: #342A32;
+  color: #F8EAF0;
+  padding-top: 5rem;
+  padding-bottom: 2.5rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(248, 234, 240, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle decorative bubble accents in footer */
+.boba-footer-bubble {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.12;
+}
+
+.boba-footer > .boba-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Main 5-Column Grid */
+.boba-footer-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+  align-items: start;
+}
+
+/* Column 1 — Brand */
+.boba-footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.boba-footer-brand .boba-brand {
+  margin-bottom: 0.75rem;
+  text-decoration: none;
+}
+
+.boba-footer-brand .boba-brand-name {
+  color: #FFFFFF;
+}
+
+.boba-footer-brand .boba-brand-descriptor {
+  color: #FFB4C5;
+}
+
+.boba-footer-tagline {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #FFD166;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.boba-footer-desc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #D4C3CE;
+  margin-bottom: 1.25rem;
+  max-width: 290px;
+}
+
+.boba-footer-social {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.boba-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(248, 234, 240, 0.08);
+  border: 1px solid rgba(248, 234, 240, 0.18);
+  color: #F8EAF0;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.boba-social-btn:hover {
+  background-color: #FFD166;
+  color: #342A32;
+  border-color: #FFD166;
+  transform: translateY(-2px);
+}
+
+.boba-social-btn:focus-visible {
+  outline: 2px solid #FFD166;
+  outline-offset: 3px;
+}
+
+/* Columns 2-5 — Headings and Links */
+.boba-footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.boba-footer-col h3,
+.boba-footer-heading {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFB4C5;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.boba-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.boba-footer-links a {
+  color: #F8EAF0;
+  font-size: 0.935rem;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1.35;
+  transition: color var(--transition-fast), padding-inline-start var(--transition-fast);
+  display: inline-block;
+}
+
+.boba-footer-links a:hover {
+  color: #FFD166;
+  padding-inline-start: 4px;
+}
+
+.boba-footer-links a:focus-visible {
+  outline: 2px solid #FFD166;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Bottom Bar */
+.boba-footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(248, 234, 240, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #D4C3CE;
+}
+
+.boba-footer-copy {
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.boba-footer-tagline-bottom {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: #FFB4C5;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   7. DECORATIVE FLOATING BUBBLES
+   -------------------------------------------------------------------------- */
+.boba-bubble {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.boba-bubble-pink {
+  background: radial-gradient(circle at 30% 30%, rgba(255, 107, 138, 0.3), rgba(255, 107, 138, 0.08));
+  border: 1px solid rgba(255, 107, 138, 0.25);
+}
+
+.boba-bubble-matcha {
+  background: radial-gradient(circle at 30% 30%, rgba(140, 191, 136, 0.3), rgba(140, 191, 136, 0.08));
+  border: 1px solid rgba(140, 191, 136, 0.25);
+}
+
+.boba-bubble-mango {
+  background: radial-gradient(circle at 30% 30%, rgba(255, 209, 102, 0.35), rgba(255, 209, 102, 0.08));
+  border: 1px solid rgba(255, 209, 102, 0.3);
+}
+
+@keyframes floatBubble {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: floatBubble 6s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: floatBubble 7s ease-in-out infinite 2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float, .animate-float-delay {
+    animation: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. ACCESSIBILITY & UTILITIES
+   -------------------------------------------------------------------------- */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-pink);
+  outline-offset: 3px;
+}

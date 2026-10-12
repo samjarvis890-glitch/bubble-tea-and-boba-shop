@@ -1,0 +1,1326 @@
+/* ==========================================================================
+   BOBA BLOOM — ABOUT PAGE STYLESHEET (about.css)
+   Brand: BOBA BLOOM
+   Descriptor: BUBBLE TEA & BOBA
+   Tagline: A LITTLE SIP OF HAPPINESS.
+   
+   A warm, genuine, story-led visual direction with generous whitespace,
+   natural photographic color grades, and thoughtful editorial typography.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. ABOUT PAGE GLOBAL RESETS & DECORATIVE MOTIFS
+   -------------------------------------------------------------------------- */
+.about-page-main {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+.about-editorial-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+  border: none;
+  margin-block: 4rem;
+}
+
+.about-section-header {
+  margin-bottom: 3rem;
+  max-width: 680px;
+}
+
+.about-section-header.text-center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.about-section-header .boba-eyebrow {
+  margin-bottom: 1rem;
+}
+
+.about-section-title {
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.about-section-lead {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.68;
+  color: var(--text-muted);
+}
+
+/* Subtle editorial counter badge */
+.about-num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-pink);
+  background-color: var(--color-pink-light);
+  border: 1px solid rgba(255, 107, 138, 0.25);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   SECTION 1 — A LITTLE ABOUT OUR WORLD (DISTINCTIVE STORYBOOK SPREAD)
+   A unique, warm editorial chapter layout. Does not repeat Home 1 or Home 2.
+   ========================================================================== */
+.about-hero-section {
+  position: relative;
+  padding-top: calc(var(--navbar-height) + 2.5rem);
+  padding-bottom: 5.5rem;
+  background: radial-gradient(circle at 85% 15%, rgba(255, 107, 138, 0.12) 0%, transparent 55%),
+              radial-gradient(circle at 10% 85%, rgba(255, 209, 102, 0.14) 0%, transparent 60%),
+              var(--bg-main);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .about-hero-section {
+  background: radial-gradient(circle at 85% 15%, rgba(255, 107, 138, 0.08) 0%, transparent 55%),
+              radial-gradient(circle at 10% 85%, rgba(201, 182, 228, 0.06) 0%, transparent 60%),
+              var(--bg-main);
+}
+
+.about-hero-section > .boba-container {
+  position: relative;
+  z-index: 2;
+}
+
+.about-hero-section .boba-bubble {
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Chapter Header with decorative floral divider */
+.about-hero-header {
+  text-align: center;
+  max-width: 860px;
+  margin-inline: auto;
+  margin-bottom: 3.5rem;
+}
+
+.about-hero-header .boba-eyebrow {
+  margin-inline: auto;
+  margin-bottom: 1.25rem;
+}
+
+.about-hero-title {
+  font-size: clamp(2.3rem, 4.5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.about-hero-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  max-width: 320px;
+  margin-inline: auto;
+}
+
+.about-hero-rule-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-color));
+}
+
+.about-hero-rule-line:last-child {
+  background: linear-gradient(90deg, var(--border-color), transparent);
+}
+
+[data-theme="dark"] .about-hero-rule-line {
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 138, 0.45));
+}
+
+[data-theme="dark"] .about-hero-rule-line:last-child {
+  background: linear-gradient(90deg, rgba(255, 107, 138, 0.45), transparent);
+}
+
+.about-hero-rule-icon {
+  font-size: 1.15rem;
+  color: var(--color-pink);
+}
+
+/* Two-column Editorial Storybook Spread */
+.about-hero-spread {
+  display: grid;
+  grid-template-columns: 1fr 1.18fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+/* Cream-colored Editorial Reading Panel */
+.about-hero-story-panel {
+  position: relative;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 3.25rem 3.5rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.about-quote-mark {
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-pink);
+  opacity: 0.85;
+  margin-bottom: 0.75rem;
+}
+
+.about-hero-story-text {
+  font-size: clamp(1.12rem, 1.45vw, 1.35rem);
+  line-height: 1.75;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.about-hero-pillars {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-block: 1.5rem;
+  border-block: 1px solid var(--border-subtle);
+  margin-bottom: 2rem;
+}
+
+.about-hero-pillar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.about-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+/* Large Photographic Showcase */
+.about-hero-photo-showcase {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.about-hero-photo-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+}
+
+.about-hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.about-hero-photo-frame:hover .about-hero-photo {
+  transform: scale(1.025);
+}
+
+.about-hero-badge-overlay {
+  position: absolute;
+  bottom: 1.5rem;
+  inset-inline-start: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+[data-theme="dark"] .about-hero-badge-overlay {
+  background: rgba(38, 29, 37, 0.88);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+}
+
+.about-hero-badge-overlay i {
+  color: var(--color-pink);
+}
+
+/* ==========================================================================
+   SECTION 2 — HOW OUR STORY BEGINS (TIMELINE-INSPIRED EDITORIAL)
+   ========================================================================== */
+.about-story-section {
+  position: relative;
+  padding-block: 5.5rem;
+  background-color: var(--bg-main);
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.about-story-visual {
+  position: relative;
+}
+
+.about-story-photo-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  aspect-ratio: 4 / 3;
+}
+
+.about-story-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about-story-photo-frame:hover .about-story-photo {
+  transform: scale(1.03);
+}
+
+/* Floating story accent card */
+.about-story-card-accent {
+  position: absolute;
+  bottom: -1.75rem;
+  inset-inline-end: -1.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.75rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 280px;
+  z-index: 2;
+}
+
+.about-story-card-accent .accent-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-mango-light);
+  color: var(--color-mango-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.about-story-card-accent .accent-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+
+/* Story Timeline Layout */
+.about-story-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.about-story-timeline::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  inset-inline-start: 22px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--color-pink), var(--color-mango), var(--color-matcha));
+  border-radius: 99px;
+  opacity: 0.45;
+}
+
+.about-timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.about-timeline-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-pink);
+}
+
+.about-timeline-node {
+  position: relative;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-main);
+  border: 2px solid var(--color-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-pink);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px var(--bg-surface);
+}
+
+.about-timeline-item:nth-child(2) .about-timeline-node {
+  border-color: var(--color-mango);
+  color: var(--color-mango-hover);
+}
+
+.about-timeline-item:nth-child(3) .about-timeline-node {
+  border-color: var(--color-matcha);
+  color: var(--color-matcha);
+}
+
+.about-timeline-content {
+  flex: 1;
+}
+
+.about-timeline-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.about-timeline-desc {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   SECTION 3 — WHAT BOBA BLOOM BELIEVES IN (ASYMMETRICAL EDITORIAL)
+   ========================================================================== */
+.about-philosophy-section {
+  position: relative;
+  padding-block: 5.5rem;
+  background-color: var(--bg-surface-alt);
+  border-block: 1px solid var(--border-color);
+}
+
+.about-philosophy-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.about-philosophy-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-principles-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.about-principle-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75rem;
+  padding-block: 1.75rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: padding-inline var(--transition-fast);
+}
+
+.about-principle-item:last-child {
+  border-bottom: none;
+}
+
+.about-principle-item:hover {
+  padding-inline-start: 0.5rem;
+}
+
+.about-principle-index {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-pink);
+  background-color: var(--color-pink-light);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 107, 138, 0.2);
+}
+
+.about-principle-text {
+  flex: 1;
+}
+
+.about-principle-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.about-principle-desc {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Philosophy Visual Card */
+.about-philosophy-visual {
+  position: relative;
+}
+
+.about-philosophy-photo-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  aspect-ratio: 4 / 3;
+}
+
+.about-philosophy-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about-philosophy-photo-frame:hover .about-philosophy-photo {
+  transform: scale(1.03);
+}
+
+.about-philosophy-quote-box {
+  position: absolute;
+  top: 2rem;
+  inset-inline-start: -2rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.75rem;
+  box-shadow: var(--shadow-md);
+  max-width: 260px;
+  z-index: 2;
+}
+
+.about-philosophy-quote-box i {
+  font-size: 1.4rem;
+  color: var(--color-matcha);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.about-philosophy-quote-box p {
+  font-size: 0.88rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   SECTION 4 — THE BEAUTY OF THE DETAILS (CRAFT SHOWCASE)
+   ========================================================================== */
+.about-craft-section {
+  position: relative;
+  padding-block: 5.5rem;
+  background-color: var(--bg-main);
+}
+
+.about-craft-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.about-craft-visual {
+  position: relative;
+}
+
+.about-craft-photo-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  aspect-ratio: 4 / 3;
+}
+
+.about-craft-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about-craft-photo-frame:hover .about-craft-photo {
+  transform: scale(1.03);
+}
+
+.about-craft-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-craft-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-top: 1.5rem;
+}
+
+.about-craft-item {
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.about-craft-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.about-craft-tag {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-pink);
+  margin-bottom: 0.35rem;
+}
+
+.about-craft-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 0.45rem;
+}
+
+.about-craft-desc {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   SECTION 5 — A WORLD OF INGREDIENTS (STRUCTURED OVERHEAD SHOWCASE)
+   ========================================================================== */
+.about-ingredients-section {
+  position: relative;
+  padding-block: 5.5rem;
+  background-color: var(--bg-surface-alt);
+  border-block: 1px solid var(--border-color);
+}
+
+.about-ingredients-showcase {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  aspect-ratio: 16 / 9;
+  max-height: 520px;
+  margin-bottom: 3.5rem;
+}
+
+.about-ingredients-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ingredient floating tags over photograph */
+.about-ingredient-badge-floating {
+  position: absolute;
+  padding: 0.45rem 1rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: 0 4px 12px rgba(52, 42, 50, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .about-ingredient-badge-floating {
+  background: rgba(38, 29, 37, 0.92);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+}
+
+.about-ingredient-badge-floating i {
+  color: var(--color-pink);
+  font-size: 0.85rem;
+}
+
+/* Structured Editorial Legend Cards Grid */
+.about-ingredients-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.about-ingredient-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.about-ingredient-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-pink);
+}
+
+.about-ingredient-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.about-ingredient-card-icon.icon-tea {
+  background-color: var(--color-matcha-light);
+  color: var(--color-matcha);
+}
+
+.about-ingredient-card-icon.icon-pearls {
+  background-color: var(--color-peach-light);
+  color: var(--text-primary);
+}
+
+.about-ingredient-card-icon.icon-fruit {
+  background-color: var(--color-pink-light);
+  color: var(--color-pink);
+}
+
+.about-ingredient-card-icon.icon-toppings {
+  background-color: var(--color-lavender-light);
+  color: var(--color-lavender);
+}
+
+.about-ingredient-card-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.about-ingredient-card-desc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   SECTION 6 — THE EXPERIENCE WE WANT TO SHARE (WARM LIFESTYLE)
+   ========================================================================== */
+.about-experience-section {
+  position: relative;
+  padding-block: 5.5rem;
+  background-color: var(--bg-main);
+}
+
+.about-experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.about-experience-visual {
+  position: relative;
+}
+
+.about-experience-photo-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  aspect-ratio: 4 / 3;
+}
+
+.about-experience-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about-experience-photo-frame:hover .about-experience-photo {
+  transform: scale(1.03);
+}
+
+.about-experience-panel {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 3rem 3.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.about-experience-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.about-experience-trio-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-experience-trio-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-pink);
+  margin-bottom: 0.35rem;
+}
+
+.about-experience-trio-desc {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   SECTION 7 — A LITTLE MORE HAPPINESS AWAITS (DISTINCTIVE CLOSING)
+   ========================================================================== */
+.about-closing-section {
+  position: relative;
+  padding-block: 5.5rem 6.5rem;
+  background: radial-gradient(circle at 15% 25%, rgba(255, 107, 138, 0.14) 0%, transparent 60%),
+              radial-gradient(circle at 85% 75%, rgba(255, 209, 102, 0.16) 0%, transparent 55%),
+              var(--color-peach-light);
+  border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .about-closing-section {
+  background: radial-gradient(circle at 15% 25%, rgba(255, 107, 138, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at 85% 75%, rgba(201, 182, 228, 0.06) 0%, transparent 55%),
+              var(--bg-surface);
+}
+
+.about-closing-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 4rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-closing-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-closing-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.about-closing-desc {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.68;
+  color: var(--text-muted);
+  margin-bottom: 2.25rem;
+  max-width: 520px;
+}
+
+.about-closing-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.about-closing-visual {
+  position: relative;
+}
+
+.about-closing-photo-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  aspect-ratio: 16 / 9;
+}
+
+.about-closing-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about-closing-photo-frame:hover .about-closing-photo {
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   RTL ADAPTATIONS (dir="rtl")
+   ========================================================================== */
+[dir="rtl"] .about-intro-photo-tag {
+  inset-inline-start: auto;
+  inset-inline-end: 1.5rem;
+}
+
+[dir="rtl"] .about-story-timeline::before {
+  inset-inline-start: auto;
+  inset-inline-end: 22px;
+}
+
+[dir="rtl"] .about-story-card-accent {
+  inset-inline-end: auto;
+  inset-inline-start: -1.5rem;
+}
+
+[dir="rtl"] .about-philosophy-quote-box {
+  inset-inline-start: auto;
+  inset-inline-end: -2rem;
+}
+
+[dir="rtl"] .bi-arrow-right {
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
+[dir="rtl"] .about-principle-item:hover {
+  padding-inline-start: 0;
+  padding-inline-end: 0.5rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (320px - 1280px+)
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .about-hero-spread {
+    gap: 2.5rem;
+  }
+
+  .about-story-grid,
+  .about-philosophy-grid,
+  .about-craft-grid,
+  .about-experience-grid {
+    gap: 3rem;
+  }
+
+  .about-closing-card {
+    padding: 3rem;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-hero-spread {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-hero-story-panel {
+    padding: 2.5rem 2rem;
+  }
+
+  .about-hero-photo-frame {
+    min-height: 380px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .about-ingredients-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-story-grid,
+  .about-philosophy-grid,
+  .about-craft-grid,
+  .about-experience-grid,
+  .about-closing-card {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-story-card-accent,
+  .about-philosophy-quote-box {
+    position: static;
+    margin-top: 1.5rem;
+    max-width: 100%;
+  }
+
+  .about-closing-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-closing-content {
+    align-items: center;
+  }
+
+  .about-closing-desc {
+    margin-inline: auto;
+  }
+
+  .about-closing-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-section {
+    padding-top: calc(var(--navbar-height) + 1.25rem);
+    padding-bottom: 3.5rem;
+  }
+
+  .about-hero-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .about-hero-header .boba-eyebrow {
+    margin-bottom: 0.85rem;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.85rem;
+  }
+
+  .about-hero-title {
+    font-size: clamp(1.85rem, 5.2vw, 2.35rem);
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+    margin-bottom: 1rem;
+  }
+
+  .about-hero-rule {
+    max-width: 240px;
+    gap: 0.85rem;
+  }
+
+  .about-hero-rule-icon {
+    font-size: 1rem;
+  }
+
+  .about-hero-spread {
+    gap: 1.75rem;
+  }
+
+  .about-hero-story-panel {
+    padding: 1.75rem 1.35rem;
+    border-radius: var(--radius-md);
+  }
+
+  .about-quote-mark {
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-hero-story-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1.35rem;
+  }
+
+  .about-hero-pillars {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.25rem;
+    padding-block: 0.85rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .about-hero-pillar-item {
+    font-size: 0.88rem;
+    gap: 0.4rem;
+  }
+
+  .about-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .about-hero-actions .boba-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .about-hero-photo-frame {
+    min-height: 240px;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-md);
+  }
+
+  .about-hero-badge-overlay {
+    bottom: 1rem;
+    inset-inline-start: 1rem;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.75rem;
+    gap: 0.4rem;
+  }
+
+  .about-hero-section .boba-bubble {
+    opacity: 0.3;
+  }
+
+  .about-section-title {
+    font-size: clamp(1.75rem, 4.8vw, 2.25rem);
+  }
+
+  .about-story-section,
+  .about-philosophy-section,
+  .about-craft-section,
+  .about-ingredients-section,
+  .about-experience-section,
+  .about-closing-section {
+    padding-block: 3.75rem;
+  }
+
+  .about-experience-panel {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-experience-trio {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .about-closing-card {
+    padding: 2.25rem 1.5rem;
+  }
+
+  .about-closing-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .about-closing-buttons .boba-btn {
+    width: 100%;
+  }
+
+  .about-story-timeline::before {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-hero-section {
+    padding-top: calc(var(--navbar-height) + 1rem);
+    padding-bottom: 2.75rem;
+  }
+
+  .about-hero-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-hero-title {
+    font-size: clamp(1.65rem, 5.8vw, 1.95rem);
+    line-height: 1.18;
+    margin-bottom: 0.85rem;
+  }
+
+  .about-hero-rule {
+    max-width: 200px;
+    gap: 0.75rem;
+  }
+
+  .about-hero-spread {
+    gap: 1.5rem;
+  }
+
+  .about-hero-story-panel {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .about-quote-mark {
+    font-size: 2rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .about-hero-story-text {
+    font-size: 0.98rem;
+    line-height: 1.55;
+    margin-bottom: 1.15rem;
+  }
+
+  .about-hero-pillars {
+    gap: 0.5rem 0.85rem;
+    padding-block: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-hero-pillar-item {
+    font-size: 0.84rem;
+  }
+
+  .about-hero-actions .boba-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .about-hero-photo-frame {
+    min-height: 200px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .about-hero-badge-overlay {
+    bottom: 0.75rem;
+    inset-inline-start: 0.75rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.72rem;
+  }
+
+  .about-hero-section .boba-bubble-pink {
+    width: 60px !important;
+    height: 60px !important;
+    top: 6% !important;
+    inset-inline-start: 2% !important;
+  }
+
+  .about-hero-section .boba-bubble-mango {
+    width: 48px !important;
+    height: 48px !important;
+    bottom: 5% !important;
+    inset-inline-end: 3% !important;
+  }
+
+  .about-hero-section .boba-bubble-matcha {
+    width: 52px !important;
+    height: 52px !important;
+    top: 32% !important;
+    inset-inline-end: 1% !important;
+  }
+
+  .about-ingredients-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-timeline-item {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .about-principle-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .about-hero-title {
+    font-size: 1.5rem;
+  }
+
+  .about-hero-story-panel {
+    padding: 1.25rem 0.95rem;
+  }
+
+  .about-hero-story-text {
+    font-size: 0.92rem;
+  }
+
+  .about-hero-pillars {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+

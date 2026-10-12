@@ -1,0 +1,1252 @@
+/* ==========================================================================
+   BOBA BLOOM — CUSTOMIZE YOUR DRINK STYLESHEET (customize.css)
+   Brand: BOBA BLOOM
+   Descriptor: BUBBLE TEA & BOBA
+   Tagline: A LITTLE SIP OF HAPPINESS.
+   
+   A playful, interactive drink-building studio with clear visual stages,
+   delightful interactive controls, and a live recipe configuration summary.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. GLOBAL CUSTOMIZER RESETS & COMMON UTILITIES
+   -------------------------------------------------------------------------- */
+.customize-page-main {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  overflow-x: clip;
+}
+
+/* Unified Scroll Margin to account for fixed navbar + breathing room */
+#drink-builder,
+#sweetness,
+#ice-level,
+#toppings,
+#drink-preview {
+  scroll-margin-top: 146px;
+}
+
+@media (max-width: 1280px) {
+  #drink-builder,
+  #sweetness,
+  #ice-level,
+  #toppings,
+  #drink-preview {
+    scroll-margin-top: 132px;
+  }
+}
+
+.custom-step-header {
+  margin-bottom: 2.75rem;
+  max-width: 720px;
+}
+
+.custom-step-header.text-center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.custom-step-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-pink);
+  background-color: var(--color-pink-light);
+  border: 1px solid rgba(255, 107, 138, 0.25);
+  margin-bottom: 1rem;
+}
+
+.custom-step-title {
+  font-size: clamp(2rem, 3.6vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.custom-step-lead {
+  font-size: clamp(1.02rem, 1.35vw, 1.15rem);
+  line-height: 1.68;
+  color: var(--text-muted);
+}
+
+.custom-nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   SECTION 1 — THE DRINK-BUILDING STUDIO (HERO)
+   ========================================================================== */
+.custom-hero-section {
+  position: relative;
+  padding-top: calc(var(--navbar-height) + 2.5rem);
+  padding-bottom: 5.5rem;
+  background: radial-gradient(circle at 85% 15%, rgba(255, 107, 138, 0.12) 0%, transparent 55%),
+              radial-gradient(circle at 10% 85%, rgba(255, 209, 102, 0.14) 0%, transparent 60%),
+              var(--bg-main);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .custom-hero-section {
+  background: radial-gradient(circle at 85% 15%, rgba(255, 107, 138, 0.08) 0%, transparent 55%),
+              radial-gradient(circle at 10% 85%, rgba(201, 182, 228, 0.06) 0%, transparent 60%),
+              var(--bg-main);
+}
+
+.custom-hero-header {
+  text-align: center;
+  max-width: 860px;
+  margin-inline: auto;
+  margin-bottom: 3.5rem;
+}
+
+.custom-hero-header .boba-eyebrow {
+  margin-inline: auto;
+  margin-bottom: 1.25rem;
+}
+
+.custom-hero-title {
+  font-size: clamp(2.3rem, 4.6vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.custom-hero-lead {
+  font-size: clamp(1.08rem, 1.45vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin-inline: auto;
+  margin-bottom: 2.25rem;
+}
+
+/* 4-Step Indicator Bar */
+.custom-step-tracker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.tracker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.15rem;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.tracker-item .tracker-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-pink-light);
+  color: var(--color-pink);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.tracker-item:hover {
+  border-color: var(--color-pink);
+  transform: translateY(-2px);
+}
+
+.custom-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Asymmetrical Decorative Visual Frame */
+.custom-hero-showcase {
+  position: relative;
+  max-width: 1040px;
+  margin-inline: auto;
+}
+
+.custom-hero-photo-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  aspect-ratio: 16 / 9;
+}
+
+.custom-hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.custom-hero-photo-frame:hover .custom-hero-photo {
+  transform: scale(1.025);
+}
+
+.custom-hero-badge-overlay {
+  position: absolute;
+  bottom: 1.5rem;
+  inset-inline-start: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.15rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: 0 4px 15px rgba(52, 42, 50, 0.08);
+  z-index: 2;
+}
+
+[data-theme="dark"] .custom-hero-badge-overlay {
+  background: rgba(38, 29, 37, 0.9);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+}
+
+.custom-hero-badge-overlay i {
+  color: var(--color-pink);
+}
+
+/* ==========================================================================
+   SECTION 2 — STEP 01: CHOOSE YOUR BASE
+   ========================================================================== */
+.custom-base-section {
+  position: relative;
+  padding-block: 5.5rem;
+  background-color: var(--bg-surface-alt);
+  border-block: 1px solid var(--border-color);
+}
+
+.custom-base-selected-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 1rem;
+}
+
+.custom-base-selected-badge strong {
+  color: var(--color-pink);
+}
+
+/* 6 Selectable Base Tiles Grid */
+.custom-base-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.custom-base-tile {
+  position: relative;
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all var(--transition-fast);
+}
+
+.custom-base-tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-pink);
+  box-shadow: var(--shadow-md);
+}
+
+.custom-base-tile.is-selected {
+  border-color: var(--color-pink);
+  background-color: var(--color-pink-light);
+  box-shadow: 0 6px 20px rgba(255, 107, 138, 0.22);
+}
+
+[data-theme="dark"] .custom-base-tile.is-selected {
+  background-color: #38242E;
+  border-color: var(--color-pink);
+}
+
+.custom-base-thumb-wrap {
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface-alt);
+}
+
+.custom-base-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-fast);
+}
+
+.custom-base-tile:hover .custom-base-thumb {
+  transform: scale(1.08);
+}
+
+.custom-base-info {
+  flex: 1;
+}
+
+.custom-base-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.custom-base-desc {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.custom-base-check {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: transparent;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.custom-base-tile.is-selected .custom-base-check {
+  background-color: var(--color-pink);
+  border-color: var(--color-pink);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   SECTION 3 — STEP 02: FIND YOUR SWEETNESS
+   Horizontal Sweetness Meter Scale
+   ========================================================================== */
+.custom-sweetness-section {
+  position: relative;
+  padding-block: 5.5rem;
+  background-color: var(--bg-main);
+}
+
+.custom-sweetness-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 3.5rem;
+  box-shadow: var(--shadow-md);
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+/* Visual Sweetness Scale Meter */
+.sweetness-scale-wrapper {
+  position: relative;
+  margin-block: 2.5rem 2rem;
+}
+
+.sweetness-track {
+  position: absolute;
+  top: 26px;
+  left: 5%;
+  right: 5%;
+  height: 8px;
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  z-index: 1;
+}
+
+.sweetness-track-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-matcha), var(--color-mango), var(--color-pink));
+  border-radius: var(--radius-full);
+  width: 50%; /* Synchronized via JS */
+  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.sweetness-stops-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.sweetness-stop-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.sweetness-node {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface);
+  border: 3px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 0.85rem;
+  transition: all var(--transition-fast);
+}
+
+.sweetness-stop-btn:hover .sweetness-node {
+  border-color: var(--color-pink);
+  color: var(--color-pink);
+  transform: scale(1.08);
+}
+
+.sweetness-stop-btn.is-selected .sweetness-node {
+  background-color: var(--color-pink);
+  border-color: var(--color-pink);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-pink);
+  transform: scale(1.15);
+}
+
+.sweetness-label {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.sweetness-subtext {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Sweetness Dynamic Helper Box */
+.sweetness-helper-box {
+  margin-top: 1.75rem;
+  padding: 1.25rem 1.75rem;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface-alt);
+  border: 1px dashed var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sweetness-helper-box i {
+  font-size: 1.5rem;
+  color: var(--color-mango-hover);
+}
+
+.sweetness-helper-box p {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 4 — STEP 03: SET YOUR ICE LEVEL
+   3-Position Visual Selector
+   ========================================================================== */
+.custom-ice-section {
+  position: relative;
+  padding-block: 5.5rem;
+  background-color: var(--bg-surface-alt);
+  border-block: 1px solid var(--border-color);
+}
+
+.custom-ice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 980px;
+  margin-inline: auto;
+}
+
+.custom-ice-card {
+  position: relative;
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all var(--transition-fast);
+}
+
+.custom-ice-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-matcha);
+  box-shadow: var(--shadow-md);
+}
+
+.custom-ice-card.is-selected {
+  border-color: var(--color-pink);
+  background-color: var(--color-pink-light);
+  box-shadow: 0 8px 24px rgba(255, 107, 138, 0.22);
+}
+
+[data-theme="dark"] .custom-ice-card.is-selected {
+  background-color: #38242E;
+  border-color: var(--color-pink);
+}
+
+.custom-ice-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  background-color: var(--bg-surface-alt);
+  color: #3B82F6;
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-fast);
+}
+
+.custom-ice-card:hover .custom-ice-icon {
+  transform: scale(1.1);
+}
+
+.custom-ice-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.custom-ice-desc {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.custom-ice-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface-alt);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+.custom-ice-card.is-selected .custom-ice-radio {
+  background-color: var(--color-pink);
+  border-color: var(--color-pink);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   SECTION 5 — STEP 04: MAKE IT EXTRA BOBA (TOPPINGS)
+   Multi-Select Topping-Bar Interface
+   ========================================================================== */
+.custom-toppings-section {
+  position: relative;
+  padding-block: 5.5rem;
+  background-color: var(--bg-main);
+}
+
+.custom-toppings-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.25rem 1.75rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.toppings-counter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.toppings-counter-badge span.count-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-pink);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+}
+
+.reset-toppings-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.reset-toppings-btn:hover {
+  border-color: var(--color-pink);
+  color: var(--color-pink);
+}
+
+/* 8 Topping Tiles Grid */
+.custom-toppings-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.custom-topping-tile {
+  position: relative;
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+}
+
+.custom-topping-tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-pink);
+  box-shadow: var(--shadow-md);
+}
+
+.custom-topping-tile.is-selected {
+  border-color: var(--color-pink);
+  background-color: var(--color-pink-light);
+  box-shadow: 0 6px 18px rgba(255, 107, 138, 0.2);
+}
+
+[data-theme="dark"] .custom-topping-tile.is-selected {
+  background-color: #38242E;
+  border-color: var(--color-pink);
+}
+
+.topping-tile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.topping-tile-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  border: 1px solid var(--border-color);
+}
+
+.topping-checkbox-box {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: transparent;
+  transition: all var(--transition-fast);
+}
+
+.custom-topping-tile.is-selected .topping-checkbox-box {
+  background-color: var(--color-pink);
+  border-color: var(--color-pink);
+  color: #FFFFFF;
+}
+
+.topping-tile-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.topping-tile-desc {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   SECTION 6 — YOUR CUSTOM BOBA PREVIEW (DRINK LABORATORY)
+   ========================================================================== */
+.custom-preview-section {
+  position: relative;
+  padding-block: 5.5rem;
+  background-color: var(--bg-surface-alt);
+  border-block: 1px solid var(--border-color);
+}
+
+.custom-lab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Left Column: Visual Showcase */
+.custom-lab-visual {
+  position: relative;
+}
+
+.custom-lab-photo-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  aspect-ratio: 4 / 3;
+}
+
+.custom-lab-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.custom-lab-photo-frame:hover .custom-lab-photo {
+  transform: scale(1.03);
+}
+
+.custom-lab-cup-tag {
+  position: absolute;
+  top: 1.5rem;
+  inset-inline-start: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: 0 4px 15px rgba(52, 42, 50, 0.08);
+  z-index: 2;
+}
+
+[data-theme="dark"] .custom-lab-cup-tag {
+  background: rgba(38, 29, 37, 0.9);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+}
+
+.custom-lab-cup-tag i {
+  color: var(--color-pink);
+}
+
+/* Right Column: Live Configuration Board */
+.custom-lab-board {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 3rem 3.5rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-board-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.custom-board-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.custom-board-sub {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+/* Summary Recipe Rows */
+.custom-recipe-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.custom-recipe-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.15rem;
+  background-color: var(--bg-surface-alt);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.recipe-row-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.recipe-row-val {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-pink);
+  text-align: right;
+}
+
+/* Board Action Buttons */
+.custom-board-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn-clipboard-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-pink);
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-pink);
+}
+
+.btn-clipboard-copy:hover {
+  background-color: var(--color-pink-hover);
+  transform: translateY(-2px);
+}
+
+.btn-builder-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius-full);
+  background-color: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-builder-reset:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+/* Clipboard Toast Notification */
+.clipboard-toast {
+  display: none;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  background-color: var(--color-matcha-light);
+  border: 1px solid rgba(140, 191, 136, 0.4);
+  color: #2F592B;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.clipboard-toast.show {
+  display: flex;
+  animation: fadeInToast 0.3s ease;
+}
+
+@keyframes fadeInToast {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   SECTION 7 — YOUR NEXT HAPPY SIP (CLOSING BANNER)
+   ========================================================================== */
+.custom-closing-section {
+  position: relative;
+  padding-block: 5.5rem 6.5rem;
+  background: radial-gradient(circle at 15% 25%, rgba(255, 107, 138, 0.14) 0%, transparent 60%),
+              radial-gradient(circle at 85% 75%, rgba(255, 209, 102, 0.15) 0%, transparent 55%),
+              var(--color-peach-light);
+  border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .custom-closing-section {
+  background: radial-gradient(circle at 15% 25%, rgba(255, 107, 138, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at 85% 75%, rgba(201, 182, 228, 0.06) 0%, transparent 55%),
+              var(--bg-surface);
+}
+
+.custom-closing-card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 4rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-closing-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-closing-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.custom-closing-desc {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.68;
+  color: var(--text-muted);
+  margin-bottom: 2.25rem;
+  max-width: 520px;
+}
+
+.custom-closing-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.custom-closing-visual {
+  position: relative;
+}
+
+.custom-closing-photo-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  aspect-ratio: 16 / 9;
+}
+
+.custom-closing-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.custom-closing-photo-frame:hover .custom-closing-photo {
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   RTL ADAPTATIONS (dir="rtl")
+   ========================================================================== */
+[dir="rtl"] .custom-hero-badge-overlay,
+[dir="rtl"] .custom-lab-cup-tag {
+  inset-inline-start: auto;
+  inset-inline-end: 1.5rem;
+}
+
+[dir="rtl"] .recipe-row-val {
+  text-align: left;
+}
+
+[dir="rtl"] .bi-arrow-right {
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
+[dir="rtl"] .bi-arrow-left {
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (320px - 1280px+)
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .custom-base-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .custom-toppings-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .custom-lab-grid {
+    gap: 3rem;
+  }
+
+  .custom-closing-card {
+    padding: 3rem;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .custom-ice-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .custom-lab-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .custom-closing-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .custom-closing-content {
+    align-items: center;
+  }
+
+  .custom-closing-desc {
+    margin-inline: auto;
+  }
+
+  .custom-closing-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-hero-section {
+    padding-top: calc(var(--navbar-height) + 1.25rem);
+    padding-bottom: 3.5rem;
+  }
+
+  .custom-base-section,
+  .custom-sweetness-section,
+  .custom-ice-section,
+  .custom-toppings-section,
+  .custom-preview-section,
+  .custom-closing-section {
+    padding-block: 3.75rem;
+  }
+
+  .custom-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .custom-hero-actions .boba-btn {
+    width: 100%;
+  }
+
+  .custom-base-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sweetness-stops-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .sweetness-track {
+    display: none;
+  }
+
+  .sweetness-stop-btn {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    background-color: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+  }
+
+  .sweetness-node {
+    margin-bottom: 0;
+    width: 44px;
+    height: 44px;
+    font-size: 0.85rem;
+  }
+
+  .sweetness-stop-btn.is-selected {
+    border-color: var(--color-pink);
+    background-color: var(--color-pink-light);
+  }
+
+  .custom-toppings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-sweetness-card,
+  .custom-lab-board {
+    padding: 2rem 1.5rem;
+  }
+
+  .custom-nav-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .custom-nav-actions .boba-btn {
+    width: 100%;
+  }
+
+  .custom-board-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-clipboard-copy,
+  .btn-builder-reset {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .custom-closing-card {
+    padding: 2.25rem 1.5rem;
+  }
+
+  .custom-closing-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .custom-closing-buttons .boba-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — BOBA BLOOM | A Little Sip of Happiness</title>
+  <meta name="description" content="Get in touch with Boba Bloom. Explore our upcoming flagship café plans, ask questions, discover FAQs, or send us a friendly note about bubble tea.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+  <!-- Instant Theme & Direction initialization to prevent layout/color flash -->
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem('boba_bloom_theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+        const savedDir = localStorage.getItem('boba_bloom_dir');
+        if (savedDir) {
+          document.documentElement.setAttribute('dir', savedDir);
+          document.documentElement.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google Fonts: Fredoka & Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/pages/contact.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="contact-page-body">
+
+  <!-- ========================================================================
+       GLOBAL NAVBAR (EXACTLY THE SAME AS HOME 1)
+       ======================================================================== -->
+  <header class="boba-navbar" role="banner">
+    <div class="boba-container boba-navbar-inner">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="boba-brand" aria-label="Boba Bloom Homepage">
+        <div class="boba-logo-icon" aria-hidden="true">
+          <i class="bi bi-cup-straw"></i>
+        </div>
+        <div class="boba-brand-text">
+          <span class="boba-brand-name">BOBA BLOOM</span>
+          <span class="boba-brand-descriptor">BUBBLE TEA & BOBA</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu (1281px+) -->
+      <nav class="boba-nav-menu" aria-label="Primary Navigation">
+        <div class="boba-nav-dropdown">
+          <a href="index.html" class="boba-nav-link" aria-haspopup="true" aria-expanded="false">
+            <span>HOME</span>
+            <i class="bi bi-chevron-down" style="font-size: 0.75rem;" aria-hidden="true"></i>
+          </a>
+          <div class="boba-dropdown-menu" role="menu">
+            <a href="index.html" class="boba-dropdown-link" role="menuitem">Home 1</a>
+            <a href="home2.html" class="boba-dropdown-link" role="menuitem">Home 2</a>
+          </div>
+        </div>
+        <a href="about.html" class="boba-nav-link">ABOUT</a>
+        <a href="menu.html" class="boba-nav-link">CATEGORIES</a>
+        <a href="customize.html" class="boba-nav-link">CUSTOMIZE DRINK</a>
+        <a href="about.html#our-story" class="boba-nav-link">BLOG</a>
+        <a href="contact.html" class="boba-nav-link active" aria-current="page">CONTACT</a>
+      </nav>
+
+      <!-- Right Side Controls & Actions -->
+      <div class="boba-nav-controls">
+        
+        <!-- Dark Mode Toggle Button -->
+        <button type="button" class="boba-icon-btn theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+
+        <!-- RTL / LTR Direction Toggle Button -->
+        <button type="button" class="boba-icon-btn rtl-toggle-btn" aria-label="Toggle text direction" title="RTL / LTR Toggle">
+          <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
+        </button>
+
+        <!-- Desktop Explore Menu CTA Button -->
+        <a href="#contact-form" class="boba-btn boba-btn-dark boba-navbar-cta">
+          <span>EXPLORE MENU</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Mobile/Tablet Hamburger Menu Toggle -->
+        <button type="button" class="boba-hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MOBILE & TABLET DRAWER MENU
+       ======================================================================== -->
+  <div class="boba-drawer-backdrop" aria-hidden="true"></div>
+  
+  <aside id="mobile-drawer" class="boba-drawer" aria-label="Mobile Navigation Drawer" aria-hidden="true">
+    <div class="boba-drawer-header">
+      <a href="index.html" class="boba-brand" aria-label="Boba Bloom Homepage">
+        <div class="boba-logo-icon" aria-hidden="true">
+          <i class="bi bi-cup-straw"></i>
+        </div>
+        <div class="boba-brand-text">
+          <span class="boba-brand-name">BOBA BLOOM</span>
+          <span class="boba-brand-descriptor">BUBBLE TEA & BOBA</span>
+        </div>
+      </a>
+      <button type="button" class="boba-drawer-close" aria-label="Close navigation menu">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+
+    <div class="boba-drawer-body">
+      <nav class="boba-drawer-nav" aria-label="Mobile Menu Links">
+        <!-- Home Dropdown -->
+        <div class="boba-drawer-dropdown">
+          <button type="button" class="boba-drawer-link boba-drawer-dropdown-btn" aria-expanded="false">
+            <span class="drawer-link-inner">
+              <i class="bi bi-house-door" aria-hidden="true"></i>
+              <span>HOME</span>
+            </span>
+            <i class="bi bi-chevron-down drawer-chevron" aria-hidden="true"></i>
+          </button>
+          <div class="boba-drawer-submenu">
+            <a href="index.html" class="boba-drawer-sublink">
+              <i class="bi bi-cup-straw" aria-hidden="true"></i>
+              <span>Home 1</span>
+            </a>
+            <a href="home2.html" class="boba-drawer-sublink">
+              <i class="bi bi-journal-album" aria-hidden="true"></i>
+              <span>Home 2</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- About -->
+        <a href="about.html" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-info-circle" aria-hidden="true"></i>
+            <span>ABOUT</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Categories -->
+        <a href="menu.html" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-cup-straw" aria-hidden="true"></i>
+            <span>CATEGORIES</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Customize Drink -->
+        <a href="customize.html" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-cup-hot" aria-hidden="true"></i>
+            <span>CUSTOMIZE DRINK</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Blog -->
+        <a href="about.html#our-story" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-journal-text" aria-hidden="true"></i>
+            <span>BLOG</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Contact -->
+        <a href="contact.html" class="boba-drawer-link active" aria-current="page">
+          <span class="drawer-link-inner">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            <span>CONTACT</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+      </nav>
+
+      <div class="boba-drawer-controls">
+        <span class="boba-drawer-controls-label">Theme &amp; Direction</span>
+        <div class="boba-drawer-toggle-group">
+          <button type="button" class="boba-icon-btn theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button type="button" class="boba-icon-btn rtl-toggle-btn" aria-label="Toggle text direction" title="RTL / LTR Toggle">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="boba-drawer-footer">
+      <a href="#contact-form" class="boba-btn boba-btn-primary boba-drawer-btn" style="width: 100%;">
+        <span>EXPLORE MENU</span>
+        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       MAIN PAGE CONTENT (EXACTLY 7 UNIQUE CONTENT SECTIONS)
+       ======================================================================== -->
+  <main class="contact-page-main" id="main-content">
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 1 — HERO HEADER: SAY HELLO, BOBA FRIEND!
+         ---------------------------------------------------------------------- -->
+    <section class="contact-hero-section" aria-label="Contact Introduction Header">
+      <div class="boba-container">
+        <div class="contact-hero-grid">
+          
+          <div class="contact-hero-text">
+            <div class="contact-pill-eyebrow">
+              <i class="bi bi-chat-heart-fill" aria-hidden="true"></i>
+              <span>SAY HELLO, BOBA FRIEND!</span>
+            </div>
+            
+            <h1 class="contact-hero-title">
+              WE’D LOVE TO <span class="text-highlight">HEAR FROM YOU.</span>
+            </h1>
+            
+            <p class="contact-hero-desc">
+              Have a flavor question, craving an upcoming event collab, or just want to tell us your favorite boba topping? We're all smiles, freshly brewed, and always ready to chat.
+            </p>
+            
+            <div class="contact-hero-ctas">
+              <a href="#contact-form" class="boba-btn boba-btn-primary boba-btn-pink">
+                <span>DROP US A NOTE</span>
+                <i class="bi bi-envelope-paper-heart" aria-hidden="true"></i>
+              </a>
+              <a href="#store-locator" class="boba-btn boba-btn-light">
+                <span>FIND OUR CAFÉ</span>
+                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <div class="contact-hero-perks">
+              <div class="contact-perk-item">
+                <i class="bi bi-clock-history" aria-hidden="true"></i>
+                <span>Fast Replies: Within 24–48 Hours</span>
+              </div>
+              <div class="contact-perk-item">
+                <i class="bi bi-heart-fill" aria-hidden="true"></i>
+                <span>Catering & Custom Event Flight Bars</span>
+              </div>
+              <div class="contact-perk-item">
+                <i class="bi bi-geo-fill" aria-hidden="true"></i>
+                <span>Flagship Café Site Opening Soon</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-hero-visual">
+            <div class="contact-float-badge badge-top">
+              <i class="bi bi-emoji-smile-fill text-warning" aria-hidden="true"></i>
+              <span>Friendly Barista Team</span>
+            </div>
+
+            <div class="contact-hero-img-wrap">
+              <img src="assets/images/contact/contact-intro.webp" alt="Vibrant Boba Bloom iced drinks shared on a cafe table" class="contact-hero-img" width="1100" height="806" loading="eager">
+            </div>
+
+            <div class="contact-float-badge badge-bottom">
+              <i class="bi bi-cup-straw text-danger" aria-hidden="true"></i>
+              <span>100% Happiness Guaranteed</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 2 — WE'RE ALL EARS: CONTACT FORM & INFO HUB (#contact-form)
+         ---------------------------------------------------------------------- -->
+    <section id="contact-form" class="contact-form-section" aria-label="Contact Message Form and Directory">
+      <div class="boba-container">
+        
+        <div class="contact-section-header text-center">
+          <div class="contact-pill-eyebrow">
+            <i class="bi bi-pencil-heart" aria-hidden="true"></i>
+            <span>GET IN TOUCH</span>
+          </div>
+          <h2 class="contact-section-title">WE’RE ALL EARS. SEND US A MESSAGE.</h2>
+          <p class="contact-section-lead">
+            Whether it's an ingredient inquiry, a party catering booking, or pure love for boba, write to us below.
+          </p>
+        </div>
+
+        <div class="contact-form-layout">
+          
+          <!-- Column 1: Interactive Contact Form -->
+          <div class="contact-form-card">
+            <h3 class="contact-form-card-title">Send a Friendly Note</h3>
+            <p class="contact-form-card-desc">
+              Fill in your details and we'll get back to you with sweet answers!
+            </p>
+
+            <form id="boba-contact-form" novalidate>
+              
+              <!-- Full Name -->
+              <div class="form-group-item">
+                <label for="contact-name" class="boba-form-label">
+                  Your Full Name <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <div class="boba-input-wrapper">
+                  <i class="bi bi-person boba-input-icon" aria-hidden="true"></i>
+                  <input type="text" id="contact-name" class="boba-input-control" placeholder="e.g. Sam Miller" autocomplete="name" required>
+                </div>
+                <div id="name-error" class="form-error-msg" role="alert"></div>
+              </div>
+
+              <!-- Email Address -->
+              <div class="form-group-item">
+                <label for="contact-email" class="boba-form-label">
+                  Email Address <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <div class="boba-input-wrapper">
+                  <i class="bi bi-envelope boba-input-icon" aria-hidden="true"></i>
+                  <input type="email" id="contact-email" class="boba-input-control" placeholder="e.g. sam@example.com" autocomplete="email" required>
+                </div>
+                <div id="email-error" class="form-error-msg" role="alert"></div>
+              </div>
+
+              <!-- Subject / Topic Dropdown -->
+              <div class="form-group-item">
+                <label for="contact-subject" class="boba-form-label">
+                  Inquiry Topic <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <div class="boba-input-wrapper">
+                  <i class="bi bi-tag boba-input-icon" aria-hidden="true"></i>
+                  <select id="contact-subject" class="boba-input-control" required>
+                    <option value="" disabled selected>Select what you'd like to chat about...</option>
+                    <option value="General Boba Inquiry">General Boba Inquiry</option>
+                    <option value="Menu, Allergies & Ingredients">Menu, Allergies & Ingredients</option>
+                    <option value="Party Catering & Private Events">Party Catering & Private Events</option>
+                    <option value="Store Opening & Location Details">Store Opening & Location Details</option>
+                    <option value="Recipe Suggestion & Sweet Feedback">Recipe Suggestion & Sweet Feedback</option>
+                  </select>
+                </div>
+                <div id="subject-error" class="form-error-msg" role="alert"></div>
+              </div>
+
+              <!-- Message -->
+              <div class="form-group-item">
+                <label for="contact-message" class="boba-form-label">
+                  Your Message <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <textarea id="contact-message" class="boba-input-control boba-textarea" placeholder="Tell us what’s on your mind, event details, or drink feedback..." maxlength="500" required></textarea>
+                <div class="form-field-meta">
+                  <span id="message-char-count">0 / 500 characters</span>
+                  <span>Minimum 10 characters</span>
+                </div>
+                <div id="message-error" class="form-error-msg" role="alert"></div>
+              </div>
+
+              <!-- Optional Consent Checkbox -->
+              <label class="boba-checkbox-wrap">
+                <input type="checkbox" id="contact-consent">
+                <span class="boba-checkbox-label">
+                  Send me sweet boba updates, seasonal menu announcements, and launch party invites.
+                </span>
+              </label>
+
+              <!-- Submit Button -->
+              <button type="submit" class="boba-btn boba-btn-primary boba-btn-pink contact-submit-btn">
+                <span>SEND YOUR NOTE</span>
+                <i class="bi bi-send-fill" aria-hidden="true"></i>
+              </button>
+
+              <!-- Alert Feedback Area -->
+              <div id="contact-form-alert" class="contact-alert-box" role="status" aria-live="polite"></div>
+
+            </form>
+          </div>
+
+          <!-- Column 2: Helpful Info Hub & Direct Channels -->
+          <div class="contact-info-panel">
+            
+            <!-- Direct Email Card with Clipboard Copy -->
+            <div class="contact-info-card">
+              <div class="contact-info-header">
+                <div class="contact-info-icon-badge icon-pink" aria-hidden="true">
+                  <i class="bi bi-envelope-heart-fill"></i>
+                </div>
+                <h4 class="contact-info-title">Direct Email</h4>
+              </div>
+              <p class="contact-info-body">
+                Drop our friendly team a direct line anytime for quick answers or custom collaboration inquiries.
+              </p>
+              <div class="contact-copy-row">
+                <span class="contact-email-text">hello@bobabloomtea.com</span>
+                <button type="button" id="copy-email-btn" class="contact-copy-btn" title="Copy email address to clipboard" aria-label="Copy hello@bobabloomtea.com to clipboard">
+                  <i class="bi bi-clipboard" aria-hidden="true"></i>
+                  <span>Copy</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Social Media Channels -->
+            <div class="contact-info-card">
+              <div class="contact-info-header">
+                <div class="contact-info-icon-badge icon-lavender" aria-hidden="true">
+                  <i class="bi bi-chat-dots-fill"></i>
+                </div>
+                <h4 class="contact-info-title">Daily Sips on Social</h4>
+              </div>
+              <p class="contact-info-body">
+                Tag your boba moments with <strong>#BobaBloomDaily</strong> and check out behind-the-scenes brewing videos.
+              </p>
+              <div class="contact-social-pills">
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="contact-social-pill">
+                  <i class="bi bi-instagram" aria-hidden="true"></i>
+                  <span>@bobabloomtea</span>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="contact-social-pill">
+                  <i class="bi bi-facebook" aria-hidden="true"></i>
+                  <span>Boba Bloom Café</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Response Hours -->
+            <div class="contact-info-card">
+              <div class="contact-info-header">
+                <div class="contact-info-icon-badge icon-matcha" aria-hidden="true">
+                  <i class="bi bi-clock-fill"></i>
+                </div>
+                <h4 class="contact-info-title">Support Hours</h4>
+              </div>
+              <p class="contact-info-body">
+                Monday – Friday: 9:00 AM – 6:00 PM<br>
+                <small class="text-muted">Weekend messages receive care first thing Monday morning.</small>
+              </p>
+            </div>
+
+            <!-- Events & Catering -->
+            <div class="contact-info-card">
+              <div class="contact-info-header">
+                <div class="contact-info-icon-badge icon-mango" aria-hidden="true">
+                  <i class="bi bi-balloon-heart-fill"></i>
+                </div>
+                <h4 class="contact-info-title">Events & Catering</h4>
+              </div>
+              <p class="contact-info-body">
+                Planning a birthday party, bridal shower, or corporate gathering? We bring freshly sealed boba cups and custom flight bars for groups of 20+.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 3 — FIND YOUR BOBA DESTINATION (#store-locator)
+         ---------------------------------------------------------------------- -->
+    <section id="store-locator" class="contact-locator-section" aria-label="Store Location and Projected Opening Hours">
+      <div class="boba-container">
+        
+        <div class="contact-section-header">
+          <div class="contact-pill-eyebrow">
+            <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+            <span>OUR SANCTUARY</span>
+          </div>
+          <h2 class="contact-section-title">FIND YOUR BOBA OASIS</h2>
+          <p class="contact-section-lead">
+            We are preparing our very first flagship café sanctuary in the vibrant downtown arts district.
+          </p>
+        </div>
+
+        <div class="contact-locator-grid">
+          
+          <!-- 70% Map Container -->
+          <div class="contact-map-wrapper">
+            <div class="contact-map-banner">
+              <div>
+                <i class="bi bi-pin-map-fill" aria-hidden="true"></i>
+                <span>Flagship Café Site: Downtown Arts & Pedestrian Promenade</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <a href="https://www.google.com/maps?q=37.7749,-122.4194" target="_blank" rel="noopener noreferrer" class="boba-btn boba-btn-sm boba-btn-light" style="padding: 0.25rem 0.65rem; font-size: 0.78rem;" title="Open in Google Maps">
+                  <i class="bi bi-box-arrow-up-right me-1"></i> Google Maps
+                </a>
+                <button type="button" id="map-recenter-btn" class="boba-btn boba-btn-sm boba-btn-light" style="padding: 0.25rem 0.65rem; font-size: 0.78rem;" title="Recenter map pin">
+                  <i class="bi bi-crosshair me-1"></i> Recenter
+                </button>
+              </div>
+            </div>
+
+            <!-- Leaflet Interactive Canvas -->
+            <div id="contact-map" class="contact-map-canvas" role="region" aria-label="Interactive map showing projected flagship café location">
+              
+              <!-- Resilient Fallback Overlay if Leaflet or CDN fails -->
+              <div id="contact-map-fallback" class="contact-map-fallback">
+                <div>
+                  <div class="contact-info-icon-badge icon-pink mx-auto mb-3" style="width: 56px; height: 56px; font-size: 1.5rem;">
+                    <i class="bi bi-cup-straw"></i>
+                  </div>
+                  <h4 style="font-family: var(--font-heading); font-weight: 700;">BOBA BLOOM FLAGSHIP CAFÉ</h4>
+                  <p class="text-muted mb-3">Downtown Pedestrian Boulevard • Grand Opening Late 2026</p>
+                  <span class="badge bg-danger rounded-pill px-3 py-2">Site In Final Crafting</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 30% Store Details Card -->
+          <div class="contact-store-card">
+            <div>
+              <span class="contact-store-badge">
+                <i class="bi bi-stars" aria-hidden="true"></i>
+                <span>FLAGSHIP STORE</span>
+              </span>
+              
+              <h3 class="contact-store-name">Downtown Bloomery</h3>
+              <p class="contact-store-status">
+                <i class="bi bi-bell-fill me-1" aria-hidden="true"></i>
+                Grand Opening Announced Soon
+              </p>
+
+              <div class="contact-store-thumb-wrap">
+                <img src="assets/images/contact/contact-location.webp" alt="Fresh artisanal teas and natural ingredients prepared for Boba Bloom store" class="contact-store-thumb" width="1080" height="796" loading="lazy">
+              </div>
+
+              <h4 style="font-family: var(--font-heading); font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem;">
+                Projected Operating Hours
+              </h4>
+              <ul class="contact-store-hours-list">
+                <li><span>Mon – Thu</span> <strong>10:00 AM – 9:00 PM</strong></li>
+                <li><span>Fri – Sat</span> <strong>10:00 AM – 10:30 PM</strong></li>
+                <li><span>Sunday</span> <strong>11:00 AM – 8:00 PM</strong></li>
+              </ul>
+
+              <h4 style="font-family: var(--font-heading); font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem;">
+                Café Highlights
+              </h4>
+              <div class="contact-store-amenities">
+                <div class="amenity-chip"><i class="bi bi-train-front" aria-hidden="true"></i> Metro 2 min</div>
+                <div class="amenity-chip"><i class="bi bi-bicycle" aria-hidden="true"></i> Bike Racks</div>
+                <div class="amenity-chip"><i class="bi bi-wifi" aria-hidden="true"></i> Free Wi-Fi</div>
+                <div class="amenity-chip"><i class="bi bi-sun" aria-hidden="true"></i> Sunny Patio</div>
+              </div>
+            </div>
+
+            <button type="button" id="store-notify-btn" class="boba-btn boba-btn-primary boba-btn-pink w-100 justify-content-center">
+              <span>NOTIFY ME WHEN OPEN</span>
+              <i class="bi bi-bell" aria-hidden="true"></i>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 4 — A LITTLE LOOK INSIDE CAFÉ AMBIANCE SHOWCASE
+         ---------------------------------------------------------------------- -->
+    <section id="interior" class="contact-interior-section" aria-label="Café Atmosphere and Interior Gallery">
+      <div class="boba-container">
+        
+        <div class="contact-section-header text-center">
+          <div class="contact-pill-eyebrow">
+            <i class="bi bi-shop" aria-hidden="true"></i>
+            <span>CAFÉ AMBIANCE</span>
+          </div>
+          <h2 class="contact-section-title">A PEEK INSIDE THE BLOOM CAFÉ</h2>
+          <p class="contact-section-lead">
+            Step into a serene, pastel-hued sanctuary designed for conversation, comfort, and sweet boba moments.
+          </p>
+        </div>
+
+        <div class="contact-interior-showcase">
+          <img src="assets/images/contact/contact-interior.webp" alt="Warm café interior with cozy pastel seating, wooden accents, and gentle ambient lighting" class="contact-interior-img" width="1140" height="796" loading="lazy">
+          
+          <div class="contact-interior-overlay">
+            <div class="contact-interior-badge-text">
+              <i class="bi bi-flower1 text-danger" aria-hidden="true"></i>
+              <span>Designed for Calm Minds & Cheerful Sips</span>
+            </div>
+            <a href="about.html" class="boba-btn boba-btn-sm boba-btn-dark">
+              <span>OUR STORY</span>
+              <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-interior-highlights-grid">
+          
+          <div class="interior-highlight-card">
+            <span class="interior-card-icon" aria-hidden="true">🌿</span>
+            <h3 class="interior-card-title">Sunlit Seating Nooks</h3>
+            <p class="interior-card-desc">
+              Soft linen couches, natural white oak tables, and leafy indoor plants create the perfect backdrop for studying or meeting friends.
+            </p>
+          </div>
+
+          <div class="interior-highlight-card">
+            <span class="interior-card-icon" aria-hidden="true">🧋</span>
+            <h3 class="interior-card-title">Live Boba Brew Bar</h3>
+            <p class="interior-card-desc">
+              Watch our baristas freshly brew organic loose leaves in precision kettles and simmer dark brown sugar tapioca pearls every three hours.
+            </p>
+          </div>
+
+          <div class="interior-highlight-card">
+            <span class="interior-card-icon" aria-hidden="true">✨</span>
+            <h3 class="interior-card-title">Eco-Friendly Sipware</h3>
+            <p class="interior-card-desc">
+              100% compostable plant-fiber straws, recycled paper sleeves, and reusable glass tumblers make every single sip kind to the earth.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 5 — HERE FOR YOUR BOBA QUESTIONS (#faqs)
+         ---------------------------------------------------------------------- -->
+    <section id="faqs" class="contact-faq-section" aria-label="Frequently Asked Questions Accordion">
+      <div class="boba-container">
+        
+        <div class="contact-section-header text-center">
+          <div class="contact-pill-eyebrow">
+            <i class="bi bi-question-circle-fill" aria-hidden="true"></i>
+            <span>FREQUENTLY ASKED QUESTIONS</span>
+          </div>
+          <h2 class="contact-section-title">HERE FOR YOUR BOBA QUESTIONS</h2>
+          <p class="contact-section-lead">
+            Curious about ingredients, custom sweetness, party catering, or allergens? We have you covered.
+          </p>
+        </div>
+
+        <div class="contact-faq-wrapper">
+          
+          <!-- FAQ Item 1 -->
+          <div class="contact-faq-item">
+            <button type="button" class="contact-faq-trigger" aria-expanded="false" aria-controls="faq-ans-1" id="faq-btn-1">
+              <span>What dairy-free and vegan drink options do you offer?</span>
+              <span class="contact-faq-icon" aria-hidden="true"><i class="bi bi-chevron-down"></i></span>
+            </button>
+            <div id="faq-ans-1" class="contact-faq-collapse" role="region" aria-labelledby="faq-btn-1">
+              <div class="contact-faq-body">
+                We believe everyone deserves boba happiness! We offer certified organic oat milk, creamy soy milk, and rich coconut milk with zero dairy. In addition, all of our fruit teas, jasmine green teas, crystal boba, and coconut jellies are 100% vegan. Explore dairy-free choices on our <a href="customize.html#dairy-free" class="contact-inline-link">Customizer Page</a>.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="contact-faq-item">
+            <button type="button" class="contact-faq-trigger" aria-expanded="false" aria-controls="faq-ans-2" id="faq-btn-2">
+              <span>Can I adjust sweetness and ice levels on every drink?</span>
+              <span class="contact-faq-icon" aria-hidden="true"><i class="bi bi-chevron-down"></i></span>
+            </button>
+            <div id="faq-ans-2" class="contact-faq-collapse" role="region" aria-labelledby="faq-btn-2">
+              <div class="contact-faq-body">
+                Yes, absolutely! Every single cup is shaken to your personal preference. Choose from five sweetness levels (0%, 25%, 50%, 75%, 100%) and four ice levels (No Ice, Light Ice, Regular Ice, Extra Chill). You can try building your recipe in our interactive <a href="customize.html#sweetness" class="contact-inline-link">Drink Customizer</a>.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="contact-faq-item">
+            <button type="button" class="contact-faq-trigger" aria-expanded="false" aria-controls="faq-ans-3" id="faq-btn-3">
+              <span>Do you provide catering for parties, weddings, and corporate events?</span>
+              <span class="contact-faq-icon" aria-hidden="true"><i class="bi bi-chevron-down"></i></span>
+            </button>
+            <div id="faq-ans-3" class="contact-faq-collapse" role="region" aria-labelledby="faq-btn-3">
+              <div class="contact-faq-body">
+                We love celebrating milestones with you! We cater gatherings of 20 to 250+ guests with sealed fresh cups and topping flight bars. Simply select <em>"Party Catering & Private Events"</em> on our <a href="#contact-form" class="contact-inline-link">Contact Form</a> above with your date and approximate guest count.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="contact-faq-item">
+            <button type="button" class="contact-faq-trigger" aria-expanded="false" aria-controls="faq-ans-4" id="faq-btn-4">
+              <span>Where can I view allergen and nutritional information?</span>
+              <span class="contact-faq-icon" aria-hidden="true"><i class="bi bi-chevron-down"></i></span>
+            </button>
+            <div id="faq-ans-4" class="contact-faq-collapse" role="region" aria-labelledby="faq-btn-4">
+              <div class="contact-faq-body">
+                Transparency matters deeply to us. You can find allergen badges (dairy, gluten, nuts, caffeine) on our <a href="menu.html" class="contact-inline-link">Menu Page</a>. If you have specific dietary sensitivities, our team is always pleased to customize recipes without cross-contact.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="contact-faq-item">
+            <button type="button" class="contact-faq-trigger" aria-expanded="false" aria-controls="faq-ans-5" id="faq-btn-5">
+              <span>When and where will the flagship Boba Bloom café open?</span>
+              <span class="contact-faq-icon" aria-hidden="true"><i class="bi bi-chevron-down"></i></span>
+            </button>
+            <div id="faq-ans-5" class="contact-faq-collapse" role="region" aria-labelledby="faq-btn-5">
+              <div class="contact-faq-body">
+                Our first flagship location is under construction in downtown. You can view our planned hours and amenities in the <a href="#store-locator" class="contact-inline-link">Store Locator</a> section above, and subscribe for opening day perks and complimentary boba giveaways.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="contact-faq-item">
+            <button type="button" class="contact-faq-trigger" aria-expanded="false" aria-controls="faq-ans-6" id="faq-btn-6">
+              <span>How can I suggest a new seasonal recipe or topping idea?</span>
+              <span class="contact-faq-icon" aria-hidden="true"><i class="bi bi-chevron-down"></i></span>
+            </button>
+            <div id="faq-ans-6" class="contact-faq-collapse" role="region" aria-labelledby="faq-btn-6">
+              <div class="contact-faq-body">
+                We love fan creativity! Many seasonal drinks begin with suggestions from our community. Select <em>"Recipe Suggestion & Sweet Feedback"</em> in our <a href="#contact-form" class="contact-inline-link">Contact Form</a> or tag @bobabloomtea on social media.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 6 — A LITTLE SIP, A LITTLE JOY (LIFESTYLE & PHILOSOPHY)
+         ---------------------------------------------------------------------- -->
+    <section class="contact-lifestyle-section" aria-label="Lifestyle Philosophy and Barista Craft">
+      <div class="boba-container">
+        
+        <div class="contact-lifestyle-grid">
+          
+          <div class="contact-lifestyle-visual">
+            <div class="contact-lifestyle-frame">
+              <img src="assets/images/contact/contact-lifestyle.webp" alt="Smiling friends enjoying handcrafted Boba Bloom bubble tea" class="contact-lifestyle-img" width="1060" height="786" loading="lazy">
+            </div>
+          </div>
+
+          <div class="contact-lifestyle-content">
+            <div class="contact-pill-eyebrow">
+              <i class="bi bi-heart-pulse-fill" aria-hidden="true"></i>
+              <span>OUR PHILOSOPHY</span>
+            </div>
+
+            <h2 class="contact-section-title">MORE THAN TEA. IT’S A DAILY BLOOM.</h2>
+
+            <div class="contact-quote-box">
+              <p class="contact-quote-text">
+                “Boba is more than just tapioca and tea. It's the pause in a busy afternoon, the shared laugh between friends, and the small sweet ritual that reminds us to smile.”
+              </p>
+              <p class="contact-quote-author">— The Boba Bloom Barista Family</p>
+            </div>
+
+            <div class="contact-promises-list">
+              
+              <div class="contact-promise-item">
+                <div class="promise-icon-bubble" aria-hidden="true">
+                  <i class="bi bi-droplet-half"></i>
+                </div>
+                <div>
+                  <h3 class="promise-text-title">Whole-Leaf Teas Only</h3>
+                  <p class="promise-text-sub">Steeped from real Taiwanese oolong, fragrant jasmine blossoms, and ceremonial grade Uji matcha.</p>
+                </div>
+              </div>
+
+              <div class="contact-promise-item">
+                <div class="promise-icon-bubble" aria-hidden="true">
+                  <i class="bi bi-hourglass-split"></i>
+                </div>
+                <div>
+                  <h3 class="promise-text-title">Simmered Fresh Every 3 Hours</h3>
+                  <p class="promise-text-sub">Never rubbery or refrigerated pearls. Our tapioca is stewed in small batches for bouncy chewiness.</p>
+                </div>
+              </div>
+
+              <div class="contact-promise-item">
+                <div class="promise-icon-bubble" aria-hidden="true">
+                  <i class="bi bi-emoji-smile"></i>
+                </div>
+                <div>
+                  <h3 class="promise-text-title">Warm Welcomes Everyday</h3>
+                  <p class="promise-text-sub">Every guest is greeted with warm smiles, thoughtful care, and personalized flavor guidance.</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 7 — YOUR NEXT LITTLE ADVENTURE (COLOR-BLOCK CLOSING)
+         ---------------------------------------------------------------------- -->
+    <section class="contact-closing-section" aria-label="Next Steps and Drink Exploration">
+      <div class="boba-container">
+        
+        <div class="contact-closing-card">
+          
+          <div class="contact-closing-content">
+            <span class="contact-closing-eyebrow">A LITTLE SIP OF HAPPINESS</span>
+            
+            <h2 class="contact-closing-title">
+              READY FOR YOUR NEXT LITTLE SIP?
+            </h2>
+            
+            <p class="contact-closing-desc">
+              Whether you want to explore our chef-crafted menu classics or build your own custom recipe from scratch, pure boba happiness is only one tap away.
+            </p>
+            
+            <div class="contact-closing-ctas">
+              <a href="#contact-form" class="boba-btn boba-btn-dark">
+                <span>EXPLORE THE MENU</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a href="#contact-form" class="boba-btn boba-btn-primary boba-btn-pink">
+                <span>BUILD YOUR DRINK</span>
+                <i class="bi bi-magic" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-closing-visual">
+            <div class="contact-closing-frame">
+              <img src="assets/images/contact/contact-closing.webp" alt="Joyful tall glass of handcrafted Boba Bloom milk tea with brown sugar stripes" class="contact-closing-img" width="1100" height="806" loading="lazy">
+            </div>
+            <div class="contact-closing-sticker">
+              <i class="bi bi-sparkles me-1" aria-hidden="true"></i> Fresh • Chewy • Happy
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER (EXACTLY THE SAME AS HOME 1)
+       ======================================================================== -->
+  <footer class="boba-footer" role="contentinfo">
+    <!-- Decorative subtle background bubble accents -->
+    <div class="boba-footer-bubble" style="width: 120px; height: 120px; bottom: -40px; right: 2%; background: radial-gradient(circle, rgba(255, 107, 138, 0.15), transparent 70%);" aria-hidden="true"></div>
+    <div class="boba-footer-bubble" style="width: 90px; height: 90px; top: -30px; left: 3%; background: radial-gradient(circle, rgba(255, 209, 102, 0.12), transparent 70%);" aria-hidden="true"></div>
+
+    <div class="boba-container">
+      
+      <div class="boba-footer-grid">
+        
+        <!-- COLUMN 1 — BRAND -->
+        <div class="boba-footer-brand">
+          <a href="index.html" class="boba-brand" aria-label="Boba Bloom Homepage">
+            <div class="boba-logo-icon" aria-hidden="true">
+              <i class="bi bi-cup-straw"></i>
+            </div>
+            <div class="boba-brand-text">
+              <span class="boba-brand-name">BOBA BLOOM</span>
+              <span class="boba-brand-descriptor">BUBBLE TEA & BOBA</span>
+            </div>
+          </a>
+          <p class="boba-footer-tagline">
+            A little sip of happiness.
+          </p>
+          <p class="boba-footer-desc">
+            Handcrafted bubble teas, playful flavors, and little moments of happiness.
+          </p>
+          <div class="boba-footer-social" aria-label="Follow Boba Bloom on social media">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="boba-social-btn" aria-label="Follow us on Instagram" title="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="boba-social-btn" aria-label="Follow us on Facebook" title="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- COLUMN 2 — EXPLORE -->
+        <div class="boba-footer-col">
+          <h3 class="boba-footer-heading">EXPLORE</h3>
+          <ul class="boba-footer-links">
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="customize.html">Customize Your Drink</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 3 — OUR DRINKS -->
+        <div class="boba-footer-col">
+          <h3 class="boba-footer-heading">OUR DRINKS</h3>
+          <ul class="boba-footer-links">
+            <li><a href="menu.html#milk-tea">Milk Tea</a></li>
+            <li><a href="menu.html#fruit-tea">Fruit Tea</a></li>
+            <li><a href="menu.html#matcha">Matcha</a></li>
+            <li><a href="menu.html#brown-sugar">Brown Sugar</a></li>
+            <li><a href="menu.html#toppings">Toppings</a></li>
+            <li><a href="menu.html#signature">Signature Drinks</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 4 — YOUR BOBA -->
+        <div class="boba-footer-col">
+          <h3 class="boba-footer-heading">YOUR BOBA</h3>
+          <ul class="boba-footer-links">
+            <li><a href="customize.html#drink-builder">Build Your Drink</a></li>
+            <li><a href="customize.html#sweetness">Sweetness Options</a></li>
+            <li><a href="customize.html#ice-level">Ice Levels</a></li>
+            <li><a href="customize.html#toppings">Toppings Guide</a></li>
+            <li><a href="customize.html#base">Tea Base Choices</a></li>
+            <li><a href="customize.html#dairy-free">Dairy-Free Options</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 5 — SAY HELLO -->
+        <div class="boba-footer-col">
+          <h3 class="boba-footer-heading">SAY HELLO</h3>
+          <ul class="boba-footer-links">
+            <li><a href="contact.html#contact-form">Contact Us</a></li>
+            <li><a href="contact.html#store-locator">Store Locator</a></li>
+            <li><a href="contact.html#faqs">FAQs</a></li>
+            <li><a href="contact.html#careers">Careers</a></li>
+            <li><a href="contact.html#catering">Catering & Events</a></li>
+            <li><a href="contact.html#feedback">Feedback & Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- FOOTER BOTTOM BAR -->
+      <div class="boba-footer-bottom">
+        <div class="boba-footer-copy">
+          &copy; 2026 BOBA BLOOM. ALL RIGHTS RESERVED.
+        </div>
+        <div class="boba-footer-tagline-bottom">
+          A LITTLE SIP OF HAPPINESS.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       ACCESSIBLE LOGIN MODAL
+       ======================================================================== -->
+  <div id="boba-login-modal" class="boba-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+    <div class="boba-modal-dialog">
+      <div class="boba-modal-header">
+        <div class="boba-modal-title-group">
+          <div class="boba-logo-icon" aria-hidden="true">
+            <i class="bi bi-cup-straw"></i>
+          </div>
+          <div>
+            <h2 id="login-modal-title" class="boba-modal-title">Welcome Back</h2>
+            <p class="boba-modal-subtitle">Sign in to your Boba Bloom account</p>
+          </div>
+        </div>
+        <button type="button" class="boba-modal-close" aria-label="Close login dialog">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <form id="boba-login-form" class="boba-modal-body" onsubmit="event.preventDefault(); alert('Signed in successfully! Welcome to Boba Bloom.'); document.getElementById('boba-login-modal').classList.remove('is-open');">
+        <div class="boba-form-group">
+          <label for="login-email" class="boba-form-label">Email or Username</label>
+          <div class="boba-input-wrapper">
+            <i class="bi bi-envelope boba-input-icon"></i>
+            <input type="text" id="login-email" class="boba-input-control" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <div class="boba-form-group">
+          <label for="login-password" class="boba-form-label">Password</label>
+          <div class="boba-input-wrapper">
+            <i class="bi bi-lock boba-input-icon"></i>
+            <input type="password" id="login-password" class="boba-input-control" placeholder="••••••••" required>
+          </div>
+        </div>
+
+        <div class="boba-login-options">
+          <label class="boba-checkbox-wrap">
+            <input type="checkbox" checked>
+            <span class="boba-checkbox-label" style="font-size: 0.85rem;">Remember me</span>
+          </label>
+          <a href="#" class="boba-forgot-link" onclick="event.preventDefault(); alert('Password reset instructions sent to your registered email.');">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="boba-btn boba-btn-primary boba-btn-submit" style="width: 100%;">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>SIGN IN</span>
+        </button>
+
+        <div class="boba-modal-footer-note">
+          <span>Don't have an account?</span>
+          <a href="#" onclick="event.preventDefault(); alert('Registration open! Welcome to Boba Bloom Rewards.');">Sign Up Free</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <!-- Leaflet Map JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Global & Page Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/contact.js"></script>
+</body>
+</html>
