@@ -33,7 +33,7 @@
   <!-- Google Fonts: Fredoka & Nunito -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -43,6 +43,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/cart.css">
   <link rel="stylesheet" href="assets/css/pages/contact.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
@@ -50,6 +51,12 @@
 
   <!-- ========================================================================
        GLOBAL NAVBAR (EXACTLY THE SAME AS HOME 1)
+       ======================================================================== -->
+    <!-- ========================================================================
+       GLOBAL NAVBAR (100% RULE COMPLIANT)
+       Desktop (1281px+): Logo | All Menus | Dark | RTL | Login
+       Tablet (768px - 1280px): Logo | Dark | RTL | Hamburger
+       Mobile (Below 768px): Logo | Dark | RTL | Hamburger
        ======================================================================== -->
   <header class="boba-navbar" role="banner">
     <div class="boba-container boba-navbar-inner">
@@ -65,22 +72,28 @@
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu (1281px+) -->
+      <!-- Desktop Navigation Menu (1281px+) - Contains ALL Menus -->
       <nav class="boba-nav-menu" aria-label="Primary Navigation">
+        <!-- Home Dropdown -->
         <div class="boba-nav-dropdown">
           <a href="index.html" class="boba-nav-link" aria-haspopup="true" aria-expanded="false">
             <span>HOME</span>
-            <i class="bi bi-chevron-down" style="font-size: 0.75rem;" aria-hidden="true"></i>
+            <i class="bi bi-chevron-down" style="font-size: 0.72rem;" aria-hidden="true"></i>
           </a>
           <div class="boba-dropdown-menu" role="menu">
             <a href="index.html" class="boba-dropdown-link" role="menuitem">Home 1</a>
             <a href="home2.html" class="boba-dropdown-link" role="menuitem">Home 2</a>
           </div>
         </div>
+
         <a href="about.html" class="boba-nav-link">ABOUT</a>
-        <a href="menu.html" class="boba-nav-link">CATEGORIES</a>
-        <a href="customize.html" class="boba-nav-link">CUSTOMIZE DRINK</a>
-        <a href="about.html#our-story" class="boba-nav-link">BLOG</a>
+        <a href="index.html#products" class="boba-nav-link">PRODUCTS</a>
+        <a href="index.html#categories" class="boba-nav-link">CATEGORIES</a>
+        <a href="index.html#brands" class="boba-nav-link">BRANDS</a>
+        <a href="index.html#deals" class="boba-nav-link">DEALS</a>
+        <a href="index.html#accessories" class="boba-nav-link">ACCESSORIES</a>
+        <a href="index.html#gallery" class="boba-nav-link">GALLERY</a>
+        <a href="blog.html" class="boba-nav-link">BLOG</a>
         <a href="contact.html" class="boba-nav-link active" aria-current="page">CONTACT</a>
       </nav>
 
@@ -89,7 +102,7 @@
         
         <!-- Dark Mode Toggle Button -->
         <button type="button" class="boba-icon-btn theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
-          <i class="bi bi-moon-stars-fill"></i>
+          <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
         </button>
 
         <!-- RTL / LTR Direction Toggle Button -->
@@ -97,13 +110,19 @@
           <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
         </button>
 
-        <!-- Desktop Explore Menu CTA Button -->
-        <a href="#contact-form" class="boba-btn boba-btn-dark boba-navbar-cta">
-          <span>EXPLORE MENU</span>
-          <i class="bi bi-arrow-right" aria-hidden="true"></i>
-        </a>
+        <!-- Shopping Cart Trigger Button with Live Counter Badge -->
+        <button type="button" class="boba-icon-btn boba-cart-btn" aria-label="Open Shopping Bag" title="Shopping Bag">
+          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+          <span class="boba-cart-badge" id="navbar-cart-count">2</span>
+        </button>
 
-        <!-- Mobile/Tablet Hamburger Menu Toggle -->
+        <!-- Desktop Login Button (1281px+) -->
+        <button type="button" class="boba-btn boba-btn-dark boba-navbar-login boba-login-btn">
+          <i class="bi bi-person-circle" aria-hidden="true"></i>
+          <span>LOGIN</span>
+        </button>
+
+        <!-- Mobile & Tablet Hamburger Button (<= 1280px) -->
         <button type="button" class="boba-hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
           <span></span>
           <span></span>
@@ -116,7 +135,8 @@
   </header>
 
   <!-- ========================================================================
-       MOBILE & TABLET DRAWER MENU
+       MOBILE & TABLET DRAWER MENU (100% RULE COMPLIANT)
+       Must contain ALL navigation items, Dark mode toggle, RTL toggle, & Login button
        ======================================================================== -->
   <div class="boba-drawer-backdrop" aria-hidden="true"></div>
   
@@ -132,7 +152,7 @@
         </div>
       </a>
       <button type="button" class="boba-drawer-close" aria-label="Close navigation menu">
-        <i class="bi bi-x-lg"></i>
+        <i class="bi bi-x-lg" aria-hidden="true"></i>
       </button>
     </div>
 
@@ -143,7 +163,7 @@
           <button type="button" class="boba-drawer-link boba-drawer-dropdown-btn" aria-expanded="false">
             <span class="drawer-link-inner">
               <i class="bi bi-house-door" aria-hidden="true"></i>
-              <span>HOME</span>
+              <span>Home</span>
             </span>
             <i class="bi bi-chevron-down drawer-chevron" aria-hidden="true"></i>
           </button>
@@ -163,34 +183,70 @@
         <a href="about.html" class="boba-drawer-link">
           <span class="drawer-link-inner">
             <i class="bi bi-info-circle" aria-hidden="true"></i>
-            <span>ABOUT</span>
+            <span>About</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Products -->
+        <a href="index.html#products" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-cup-hot" aria-hidden="true"></i>
+            <span>Products</span>
           </span>
           <i class="bi bi-chevron-right" aria-hidden="true"></i>
         </a>
 
         <!-- Categories -->
-        <a href="menu.html" class="boba-drawer-link">
+        <a href="index.html#categories" class="boba-drawer-link">
           <span class="drawer-link-inner">
-            <i class="bi bi-cup-straw" aria-hidden="true"></i>
-            <span>CATEGORIES</span>
+            <i class="bi bi-grid-fill" aria-hidden="true"></i>
+            <span>Categories</span>
           </span>
           <i class="bi bi-chevron-right" aria-hidden="true"></i>
         </a>
 
-        <!-- Customize Drink -->
-        <a href="customize.html" class="boba-drawer-link">
+        <!-- Brands -->
+        <a href="index.html#brands" class="boba-drawer-link">
           <span class="drawer-link-inner">
-            <i class="bi bi-cup-hot" aria-hidden="true"></i>
-            <span>CUSTOMIZE DRINK</span>
+            <i class="bi bi-patch-check" aria-hidden="true"></i>
+            <span>Brands</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Deals -->
+        <a href="index.html#deals" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-tag" aria-hidden="true"></i>
+            <span>Deals</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Accessories -->
+        <a href="index.html#accessories" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-gem" aria-hidden="true"></i>
+            <span>Accessories</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Gallery -->
+        <a href="index.html#gallery" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-images" aria-hidden="true"></i>
+            <span>Gallery</span>
           </span>
           <i class="bi bi-chevron-right" aria-hidden="true"></i>
         </a>
 
         <!-- Blog -->
-        <a href="about.html#our-story" class="boba-drawer-link">
+        <a href="blog.html" class="boba-drawer-link">
           <span class="drawer-link-inner">
             <i class="bi bi-journal-text" aria-hidden="true"></i>
-            <span>BLOG</span>
+            <span>Blog</span>
           </span>
           <i class="bi bi-chevron-right" aria-hidden="true"></i>
         </a>
@@ -199,12 +255,16 @@
         <a href="contact.html" class="boba-drawer-link active" aria-current="page">
           <span class="drawer-link-inner">
             <i class="bi bi-envelope" aria-hidden="true"></i>
-            <span>CONTACT</span>
+            <span>Contact</span>
           </span>
           <i class="bi bi-chevron-right" aria-hidden="true"></i>
         </a>
       </nav>
 
+      <!-- Drawer Divider Line -->
+      <div class="boba-drawer-divider"></div>
+
+      <!-- Theme & Direction Controls inside Drawer -->
       <div class="boba-drawer-controls">
         <span class="boba-drawer-controls-label">Theme &amp; Direction</span>
         <div class="boba-drawer-toggle-group">
@@ -216,13 +276,15 @@
           </button>
         </div>
       </div>
-    </div>
 
-    <div class="boba-drawer-footer">
-      <a href="#contact-form" class="boba-btn boba-btn-primary boba-drawer-btn" style="width: 100%;">
-        <span>EXPLORE MENU</span>
-        <i class="bi bi-arrow-right" aria-hidden="true"></i>
-      </a>
+      <!-- Drawer Login Button -->
+      <div class="boba-drawer-footer">
+        <button type="button" class="boba-btn boba-btn-dark boba-drawer-login-btn boba-login-btn" style="width: 100%;">
+          <i class="bi bi-person-circle"></i>
+          <span>LOGIN</span>
+        </button>
+      </div>
+
     </div>
   </aside>
 
@@ -871,91 +933,157 @@
   <!-- ========================================================================
        GLOBAL FOOTER (EXACTLY THE SAME AS HOME 1)
        ======================================================================== -->
-  <footer class="boba-footer" role="contentinfo">
-    <!-- Decorative subtle background bubble accents -->
-    <div class="boba-footer-bubble" style="width: 120px; height: 120px; bottom: -40px; right: 2%; background: radial-gradient(circle, rgba(255, 107, 138, 0.15), transparent 70%);" aria-hidden="true"></div>
-    <div class="boba-footer-bubble" style="width: 90px; height: 90px; top: -30px; left: 3%; background: radial-gradient(circle, rgba(255, 209, 102, 0.12), transparent 70%);" aria-hidden="true"></div>
+    <!-- ========================================================================
+       SLIDE-OUT SHOPPING CART DRAWER
+       ======================================================================== -->
+  <div id="boba-cart-backdrop" class="boba-cart-backdrop" aria-hidden="true"></div>
 
+  <aside id="boba-cart-drawer" class="boba-cart-drawer" aria-label="Shopping Bag Drawer" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <div class="cart-header-title">
+        <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+        <span>YOUR BOBA BAG</span>
+        <span class="cart-header-badge boba-cart-badge">2</span>
+      </div>
+      <button type="button" id="boba-cart-close" class="cart-drawer-close" aria-label="Close Shopping Bag">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+
+    <div class="cart-shipping-meter">
+      <p id="cart-shipping-text" class="cart-shipping-text">Add <strong>$13.00</strong> more to unlock <strong>Free Delivery</strong>!</p>
+      <div class="cart-shipping-track">
+        <div id="cart-shipping-bar" class="cart-shipping-fill" style="width: 48%;"></div>
+      </div>
+    </div>
+
+    <div id="cart-items-list" class="cart-items-container"></div>
+    <div id="cart-applied-promo" class="cart-applied-promo-wrap"></div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-promo-group">
+        <div class="cart-promo-input-wrap">
+          <i class="bi bi-tag" aria-hidden="true"></i>
+          <input type="text" id="cart-promo-input" placeholder="Promo code (e.g. BOBAHAPPY)" aria-label="Promo code">
+        </div>
+        <button type="button" id="cart-promo-apply" class="boba-btn boba-btn-sm boba-btn-pink">APPLY</button>
+      </div>
+
+      <div class="cart-summary-box">
+        <div class="cart-summary-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal" class="summary-val">$12.00</span>
+        </div>
+        <div id="cart-discount-row" class="cart-summary-row discount-row" style="display: none;">
+          <span>Discount</span>
+          <span id="cart-discount-amount" class="summary-val text-pink">-$0.00</span>
+        </div>
+        <div class="cart-summary-row">
+          <span>Estimated Taxes</span>
+          <span class="summary-val text-muted">Calculated at checkout</span>
+        </div>
+        <div class="cart-summary-divider"></div>
+        <div class="cart-summary-row total-row">
+          <strong>Total</strong>
+          <strong id="cart-total" class="summary-val text-pink">$12.00</strong>
+        </div>
+      </div>
+
+      <button type="button" id="cart-checkout-btn" class="boba-btn boba-btn-primary cart-checkout-btn" style="width: 100%;">
+        <span>PROCEED TO CHECKOUT</span>
+        <i class="bi bi-arrow-right"></i>
+      </button>
+      <p class="cart-secure-note"><i class="bi bi-shield-check" aria-hidden="true"></i> 100% Freshness Guarantee · Contactless Pickup &amp; Delivery</p>
+    </div>
+  </aside>
+
+    <!-- ========================================================================
+       GLOBAL FOOTER
+       ======================================================================== -->
+  <footer class="boba-footer" role="contentinfo">
     <div class="boba-container">
       
       <div class="boba-footer-grid">
         
-        <!-- COLUMN 1 — BRAND -->
-        <div class="boba-footer-brand">
+        <!-- COLUMN 1 — BRAND SUMMARY -->
+        <div class="boba-footer-brand-col">
           <a href="index.html" class="boba-brand" aria-label="Boba Bloom Homepage">
             <div class="boba-logo-icon" aria-hidden="true">
               <i class="bi bi-cup-straw"></i>
             </div>
             <div class="boba-brand-text">
               <span class="boba-brand-name">BOBA BLOOM</span>
-              <span class="boba-brand-descriptor">BUBBLE TEA & BOBA</span>
+              <span class="boba-brand-descriptor">BUBBLE TEA &amp; BOBA</span>
             </div>
           </a>
+
           <p class="boba-footer-tagline">
-            A little sip of happiness.
+            Fresh loose-leaf teas, warm caramelized brown sugar tapioca, and plant-based milks. Made with love for your daily smile.
           </p>
-          <p class="boba-footer-desc">
-            Handcrafted bubble teas, playful flavors, and little moments of happiness.
-          </p>
-          <div class="boba-footer-social" aria-label="Follow Boba Bloom on social media">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="boba-social-btn" aria-label="Follow us on Instagram" title="Instagram">
-              <i class="bi bi-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="boba-social-btn" aria-label="Follow us on Facebook" title="Facebook">
-              <i class="bi bi-facebook"></i>
-            </a>
+
+          <div class="boba-footer-newsletter">
+            <p class="newsletter-label">Subscribe for $2 OFF your first order:</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); BobaCart.showToast('Thank you! Use coupon BOBAHAPPY at checkout for 20% off.', 'bi-envelope-check-fill');">
+              <input type="email" placeholder="Enter your email" required aria-label="Email address for discounts">
+              <button type="submit" class="boba-btn boba-btn-sm boba-btn-pink">JOIN</button>
+            </form>
+          </div>
+
+          <div class="boba-footer-socials" aria-label="Social Media Links">
+            <a href="https://instagram.com" class="boba-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+            <a href="https://tiktok.com" class="boba-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i class="bi bi-tiktok"></i></a>
+            <a href="https://facebook.com" class="boba-social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+            <a href="https://pinterest.com" class="boba-social-link" aria-label="Pinterest" target="_blank" rel="noopener noreferrer"><i class="bi bi-pinterest"></i></a>
           </div>
         </div>
 
-        <!-- COLUMN 2 — EXPLORE -->
+        <!-- COLUMN 2 — QUICK NAVIGATION -->
         <div class="boba-footer-col">
-          <h3 class="boba-footer-heading">EXPLORE</h3>
+          <h3 class="boba-footer-heading">NAVIGATION</h3>
           <ul class="boba-footer-links">
-            <li><a href="index.html">Home 1</a></li>
-            <li><a href="home2.html">Home 2</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="customize.html">Customize Your Drink</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">Home 1 (Storefront)</a></li>
+            <li><a href="home2.html">Home 2 (Editorial Edit)</a></li>
+            <li><a href="about.html">About Boba Bloom</a></li>
+            <li><a href="index.html#products">Products Catalog</a></li>
+            <li><a href="index.html#categories">Drink Categories</a></li>
+            <li><a href="index.html#brands">Brand Partners</a></li>
           </ul>
         </div>
 
-        <!-- COLUMN 3 — OUR DRINKS -->
+        <!-- COLUMN 3 — SHOPPING & DRINKS -->
         <div class="boba-footer-col">
-          <h3 class="boba-footer-heading">OUR DRINKS</h3>
+          <h3 class="boba-footer-heading">SHOP &amp; SAVE</h3>
           <ul class="boba-footer-links">
-            <li><a href="menu.html#milk-tea">Milk Tea</a></li>
-            <li><a href="menu.html#fruit-tea">Fruit Tea</a></li>
-            <li><a href="menu.html#matcha">Matcha</a></li>
-            <li><a href="menu.html#brown-sugar">Brown Sugar</a></li>
-            <li><a href="menu.html#toppings">Toppings</a></li>
-            <li><a href="menu.html#signature">Signature Drinks</a></li>
+            <li><a href="index.html#deals">Boba Deals &amp; Combos</a></li>
+            <li><a href="index.html#accessories">Accessories &amp; Merch</a></li>
+            <li><a href="index.html#gallery">Community Gallery</a></li>
+            <li><a href="blog.html">Brewing Journal</a></li>
+            <li><a href="customize.html">Drink Customizer</a></li>
+            <li><a href="#" onclick="event.preventDefault(); BobaCart.openCart();">View Boba Bag</a></li>
           </ul>
         </div>
 
-        <!-- COLUMN 4 — YOUR BOBA -->
+        <!-- COLUMN 4 — LOCATIONS & HOURS -->
         <div class="boba-footer-col">
-          <h3 class="boba-footer-heading">YOUR BOBA</h3>
+          <h3 class="boba-footer-heading">STORE LOCATION</h3>
           <ul class="boba-footer-links">
-            <li><a href="customize.html#drink-builder">Build Your Drink</a></li>
-            <li><a href="customize.html#sweetness">Sweetness Options</a></li>
-            <li><a href="customize.html#ice-level">Ice Levels</a></li>
-            <li><a href="customize.html#toppings">Toppings Guide</a></li>
-            <li><a href="customize.html#base">Tea Base Choices</a></li>
-            <li><a href="customize.html#dairy-free">Dairy-Free Options</a></li>
+            <li><span>123 Blossom Avenue</span></li>
+            <li><span>Downtown Cafe, Suite 4B</span></li>
+            <li><span>Open Daily: 10am - 10pm</span></li>
+            <li><span>Pickup Counter Ready</span></li>
+            <li><a href="contact.html">Store Directions</a></li>
+            <li><a href="contact.html#faqs">Common FAQs</a></li>
           </ul>
         </div>
 
-        <!-- COLUMN 5 — SAY HELLO -->
+        <!-- COLUMN 5 — CONTACT & REWARDS -->
         <div class="boba-footer-col">
           <h3 class="boba-footer-heading">SAY HELLO</h3>
           <ul class="boba-footer-links">
-            <li><a href="contact.html#contact-form">Contact Us</a></li>
-            <li><a href="contact.html#store-locator">Store Locator</a></li>
-            <li><a href="contact.html#faqs">FAQs</a></li>
-            <li><a href="contact.html#careers">Careers</a></li>
-            <li><a href="contact.html#catering">Catering & Events</a></li>
-            <li><a href="contact.html#feedback">Feedback & Support</a></li>
+            <li><a href="contact.html#contact-form">Contact Barista</a></li>
+            <li><a href="contact.html#catering">Event Catering</a></li>
+            <li><a href="contact.html#careers">Join Our Team</a></li>
+            <li><button type="button" class="boba-login-btn" style="background:none; border:none; padding:0; color:inherit; font:inherit; cursor:pointer; text-align:start;">Member Rewards Login</button></li>
           </ul>
         </div>
 
@@ -1040,5 +1168,6 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/navigation.js"></script>
   <script src="assets/js/contact.js"></script>
+  <script src="assets/js/cart.js"></script>
 </body>
 </html>

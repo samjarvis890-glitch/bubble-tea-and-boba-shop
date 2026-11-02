@@ -59,7 +59,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   background-color: var(--color-pink-light);
   border: 1px solid rgba(255, 107, 138, 0.28);
   margin-bottom: 1rem;
@@ -67,7 +67,7 @@
 
 .contact-section-title {
   font-size: clamp(2rem, 3.5vw, 2.85rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.015em;
   color: var(--text-primary);
@@ -81,7 +81,7 @@
 }
 
 .contact-inline-link {
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -115,7 +115,7 @@
 
 .contact-hero-title {
   font-size: clamp(2.4rem, 4.4vw, 3.6rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.14;
   letter-spacing: -0.02em;
   color: var(--text-primary);
@@ -123,7 +123,7 @@
 }
 
 .contact-hero-title .text-highlight {
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   position: relative;
   display: inline-block;
 }
@@ -252,7 +252,7 @@
 
 .contact-form-card-title {
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
@@ -371,10 +371,11 @@
   padding: 1rem 1.75rem;
   font-size: 1.05rem;
   justify-content: center;
-  background-color: var(--color-pink) !important;
+  background: linear-gradient(135deg, #FF6B8A 0%, #D82B55 100%) !important;
   color: #FFFFFF !important;
-  border: 2px solid var(--color-pink) !important;
-  box-shadow: 0 8px 20px rgba(255, 107, 138, 0.25) !important;
+  border: 2px solid #FF6B8A !important;
+  box-shadow: 0 8px 20px rgba(216, 43, 85, 0.28) !important;
+  font-weight: 700;
 }
 
 .contact-submit-btn *,
@@ -384,19 +385,27 @@
 
 .contact-submit-btn:hover,
 #store-notify-btn:hover {
-  background-color: var(--color-pink-hover) !important;
-  border-color: var(--color-pink-hover) !important;
+  background: linear-gradient(135deg, #FF5275 0%, #C02248 100%) !important;
+  border-color: #FF5275 !important;
   color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(255, 107, 138, 0.35) !important;
+  box-shadow: 0 12px 24px rgba(216, 43, 85, 0.38) !important;
 }
 
 [data-theme="dark"] .contact-submit-btn,
 [data-theme="dark"] #store-notify-btn {
-  background-color: var(--color-pink) !important;
+  background: linear-gradient(135deg, #FF6B8A 0%, #D82B55 100%) !important;
   color: #FFFFFF !important;
-  border-color: var(--color-pink) !important;
-  box-shadow: 0 8px 24px rgba(255, 107, 138, 0.45) !important;
+  border-color: #FF6B8A !important;
+  box-shadow: 0 8px 24px rgba(255, 107, 138, 0.35) !important;
+}
+
+[data-theme="dark"] .contact-submit-btn:hover,
+[data-theme="dark"] #store-notify-btn:hover {
+  background: linear-gradient(135deg, #FF7A98 0%, #E63962 100%) !important;
+  border-color: #FF7A98 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 12px 26px rgba(255, 107, 138, 0.45) !important;
 }
 
 [data-theme="dark"] .contact-submit-btn *,
@@ -494,7 +503,7 @@
 
 .contact-info-title {
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin: 0;
 }
@@ -689,7 +698,7 @@
 .boba-popup-badge {
   display: inline-block;
   background: var(--color-pink-light);
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   font-size: 0.72rem;
   font-weight: 800;
   padding: 0.2rem 0.55rem;
@@ -700,7 +709,7 @@
 .boba-popup-title {
   font-family: var(--font-heading);
   font-size: 1.02rem;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0 0 0.2rem 0;
   color: #342A32;
 }
@@ -759,14 +768,14 @@
 
 .contact-store-name {
   font-size: 1.45rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.4rem;
 }
 
 .contact-store-status {
   font-size: 0.94rem;
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
@@ -885,7 +894,7 @@
 .contact-interior-badge-text {
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 450;
   color: #342A32;
   display: flex;
   align-items: center;
@@ -919,7 +928,7 @@
 
 .interior-card-title {
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.6rem;
 }
@@ -1079,7 +1088,7 @@
 .contact-quote-author {
   font-size: 0.92rem;
   font-weight: 700;
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   margin: 0;
 }
 
@@ -1109,7 +1118,7 @@
 }
 
 .promise-text-title {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.02rem;
   color: var(--text-primary);
   margin-bottom: 0.2rem;
@@ -1170,7 +1179,7 @@
 
 .contact-closing-title {
   font-size: clamp(2.1rem, 3.8vw, 3.1rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.18;
   color: var(--text-primary);
   margin-bottom: 1.15rem;

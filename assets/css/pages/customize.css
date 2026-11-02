@@ -57,7 +57,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   background-color: var(--color-pink-light);
   border: 1px solid rgba(255, 107, 138, 0.25);
   margin-bottom: 1rem;
@@ -65,7 +65,7 @@
 
 .custom-step-title {
   font-size: clamp(2rem, 3.6vw, 2.85rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.18;
   letter-spacing: -0.015em;
   color: var(--text-primary);
@@ -122,7 +122,7 @@
 
 .custom-hero-title {
   font-size: clamp(2.3rem, 4.6vw, 3.8rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.14;
   letter-spacing: -0.02em;
   color: var(--text-primary);
@@ -275,7 +275,7 @@
 }
 
 .custom-base-selected-badge strong {
-  color: var(--color-pink);
+  color: var(--color-pink-text);
 }
 
 /* 6 Selectable Base Tiles Grid */
@@ -344,7 +344,7 @@
 
 .custom-base-name {
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text-primary);
   margin-bottom: 0.35rem;
@@ -586,7 +586,7 @@
 
 .custom-ice-name {
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
@@ -682,7 +682,7 @@
 
 .reset-toppings-btn:hover {
   border-color: var(--color-pink);
-  color: var(--color-pink);
+  color: var(--color-pink-text);
 }
 
 /* 8 Topping Tiles Grid */
@@ -764,7 +764,7 @@
 
 .topping-tile-name {
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.35rem;
 }
@@ -868,7 +868,7 @@
 
 .custom-board-title {
   font-size: 1.85rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.35rem;
 }
@@ -911,7 +911,7 @@
   font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   text-align: right;
 }
 
@@ -1030,7 +1030,7 @@
 
 .custom-closing-title {
   font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.015em;
   color: var(--text-primary);

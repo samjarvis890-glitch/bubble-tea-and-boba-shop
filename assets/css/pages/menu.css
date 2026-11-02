@@ -47,12 +47,19 @@
 }
 
 .menu-section-header .boba-eyebrow {
-  margin-bottom: 1rem;
+  align-self: center;
+  margin-inline: auto;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.24rem 0.68rem;
+  gap: 0.32rem;
+  margin-bottom: 0.75rem;
 }
 
 .menu-section-title {
   font-size: clamp(2rem, 3.6vw, 2.85rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.18;
   letter-spacing: -0.015em;
   color: var(--text-primary);
@@ -125,16 +132,29 @@
   box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   transition: background-color var(--transition-normal), border-color var(--transition-normal);
 }
 
 .menu-hero-panel .boba-eyebrow {
-  margin-bottom: 1.25rem;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: fit-content;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.24rem 0.68rem;
+  gap: 0.32rem;
+  margin-bottom: 0.85rem;
+}
+
+.menu-hero-panel .boba-eyebrow i {
+  font-size: 0.75rem;
 }
 
 .menu-hero-title {
   font-size: clamp(2.2rem, 4vw, 3.4rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.14;
   letter-spacing: -0.02em;
   color: var(--text-primary);
@@ -177,7 +197,7 @@
 .menu-index-chip:hover {
   border-color: var(--color-pink);
   background-color: var(--color-pink-light);
-  color: var(--color-pink);
+  color: var(--color-pink-text);
 }
 
 .menu-hero-actions {
@@ -364,7 +384,7 @@
 
 .printed-item-title {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text-primary);
 }
@@ -379,7 +399,7 @@
   padding: 0.2rem 0.65rem;
   border-radius: var(--radius-full);
   background-color: var(--bg-surface-alt);
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   border: 1px solid var(--border-color);
   white-space: nowrap;
 }
@@ -402,7 +422,7 @@
   font-family: var(--font-heading);
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   padding: 0.35rem 0.75rem;
   border-radius: var(--radius-full);
   border: 1px solid rgba(255, 107, 138, 0.3);
@@ -459,6 +479,24 @@
 .menu-category-content {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Reduced, compact label sizes for Categories (CATEGORY 01, CATEGORY 02, CATEGORY 04) */
+.menu-category-content .boba-eyebrow {
+  align-self: flex-start;
+  width: fit-content;
+  max-width: fit-content;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.24rem 0.68rem;
+  gap: 0.32rem;
+  margin-bottom: 0.75rem;
+}
+
+.menu-category-content .boba-eyebrow i {
+  font-size: 0.75rem;
 }
 
 /* ==========================================================================
@@ -508,16 +546,25 @@
 .menu-matcha-accent-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 1rem;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: fit-content;
+  gap: 0.32rem;
+  padding: 0.24rem 0.68rem;
   background-color: var(--color-matcha-light);
   border: 1px solid rgba(140, 191, 136, 0.3);
   border-radius: var(--radius-full);
   font-family: var(--font-heading);
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 700;
   color: #386634;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.menu-matcha-accent-pill i {
+  font-size: 0.75rem;
 }
 
 [data-theme="dark"] .menu-matcha-accent-pill {
@@ -668,7 +715,7 @@
 
 .menu-topping-name {
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text-primary);
   margin-bottom: 0.4rem;
@@ -694,7 +741,7 @@
 
 .menu-toppings-cta-text h3 {
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.35rem;
   color: var(--text-primary);
 }
@@ -740,11 +787,29 @@
 .menu-closing-content {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Reduced, compact label sizes for Menu Closing Section */
+.menu-closing-content .boba-eyebrow {
+  align-self: flex-start;
+  width: fit-content;
+  max-width: fit-content;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.24rem 0.68rem;
+  gap: 0.32rem;
+  margin-bottom: 0.75rem;
+}
+
+.menu-closing-content .boba-eyebrow i {
+  font-size: 0.75rem;
 }
 
 .menu-closing-title {
   font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.015em;
   color: var(--text-primary);
@@ -850,8 +915,17 @@
     text-align: center;
   }
 
+  .menu-category-content,
   .menu-closing-content {
     align-items: center;
+    text-align: center;
+  }
+
+  .menu-category-content .boba-eyebrow,
+  .menu-category-content .menu-matcha-accent-pill,
+  .menu-closing-content .boba-eyebrow {
+    align-self: center;
+    margin-inline: auto;
   }
 
   .menu-closing-desc {

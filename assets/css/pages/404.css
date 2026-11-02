@@ -203,14 +203,14 @@
 .boba-404-title {
   font-family: var(--font-heading);
   font-size: clamp(1.6rem, 3.8vw, 2.4rem);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.75rem;
   line-height: 1.2;
 }
 
 .boba-404-title .highlight-pink {
-  color: var(--color-pink);
+  color: var(--color-pink-text);
 }
 
 .boba-404-desc {
@@ -250,7 +250,7 @@
 }
 
 .boba-404-quicklinks a {
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   text-decoration: none;
   font-weight: 700;
   transition: color var(--transition-fast), text-decoration var(--transition-fast);

@@ -1,14 +1,15 @@
 /* ==========================================================================
-   BOBA BLOOM — HOME PAGE STYLESHEET (home.css)
-   Contains styles for all 7 Home content sections
+   BOBA BLOOM — COMPLETE REDESIGNED HOME STOREFRONT (home.css)
+   Organized with signature drinks, flavor categories, ingredients, 
+   customization steps, bestsellers catalog, deals, pricing, and lifestyle moments.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   SECTION 1 — HERO: YOUR HAPPY PLACE, IN A CUP
+   1. HERO SECTION & TRUST PERKS
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
-  padding-block: 4rem 5rem;
+  padding-block: 3.5rem 4.5rem;
   overflow: hidden;
   background: radial-gradient(circle at 80% 20%, var(--color-pink-light) 0%, transparent 60%),
               radial-gradient(circle at 10% 90%, var(--color-mango-light) 0%, transparent 50%),
@@ -22,6 +23,7 @@
   gap: 3.5rem;
   position: relative;
   z-index: 2;
+  margin-bottom: 3rem;
 }
 
 .hero-content {
@@ -31,23 +33,24 @@
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
-  font-weight: 700;
+  font-size: clamp(2.5rem, 5.2vw, 4.15rem);
+  font-weight: 600;
   line-height: 1.12;
   letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
 }
 
 .hero-title span.highlight-pink {
-  color: var(--color-pink);
+  color: var(--color-pink-text);
 }
 
 .hero-text {
-  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
   line-height: 1.6;
   color: var(--text-muted);
   margin-bottom: 2rem;
   max-width: 540px;
+  font-weight: 450;
 }
 
 .hero-btn-group {
@@ -55,7 +58,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .hero-note {
@@ -64,7 +67,7 @@
   gap: 0.5rem;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--color-pink);
+  color: var(--color-pink-text);
 }
 
 .hero-image-wrapper {
@@ -101,15 +104,15 @@
   position: absolute;
   bottom: 1.5rem;
   left: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.92);
+  background-color: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(10px);
-  padding: 0.75rem 1.25rem;
+  padding: 0.85rem 1.25rem;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 [dir="rtl"] .hero-badge {
@@ -118,20 +121,20 @@
 }
 
 [data-theme="dark"] .hero-badge {
-  background-color: rgba(40, 31, 39, 0.92);
+  background-color: rgba(40, 31, 39, 0.94);
   border-color: var(--border-color);
 }
 
 .hero-badge-icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background-color: var(--color-pink-light);
   color: var(--color-pink);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 .hero-badge-text strong {
@@ -142,15 +145,62 @@
 }
 
 .hero-badge-text span {
-  font-size: 0.775rem;
+  font-size: 0.8rem;
+  color: var(--color-pink);
+  font-weight: 700;
+}
+
+.hero-perks-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 2;
+}
+
+.hero-perk-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.hero-perk-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-pink-light);
+  color: var(--color-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.hero-perk-text h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+}
+
+.hero-perk-text p {
+  font-size: 0.8rem;
   color: var(--text-muted);
+  font-weight: 400;
 }
 
 /* --------------------------------------------------------------------------
-   SECTION 2 — SIGNATURE SIPS
+   2. SECTION: OUR SIGNATURES — MEET YOUR NEW FAVORITE (From Mockup)
    -------------------------------------------------------------------------- */
 .signature-section {
-  padding-block: 6rem;
+  padding-block: 5.5rem;
   background-color: var(--bg-surface);
   position: relative;
   transition: background-color var(--transition-normal);
@@ -158,14 +208,14 @@
 
 .section-header-center {
   text-align: center;
-  max-width: 650px;
+  max-width: 680px;
   margin-inline: auto;
   margin-bottom: 3.5rem;
 }
 
 .section-title {
   font-size: clamp(2rem, 3.5vw, 2.75rem);
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.75rem;
   letter-spacing: -0.01em;
 }
@@ -173,6 +223,7 @@
 .section-subtitle {
   font-size: 1.1rem;
   color: var(--text-muted);
+  font-weight: 450;
 }
 
 .signature-grid {
@@ -191,6 +242,7 @@
   display: flex;
   flex-direction: column;
   transition: transform var(--transition-bounce), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  position: relative;
 }
 
 .signature-card:hover {
@@ -221,15 +273,16 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(6px);
-  padding: 0.25rem 0.65rem;
+  padding: 0.25rem 0.75rem;
   border-radius: var(--radius-full);
   font-family: var(--font-heading);
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--text-primary);
   border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 [dir="rtl"] .signature-card-tag {
@@ -238,7 +291,7 @@
 }
 
 [data-theme="dark"] .signature-card-tag {
-  background-color: rgba(40, 31, 39, 0.9);
+  background-color: rgba(40, 31, 39, 0.94);
 }
 
 .signature-card-body {
@@ -249,26 +302,50 @@
 }
 
 .signature-card-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.45rem;
 }
 
 .signature-card-desc {
-  font-size: 0.925rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
+  line-height: 1.5;
   margin-bottom: 1.25rem;
   flex: 1;
+  font-weight: 400;
+}
+
+.signature-pricing-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+}
+
+.signature-price {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-pink-text);
 }
 
 .signature-card-link {
   font-family: var(--font-heading);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 700;
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
   transition: gap var(--transition-fast), color var(--transition-fast);
 }
 
@@ -277,15 +354,28 @@
   gap: 0.65rem;
 }
 
+.signature-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.signature-actions .boba-btn-sm {
+  padding: 0.45rem 0.95rem;
+  font-size: 0.85rem;
+  min-height: 36px;
+}
+
 .signature-bottom-cta {
   text-align: center;
 }
 
 /* --------------------------------------------------------------------------
-   SECTION 3 — A WORLD OF FLAVORS (Collage Layout)
+   3. SECTION: FLAVOR EXPLORATION — WHAT'S YOUR BOBA MOOD? (From Mockup)
    -------------------------------------------------------------------------- */
 .flavor-world-section {
-  padding-block: 6rem;
+  padding-block: 5.5rem;
   background-color: var(--bg-main);
   position: relative;
 }
@@ -309,6 +399,7 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  display: block;
   transition: transform var(--transition-bounce);
 }
 
@@ -335,6 +426,7 @@
   transition: all var(--transition-bounce);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .flavor-category-card::before {
@@ -353,85 +445,330 @@
   right: 0;
 }
 
-.flavor-category-card.card-milk-tea:hover {
-  background-color: var(--color-peach-light);
-  border-color: var(--color-peach);
-  transform: translateY(-4px);
-}
-.flavor-category-card.card-milk-tea::before { background-color: var(--color-pink); }
+.card-milk-tea:hover::before { background-color: var(--color-pink); }
+.card-fruit-tea:hover::before { background-color: var(--color-mango); }
+.card-matcha:hover::before { background-color: var(--color-matcha); }
+.card-brown-sugar:hover::before { background-color: var(--color-lavender); }
 
-.flavor-category-card.card-fruit-tea:hover {
-  background-color: var(--color-mango-light);
-  border-color: var(--color-mango);
-  transform: translateY(-4px);
+.flavor-category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-subtle);
 }
-.flavor-category-card.card-fruit-tea::before { background-color: var(--color-mango); }
-
-.flavor-category-card.card-matcha:hover {
-  background-color: var(--color-matcha-light);
-  border-color: var(--color-matcha);
-  transform: translateY(-4px);
-}
-.flavor-category-card.card-matcha::before { background-color: var(--color-matcha); }
-
-.flavor-category-card.card-brown-sugar:hover {
-  background-color: var(--color-lavender-light);
-  border-color: var(--color-lavender);
-  transform: translateY(-4px);
-}
-.flavor-category-card.card-brown-sugar::before { background-color: var(--color-lavender); }
 
 .flavor-cat-icon {
   width: 44px;
   height: 44px;
-  border-radius: var(--radius-sm);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   margin-bottom: 1rem;
 }
 
 .icon-pink { background-color: var(--color-pink-light); color: var(--color-pink); }
-.icon-mango { background-color: var(--color-mango-light); color: #D9822B; }
-.icon-matcha { background-color: var(--color-matcha-light); color: var(--color-matcha); }
-.icon-lavender { background-color: var(--color-lavender-light); color: #8A68B8; }
+.icon-mango { background-color: var(--color-mango-light); color: #B35C1E; }
+.icon-matcha { background-color: var(--color-matcha-light); color: #4E8D52; }
+.icon-lavender { background-color: var(--color-lavender-light); color: #7B5EA7; }
 
 .flavor-cat-title {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
   margin-bottom: 0.35rem;
 }
 
 .flavor-cat-desc {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  line-height: 1.45;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
 }
 
 .flavor-cat-action {
   font-family: var(--font-heading);
-  font-size: 0.825rem;
+  font-size: 0.875rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-pink-text);
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  transition: gap var(--transition-fast);
+}
+
+.flavor-category-card:hover .flavor-cat-action {
+  gap: 0.6rem;
 }
 
 /* --------------------------------------------------------------------------
-   SECTION 4 — GOOD INGREDIENTS, HAPPY SIPS
+   4. SECTION: BESTSELLERS & INTERACTIVE MENU CATALOG (#products)
+   -------------------------------------------------------------------------- */
+.products-section {
+  padding-block: 5.5rem;
+  background-color: var(--bg-surface);
+  position: relative;
+  border-top: 1px solid var(--border-color);
+}
+
+.category-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.category-filter-btn {
+  background-color: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.category-filter-btn i {
+  color: var(--color-pink);
+}
+
+.category-filter-btn:hover,
+.category-filter-btn.active {
+  background-color: var(--color-pink);
+  color: #FFFFFF;
+  border-color: var(--color-pink);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 107, 138, 0.35);
+}
+
+.category-filter-btn:hover i,
+.category-filter-btn.active i {
+  color: #FFFFFF;
+}
+
+.products-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.boba-product-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-bounce), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  position: relative;
+}
+
+.boba-product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-pink);
+}
+
+.product-img-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--bg-surface-alt);
+}
+
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-bounce);
+}
+
+.boba-product-card:hover .product-img-wrap img {
+  transform: scale(1.06);
+}
+
+.product-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-pink);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+[dir="rtl"] .product-badge {
+  left: auto;
+  right: 1rem;
+}
+
+[data-theme="dark"] .product-badge {
+  background-color: rgba(40, 31, 39, 0.95);
+}
+
+.product-card-body {
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.product-category-tag {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-pink-text);
+}
+
+.product-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #FBBF24;
+}
+
+.product-rating span {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.product-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.product-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 1rem;
+  flex: 1;
+  font-weight: 400;
+}
+
+.product-flavor-notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.flavor-chip {
+  font-size: 0.725rem;
+  font-weight: 600;
+  background-color: var(--bg-surface-alt);
+  color: var(--text-muted);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.product-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+}
+
+.product-price {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-pink-text);
+}
+
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.product-actions .boba-btn-sm {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.825rem;
+  min-height: 36px;
+}
+
+.boba-btn.boba-quick-add {
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-full);
+  padding: 0.45rem 0.95rem;
+  font-size: 0.825rem;
+}
+
+.boba-quick-add {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-pink-light);
+  color: var(--color-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.boba-quick-add:hover {
+  background-color: var(--color-pink);
+  color: #FFFFFF;
+  transform: scale(1.1);
+}
+
+/* --------------------------------------------------------------------------
+   5. SECTION: CRAFT & QUALITY — MADE WITH A LITTLE EXTRA LOVE (From Mockup)
    -------------------------------------------------------------------------- */
 .ingredients-section {
-  padding-block: 6rem;
-  background-color: var(--bg-surface);
+  padding-block: 5.5rem;
+  background-color: var(--bg-main);
   position: relative;
 }
 
 .ingredients-grid {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
   align-items: center;
 }
 
@@ -440,13 +777,14 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  border: 4px solid var(--bg-card);
+  border: 4px solid var(--bg-surface);
 }
 
 .ingredients-media-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  display: block;
   transition: transform var(--transition-bounce);
 }
 
@@ -454,58 +792,59 @@
   transform: scale(1.03);
 }
 
+.ingredients-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .ingredients-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
+  width: 100%;
 }
 
 .ingredient-item {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  padding: 1.25rem;
-  border-radius: var(--radius-md);
-  background-color: var(--bg-main);
-  border: 1px solid var(--border-color);
-  transition: transform var(--transition-fast);
-}
-
-.ingredient-item:hover {
-  transform: translateY(-3px);
+  gap: 0.5rem;
 }
 
 .ingredient-icon-box {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background-color: var(--color-pink-light);
   color: var(--color-pink);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
 }
 
 .ingredient-item h4 {
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
 }
 
 .ingredient-item p {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
   line-height: 1.45;
+  font-weight: 400;
 }
 
 /* --------------------------------------------------------------------------
-   SECTION 5 — MAKE IT YOURS (Customization Teaser)
+   6. SECTION: CUSTOMIZATION — YOUR CUP. YOUR RULES. (From Mockup)
    -------------------------------------------------------------------------- */
 .custom-preview-section {
-  padding-block: 6rem;
+  padding-block: 5.5rem;
   background: linear-gradient(180deg, var(--bg-main) 0%, var(--color-peach-light) 100%);
   position: relative;
 }
@@ -522,6 +861,12 @@
   align-items: center;
 }
 
+.custom-preview-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .custom-preview-media {
   position: relative;
   border-radius: var(--radius-md);
@@ -533,6 +878,7 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  display: block;
   transition: transform var(--transition-bounce);
 }
 
@@ -545,6 +891,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
   margin-block: 2rem 2.25rem;
+  width: 100%;
 }
 
 .custom-step-card {
@@ -573,28 +920,32 @@
 }
 
 .step-content h4 {
+  font-family: var(--font-heading);
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.2rem;
+  color: var(--text-primary);
 }
 
 .step-content p {
   font-size: 0.825rem;
   line-height: 1.35;
+  color: var(--text-muted);
+  font-weight: 400;
 }
 
 /* --------------------------------------------------------------------------
-   SECTION 6 — LITTLE SIPS, BIG SMILES (Lifestyle Editorial)
+   7. SECTION: LIFESTYLE — MAKE ROOM FOR A HAPPY MOMENT. (From Mockup)
    -------------------------------------------------------------------------- */
 .lifestyle-section {
-  padding-block: 6rem;
+  padding-block: 5.5rem;
   background-color: var(--bg-surface);
   position: relative;
 }
 
 .lifestyle-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 3.5rem;
   align-items: center;
 }
@@ -611,6 +962,7 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  display: block;
   transition: transform var(--transition-bounce);
 }
 
@@ -628,16 +980,28 @@
 }
 
 .lifestyle-quote-mark {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--color-pink);
   line-height: 1;
   margin-bottom: 0.75rem;
 }
 
+.lifestyle-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
 .lifestyle-content-card p {
   font-size: 1.05rem;
   line-height: 1.7;
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
+  font-weight: 450;
 }
 
 .lifestyle-highlight {
@@ -647,11 +1011,704 @@
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.95rem;
-  color: var(--color-pink);
+  color: var(--color-pink-text);
 }
 
 /* --------------------------------------------------------------------------
-   SECTION 7 — CLOSING CTA: YOUR NEXT HAPPY SIP
+   8. SECTION: DAILY DEALS & COMBOS (#deals)
+   -------------------------------------------------------------------------- */
+.deals-section {
+  padding-block: 5.5rem;
+  background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-surface-alt) 100%);
+  position: relative;
+}
+
+.deals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.boba-deal-card {
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-bounce);
+}
+
+.boba-deal-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-pink);
+  box-shadow: var(--shadow-lg);
+}
+
+.deal-highlight-badge {
+  position: absolute;
+  top: -12px;
+  right: 1.5rem;
+  background: linear-gradient(90deg, var(--color-pink), #ff4b74);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.85rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(255, 107, 138, 0.4);
+}
+
+[dir="rtl"] .deal-highlight-badge {
+  right: auto;
+  left: 1.5rem;
+}
+
+.deal-card-header {
+  margin-bottom: 1.25rem;
+}
+
+.deal-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  background: var(--color-pink-light);
+  color: var(--color-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.deal-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.deal-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.deal-items-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed var(--border-color);
+  flex: 1;
+}
+
+.deal-items-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.deal-items-list li i {
+  color: var(--color-matcha);
+}
+
+.deal-pricing-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.deal-current-price {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-pink-text);
+}
+
+.deal-orig-price {
+  font-size: 1rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.deal-savings {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: var(--color-matcha-light);
+  color: var(--color-matcha);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+}
+
+.boba-promo-banner {
+  background: linear-gradient(135deg, #FF6B8A, #ff4b74);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 12px 30px rgba(255, 107, 138, 0.3);
+}
+
+.promo-banner-text h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: #FFFFFF;
+}
+
+.promo-banner-text p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  font-weight: 450;
+}
+
+.promo-code-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.promo-code-box strong {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+}
+
+/* --------------------------------------------------------------------------
+   9. SECTION: ACCESSORIES & MERCH (#accessories)
+   -------------------------------------------------------------------------- */
+.accessories-section {
+  padding-block: 5.5rem;
+  background-color: var(--bg-surface);
+  position: relative;
+}
+
+.accessories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.boba-accessory-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-bounce);
+}
+
+.boba-accessory-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-pink);
+  box-shadow: var(--shadow-lg);
+}
+
+.accessory-img-wrap {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background-color: var(--bg-surface-alt);
+}
+
+.accessory-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-bounce);
+}
+
+.boba-accessory-card:hover .accessory-img-wrap img {
+  transform: scale(1.06);
+}
+
+.accessory-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.accessory-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.accessory-desc {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  flex: 1;
+  font-weight: 400;
+}
+
+.accessory-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.accessory-price {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-pink-text);
+}
+
+/* --------------------------------------------------------------------------
+   10. SECTION: BRAND SOURCING & TEA PARTNERS (#brands)
+   -------------------------------------------------------------------------- */
+.brands-section {
+  padding-block: 5.5rem;
+  background-color: var(--bg-surface);
+  position: relative;
+  border-top: 1px solid var(--border-color);
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.boba-brand-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-bounce), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.boba-brand-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-pink);
+  box-shadow: var(--shadow-lg);
+}
+
+.brand-icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: var(--color-pink-light);
+  color: var(--color-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: transform var(--transition-bounce), background-color var(--transition-normal), color var(--transition-normal);
+}
+
+.boba-brand-card:hover .brand-icon-box {
+  background-color: var(--color-pink);
+  color: #FFFFFF;
+  transform: scale(1.1);
+}
+
+.brand-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.brand-origin {
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-pink-text);
+  margin-bottom: 0.85rem;
+  display: inline-block;
+}
+
+.brand-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   11. SECTION: COMMUNITY BOBA GALLERY (#gallery)
+   -------------------------------------------------------------------------- */
+.gallery-section {
+  padding-block: 5.5rem;
+  background-color: var(--bg-main);
+  position: relative;
+  border-top: 1px solid var(--border-color);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.boba-gallery-item {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface-alt);
+}
+
+.boba-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-bounce);
+}
+
+.gallery-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(43, 27, 23, 0.8);
+  backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.75rem 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.boba-gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.boba-gallery-item:hover .gallery-hover-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gallery-hover-overlay i.bi-instagram {
+  font-size: 2rem;
+  color: var(--color-pink);
+  margin-bottom: 0.5rem;
+}
+
+.gallery-handle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #FFFFFF;
+}
+
+.gallery-likes {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.gallery-likes i {
+  color: var(--color-pink);
+}
+
+.gallery-hover-overlay p {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 260px;
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   12. SECTION: BOBA JOURNAL & BREWING GUIDES (#blog)
+   -------------------------------------------------------------------------- */
+.blog-section {
+  padding-block: 5.5rem;
+  background-color: var(--bg-surface);
+  position: relative;
+  border-top: 1px solid var(--border-color);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.boba-blog-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-bounce), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.boba-blog-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-pink);
+  box-shadow: var(--shadow-lg);
+}
+
+.blog-img-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--bg-surface-alt);
+}
+
+.blog-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-bounce);
+}
+
+.boba-blog-card:hover .blog-img-wrap img {
+  transform: scale(1.06);
+}
+
+.blog-card-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-pink-text);
+  margin-bottom: 0.75rem;
+}
+
+.blog-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.blog-excerpt {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+  flex: 1;
+  font-weight: 400;
+}
+
+.blog-link {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-pink-text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: auto;
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+
+.blog-link:hover {
+  color: var(--color-pink-hover);
+  gap: 0.7rem;
+}
+
+/* --------------------------------------------------------------------------
+   13. SECTION: CUSTOMER REVIEWS & TESTIMONIALS (.reviews-section)
+   -------------------------------------------------------------------------- */
+.reviews-section {
+  padding-block: 5.5rem;
+  background-color: var(--bg-main);
+  position: relative;
+  border-top: 1px solid var(--border-color);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.boba-review-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-bounce), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  position: relative;
+}
+
+.boba-review-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-pink);
+  box-shadow: var(--shadow-lg);
+}
+
+.review-stars {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-mango);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+.review-text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  font-style: italic;
+  margin-bottom: 1.75rem;
+  flex: 1;
+  font-weight: 450;
+}
+
+.reviewer-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.reviewer-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-pink), #ff4b74);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(255, 107, 138, 0.3);
+}
+
+.reviewer-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.reviewer-badge {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.reviewer-badge i {
+  color: var(--color-matcha);
+}
+
+/* --------------------------------------------------------------------------
+   10. SECTION: STORE PICKUP STRIP (#contact)
+   -------------------------------------------------------------------------- */
+.store-strip-section {
+  padding-block: 4rem;
+  background: linear-gradient(135deg, var(--bg-surface-alt), var(--color-peach-light));
+  border-block: 1px solid var(--border-color);
+}
+
+.store-strip-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+.store-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.store-info-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-pink-light);
+  color: var(--color-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.store-info-text h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.store-info-text p {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   11. CLOSING CTA BANNER
    -------------------------------------------------------------------------- */
 .closing-cta-section {
   padding-block: 5rem 6rem;
@@ -674,7 +1731,7 @@
 .closing-cta-banner h2 {
   color: #FFFFFF;
   font-size: clamp(2.2rem, 4vw, 3.25rem);
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
@@ -684,6 +1741,7 @@
   max-width: 600px;
   margin-inline: auto;
   margin-bottom: 2.5rem;
+  font-weight: 450;
 }
 
 .closing-cta-buttons {
@@ -695,69 +1753,98 @@
 }
 
 .closing-cta-banner .boba-btn-primary {
-  background-color: #FFFFFF;
-  color: var(--color-pink);
-  border-color: #FFFFFF;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #FFFFFF !important;
+  color: var(--color-pink-text) !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
 }
 
 .closing-cta-banner .boba-btn-primary:hover {
-  background-color: var(--bg-main);
-  color: var(--color-pink-hover);
-  border-color: var(--bg-main);
+  background-color: var(--bg-main) !important;
+  color: var(--color-pink-active) !important;
+  border-color: var(--bg-main) !important;
 }
 
 /* --------------------------------------------------------------------------
-   RESPONSIVE BREAKPOINTS FOR HOME PAGE
+   RESPONSIVE BREAKPOINTS (Mobile & Tablet)
    -------------------------------------------------------------------------- */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .hero-grid,
   .flavor-collage-grid,
   .ingredients-grid,
   .custom-preview-box,
   .lifestyle-grid {
     grid-template-columns: 1fr;
-    gap: 2.75rem;
+    gap: 2.5rem;
   }
-
-  .hero-content {
+  .hero-content,
+  .ingredients-content,
+  .custom-preview-content,
+  .lifestyle-content-card {
     text-align: center;
     align-items: center;
   }
-
   .hero-text {
     margin-inline: auto;
   }
-
   .hero-btn-group {
     justify-content: center;
   }
-
-  .signature-grid {
+  .hero-perks-strip {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
+  .signature-grid,
+  .products-catalog-grid,
+  .accessories-grid,
+  .brands-grid,
+  .gallery-grid,
+  .blog-grid,
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .deals-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .store-strip-box {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+  .store-info-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .hero-perks-strip,
   .signature-grid,
   .flavor-cards-grid,
   .ingredients-list,
-  .custom-steps-grid {
+  .custom-steps-grid,
+  .products-catalog-grid,
+  .accessories-grid,
+  .brands-grid,
+  .gallery-grid,
+  .blog-grid,
+  .reviews-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-
   .custom-preview-box {
     padding: 2rem 1.5rem;
   }
-
+  .boba-promo-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+  }
   .closing-cta-banner {
     padding: 3rem 1.5rem;
-  }
-
-  .hero-badge {
-    bottom: 1rem;
-    left: 1rem;
-    padding: 0.5rem 0.85rem;
   }
 }

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Boba Bloom Journal &amp; Brewing Guides — Boba Bloom</title>
+  <meta name="description" content="Explore handcrafted brewing secrets, artisanal tea guides, sweetness breakdowns, and authentic boba culture stories at Boba Bloom.">
+  <meta name="theme-color" content="#FF6B8A">
+
+  <!-- Google Fonts: Fredoka & Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/cart.css">
+  <link rel="stylesheet" href="assets/css/pages/blog.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP NOTIFICATION ANNOUNCEMENT BAR
+       ======================================================================== -->
+  <div class="boba-announcement-bar" role="region" aria-label="Announcement">
+    <div class="boba-container boba-announcement-inner">
+      <div class="boba-announcement-text">
+        <i class="bi bi-sparkles" aria-hidden="true"></i>
+        <span>Fresh tea leaves, artisanal syrups &amp; slow-cooked tapioca pearls every morning.</span>
+      </div>
+      <div class="boba-announcement-badge">
+        <span>Use Code: <strong>BOBAHAPPY</strong> for 20% OFF</span>
+        <button type="button" class="boba-announcement-copy" data-copy="BOBAHAPPY" aria-label="Copy Promo Code">
+          <i class="bi bi-clipboard" aria-hidden="true"></i> Copy
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       GLOBAL NAVBAR (100% RULE COMPLIANT)
+       ======================================================================== -->
+  <header class="boba-navbar" role="banner">
+    <div class="boba-container boba-navbar-inner">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="boba-brand" aria-label="Boba Bloom Homepage">
+        <div class="boba-logo-icon" aria-hidden="true">
+          <i class="bi bi-cup-straw"></i>
+        </div>
+        <div class="boba-brand-text">
+          <span class="boba-brand-name">BOBA BLOOM</span>
+          <span class="boba-brand-descriptor">BUBBLE TEA & BOBA</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu (1281px+) - Contains ALL Menus -->
+      <nav class="boba-nav-menu" aria-label="Primary Navigation">
+        <!-- Home Dropdown -->
+        <div class="boba-nav-dropdown">
+          <a href="index.html" class="boba-nav-link" aria-haspopup="true" aria-expanded="false">
+            <span>HOME</span>
+            <i class="bi bi-chevron-down" style="font-size: 0.72rem;" aria-hidden="true"></i>
+          </a>
+          <div class="boba-dropdown-menu" role="menu">
+            <a href="index.html" class="boba-dropdown-link" role="menuitem">Home 1</a>
+            <a href="home2.html" class="boba-dropdown-link" role="menuitem">Home 2</a>
+          </div>
+        </div>
+
+        <a href="about.html" class="boba-nav-link">ABOUT</a>
+        <a href="index.html#products" class="boba-nav-link">PRODUCTS</a>
+        <a href="index.html#categories" class="boba-nav-link">CATEGORIES</a>
+        <a href="index.html#brands" class="boba-nav-link">BRANDS</a>
+        <a href="index.html#deals" class="boba-nav-link">DEALS</a>
+        <a href="index.html#accessories" class="boba-nav-link">ACCESSORIES</a>
+        <a href="index.html#gallery" class="boba-nav-link">GALLERY</a>
+        <a href="blog.html" class="boba-nav-link active" aria-current="page">BLOG</a>
+        <a href="contact.html" class="boba-nav-link">CONTACT</a>
+      </nav>
+
+      <!-- Right Side Controls & Actions -->
+      <div class="boba-nav-controls">
+        
+        <!-- Dark Mode Toggle Button -->
+        <button type="button" class="boba-icon-btn theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+        </button>
+
+        <!-- RTL / LTR Direction Toggle Button -->
+        <button type="button" class="boba-icon-btn rtl-toggle-btn" aria-label="Toggle text direction" title="RTL / LTR Toggle">
+          <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
+        </button>
+
+        <!-- Shopping Cart Trigger Button with Live Counter Badge -->
+        <button type="button" class="boba-icon-btn boba-cart-btn" aria-label="Open Shopping Bag" title="Shopping Bag">
+          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+          <span class="boba-cart-badge" id="navbar-cart-count">2</span>
+        </button>
+
+        <!-- Desktop Login Button (1281px+) -->
+        <button type="button" class="boba-btn boba-btn-dark boba-navbar-login boba-login-btn">
+          <i class="bi bi-person-circle" aria-hidden="true"></i>
+          <span>LOGIN</span>
+        </button>
+
+        <!-- Mobile & Tablet Hamburger Button (<= 1280px) -->
+        <button type="button" class="boba-hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MOBILE & TABLET DRAWER MENU (100% RULE COMPLIANT)
+       ======================================================================== -->
+  <div class="boba-drawer-backdrop" aria-hidden="true"></div>
+  <aside id="mobile-drawer" class="boba-drawer" aria-label="Mobile Navigation Drawer" aria-hidden="true">
+    <div class="boba-drawer-header">
+      <a href="index.html" class="boba-brand" aria-label="Boba Bloom Homepage">
+        <div class="boba-logo-icon" aria-hidden="true">
+          <i class="bi bi-cup-straw"></i>
+        </div>
+        <div class="boba-brand-text">
+          <span class="boba-brand-name">BOBA BLOOM</span>
+          <span class="boba-brand-descriptor">BUBBLE TEA & BOBA</span>
+        </div>
+      </a>
+      <button type="button" class="boba-drawer-close" aria-label="Close navigation menu">
+        <i class="bi bi-x-lg" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="boba-drawer-body">
+      <nav class="boba-drawer-nav" aria-label="Mobile Menu Links">
+        <!-- Home Dropdown -->
+        <div class="boba-drawer-dropdown">
+          <button type="button" class="boba-drawer-link boba-drawer-dropdown-btn" aria-expanded="false">
+            <span class="drawer-link-inner">
+              <i class="bi bi-house-door" aria-hidden="true"></i>
+              <span>Home</span>
+            </span>
+            <i class="bi bi-chevron-down drawer-chevron" aria-hidden="true"></i>
+          </button>
+          <div class="boba-drawer-submenu">
+            <a href="index.html" class="boba-drawer-sublink">
+              <i class="bi bi-cup-straw" aria-hidden="true"></i>
+              <span>Home 1</span>
+            </a>
+            <a href="home2.html" class="boba-drawer-sublink">
+              <i class="bi bi-journal-album" aria-hidden="true"></i>
+              <span>Home 2</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- About -->
+        <a href="about.html" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-info-circle" aria-hidden="true"></i>
+            <span>About</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Products -->
+        <a href="index.html#products" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-cup-hot" aria-hidden="true"></i>
+            <span>Products</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Categories -->
+        <a href="index.html#categories" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-grid-fill" aria-hidden="true"></i>
+            <span>Categories</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Brands -->
+        <a href="index.html#brands" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-patch-check" aria-hidden="true"></i>
+            <span>Brands</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Deals -->
+        <a href="index.html#deals" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-tag" aria-hidden="true"></i>
+            <span>Deals</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Accessories -->
+        <a href="index.html#accessories" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-gem" aria-hidden="true"></i>
+            <span>Accessories</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Gallery -->
+        <a href="index.html#gallery" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-images" aria-hidden="true"></i>
+            <span>Gallery</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Blog -->
+        <a href="blog.html" class="boba-drawer-link active" aria-current="page">
+          <span class="drawer-link-inner">
+            <i class="bi bi-journal-text" aria-hidden="true"></i>
+            <span>Blog</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Contact -->
+        <a href="contact.html" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            <span>Contact</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+      </nav>
+
+      <!-- Drawer Divider Line -->
+      <div class="boba-drawer-divider"></div>
+
+      <!-- Theme & Direction Controls inside Drawer -->
+      <div class="boba-drawer-controls">
+        <span class="boba-drawer-controls-label">Theme &amp; Direction</span>
+        <div class="boba-drawer-toggle-group">
+          <button type="button" class="boba-icon-btn theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button type="button" class="boba-icon-btn rtl-toggle-btn" aria-label="Toggle text direction" title="RTL / LTR Toggle">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Drawer Login Button -->
+      <div class="boba-drawer-footer">
+        <button type="button" class="boba-btn boba-btn-dark boba-drawer-login-btn boba-login-btn" style="width: 100%;">
+          <i class="bi bi-person-circle"></i>
+          <span>LOGIN</span>
+        </button>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       MAIN PAGE CONTENT — THE BOBA BLOOM JOURNAL
+       ======================================================================== -->
+  <main id="main-content">
+
+    <!-- 1. HERO SECTION & CATEGORY FILTER BAR -->
+    <section class="blog-hero-section" aria-labelledby="blog-hero-heading">
+      <div class="boba-container">
+        
+        <header class="blog-hero-header">
+          <div class="boba-eyebrow">
+            <i class="bi bi-journal-text" aria-hidden="true"></i>
+            <span>THE BOBA BLOOM JOURNAL</span>
+          </div>
+
+          <h1 id="blog-hero-heading" class="blog-hero-title">
+            BREWING SECRETS, TEA CULTURE &amp; CRAFT.
+          </h1>
+
+          <p class="blog-hero-lead">
+            Dive into hand-steeped loose leaves, slow-simmered tapioca techniques, flavor pairing science, and modern boba community stories.
+          </p>
+
+          <!-- Category Filter Bar -->
+          <div class="blog-filter-bar" role="tablist" aria-label="Article categories">
+            <button type="button" class="blog-filter-btn active" data-filter="all">
+              <i class="bi bi-grid-fill" aria-hidden="true"></i>
+              <span>All Stories (6)</span>
+            </button>
+            <button type="button" class="blog-filter-btn" data-filter="brewing">
+              <i class="bi bi-cup-hot-fill" aria-hidden="true"></i>
+              <span>Brewing Craft</span>
+            </button>
+            <button type="button" class="blog-filter-btn" data-filter="mastery">
+              <i class="bi bi-flower2" aria-hidden="true"></i>
+              <span>Tea Mastery</span>
+            </button>
+            <button type="button" class="blog-filter-btn" data-filter="guides">
+              <i class="bi bi-sliders2" aria-hidden="true"></i>
+              <span>Drink Guides</span>
+            </button>
+            <button type="button" class="blog-filter-btn" data-filter="culture">
+              <i class="bi bi-heart-fill" aria-hidden="true"></i>
+              <span>Boba Culture</span>
+            </button>
+          </div>
+        </header>
+
+      </div>
+    </section>
+
+    <!-- 2. FEATURED ARTICLE SPOTLIGHT -->
+    <section class="blog-featured-section" aria-labelledby="featured-heading">
+      <div class="boba-container">
+        
+        <article class="blog-featured-card" id="post-1">
+          <div class="featured-img-wrap">
+            <img 
+              src="assets/images/home2/home2-editorial.webp" 
+              alt="Artisanal copper pot slow simmering black tapioca pearls in brown sugar molasses"
+              width="1000"
+              height="625"
+              loading="eager"
+            >
+            <div class="featured-badge-float">
+              <i class="bi bi-star-fill" aria-hidden="true"></i>
+              <span>FEATURED STORY</span>
+            </div>
+          </div>
+
+          <div class="featured-content">
+            <div class="featured-meta">
+              <span><i class="bi bi-clock-history" aria-hidden="true"></i> 4 MIN READ</span>
+              <span>•</span>
+              <span><i class="bi bi-tag-fill" aria-hidden="true"></i> BREWING CRAFT</span>
+            </div>
+
+            <h2 id="featured-heading" class="featured-title">
+              Why 90-Minute Slow-Simmered Boba Tastes Infinitely Better
+            </h2>
+
+            <p class="featured-excerpt">
+              Commercial quick-cooking tapioca never develops that deep, translucent molasses core. Here is how our baristas achieve that heavenly melt-in-your-mouth chewy texture through four stages of temperature-controlled simmering and organic brown sugar soaking.
+            </p>
+
+            <div class="featured-author-row">
+              <div class="author-info">
+                <div class="author-avatar" aria-hidden="true">
+                  <i class="bi bi-person-fill"></i>
+                </div>
+                <div>
+                  <div class="author-name">Mei-Ling Chen</div>
+                  <div class="author-role">Head of Beverage Craft</div>
+                </div>
+              </div>
+
+              <a href="#article-modal-1" class="boba-btn boba-btn-primary boba-btn-sm blog-card-link-trigger" data-article="1">
+                <span>READ FULL STORY</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 3. JOURNAL ARTICLES GRID (6 IN-DEPTH ARTICLES) -->
+    <section class="blog-grid-section" aria-labelledby="articles-grid-heading">
+      <div class="boba-container">
+        
+        <h2 id="articles-grid-heading" class="visually-hidden">Journal Articles Catalog</h2>
+
+        <div class="blog-articles-grid" id="blog-catalog">
+          
+          <!-- Article 1: Matcha Mastery -->
+          <article class="blog-card" data-category="mastery" id="post-2">
+            <div class="blog-card-img-wrap">
+              <img 
+                src="assets/images/about/about-craft.webp" 
+                alt="Whisking authentic ceremonial grade Uji matcha with bamboo chasen"
+                width="800"
+                height="500"
+                loading="lazy"
+              >
+              <span class="blog-category-tag">Tea Mastery</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <i class="bi bi-clock" aria-hidden="true"></i>
+                <span>5 MIN READ · UJI MATCH</span>
+              </div>
+              <h3 class="blog-card-title">Matcha 101: Ceremonial Grade vs. Culinary Powders</h3>
+              <p class="blog-card-excerpt">
+                Not all green powder is created equal. Learn why shade-grown first-harvest Tencha leaves produce vibrant emerald color and sweet vegetal notes without bitter astringency.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-read-time">Published Oct 2026</span>
+                <a href="#article-modal-2" class="blog-card-link blog-card-link-trigger" data-article="2">
+                  <span>Read Guide</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2: Customization Sweetness Breakdown -->
+          <article class="blog-card" data-category="guides" id="post-3">
+            <div class="blog-card-img-wrap">
+              <img 
+                src="assets/images/customize/customize-sweetness.webp" 
+                alt="Measuring spoons showing balanced sweetness percentage ratios"
+                width="800"
+                height="500"
+                loading="lazy"
+              >
+              <span class="blog-category-tag">Drink Guides</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <i class="bi bi-clock" aria-hidden="true"></i>
+                <span>3 MIN READ · SWEETNESS</span>
+              </div>
+              <h3 class="blog-card-title">Finding Your Sweet Spot: 0% to 100% Decoded</h3>
+              <p class="blog-card-excerpt">
+                Tired of drinks that are either cloyingly sugary or bland? Discover how our natural cane and golden honey syrups pair with specific tea bases for ideal flavor equilibrium.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-read-time">Published Oct 2026</span>
+                <a href="#article-modal-3" class="blog-card-link blog-card-link-trigger" data-article="3">
+                  <span>Read Guide</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3: Ethical Dairy & Oat Sourcing -->
+          <article class="blog-card" data-category="brewing" id="post-4">
+            <div class="blog-card-img-wrap">
+              <img 
+                src="assets/images/about/about-ingredients.webp" 
+                alt="Farm-fresh organic whole milk and steamed barista oat milk"
+                width="800"
+                height="500"
+                loading="lazy"
+              >
+              <span class="blog-category-tag">Brewing Craft</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <i class="bi bi-clock" aria-hidden="true"></i>
+                <span>4 MIN READ · SOURCING</span>
+              </div>
+              <h3 class="blog-card-title">From Pasture to Cup: Grass-Fed Dairy &amp; Barista Oat</h3>
+              <p class="blog-card-excerpt">
+                Why temperature-regulated, non-homogenized whole milk and steamed Swedish oat milk create the silky mouthfeel that powdered creamers can never replicate.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-read-time">Published Sep 2026</span>
+                <a href="#article-modal-4" class="blog-card-link blog-card-link-trigger" data-article="4">
+                  <span>Read Guide</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 4: The History of Boba -->
+          <article class="blog-card" data-category="culture" id="post-5">
+            <div class="blog-card-img-wrap">
+              <img 
+                src="assets/images/about/about-story.webp" 
+                alt="Vintage teapot and traditional night market tea stall inspiration"
+                width="800"
+                height="500"
+                loading="lazy"
+              >
+              <span class="blog-category-tag">Boba Culture</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <i class="bi bi-clock" aria-hidden="true"></i>
+                <span>6 MIN READ · HERITAGE</span>
+              </div>
+              <h3 class="blog-card-title">The Taichung Origin Story: How Boba Won the World</h3>
+              <p class="blog-card-excerpt">
+                Travel back to the humid night markets of 1980s Taiwan, where a serendipitous drop of tapioca dessert pudding into iced Assam black tea sparked a global revolution.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-read-time">Published Sep 2026</span>
+                <a href="#article-modal-5" class="blog-card-link blog-card-link-trigger" data-article="5">
+                  <span>Read Story</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 5: Popping Boba Spheres Science -->
+          <article class="blog-card" data-category="mastery" id="post-6">
+            <div class="blog-card-img-wrap">
+              <img 
+                src="assets/images/home2/home2-collection.webp" 
+                alt="Colorful burst of fruit juice boba pearls and real fruit garnishes"
+                width="800"
+                height="500"
+                loading="lazy"
+              >
+              <span class="blog-category-tag">Tea Mastery</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <i class="bi bi-clock" aria-hidden="true"></i>
+                <span>4 MIN READ · FOOD SCIENCE</span>
+              </div>
+              <h3 class="blog-card-title">Molecular Gastronomy: The Science Behind Popping Boba</h3>
+              <p class="blog-card-excerpt">
+                Sodium alginate, calcium lactate, and real passionfruit pulp: how culinary sphere-encapsulation creates that joyous, flavorful pop in your favorite fruit tea.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-read-time">Published Aug 2026</span>
+                <a href="#article-modal-6" class="blog-card-link blog-card-link-trigger" data-article="6">
+                  <span>Read Science</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 6: Tea Steeping Times & Temperatures -->
+          <article class="blog-card" data-category="guides" id="post-7">
+            <div class="blog-card-img-wrap">
+              <img 
+                src="assets/images/customize/customize-base.webp" 
+                alt="Tea leaves blooming in hot water kettle with temperature thermometer"
+                width="800"
+                height="500"
+                loading="lazy"
+              >
+              <span class="blog-category-tag">Drink Guides</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <i class="bi bi-clock" aria-hidden="true"></i>
+                <span>5 MIN READ · BREW MATH</span>
+              </div>
+              <h3 class="blog-card-title">Temperature &amp; Time: The Golden Steeping Chart</h3>
+              <p class="blog-card-excerpt">
+                Why brewing Jasmine Green at 175°F protects subtle floral aroma, while Ceylon Black demands 205°F for bold backbone. Master our barista brewing chart at home.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-read-time">Published Aug 2026</span>
+                <a href="#article-modal-7" class="blog-card-link blog-card-link-trigger" data-article="7">
+                  <span>Read Chart</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. NEWSLETTER & BREWING COMMUNITY BANNER -->
+    <section class="blog-newsletter-section" aria-labelledby="newsletter-heading">
+      <div class="boba-container">
+        <div class="blog-newsletter-card">
+          <h2 id="newsletter-heading">GET BREWING DISPATCHES &amp; SECRET RECIPES</h2>
+          <p>
+            Join over 12,000 boba enthusiasts who receive our bi-weekly tea sourcing stories, seasonal menu preview codes, and home brewing masterclasses.
+          </p>
+          <form class="blog-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to The Boba Bloom Journal!'); this.reset();">
+            <input 
+              type="email" 
+              class="blog-newsletter-input" 
+              placeholder="Enter your email address..." 
+              required
+              aria-label="Email address for boba journal newsletter"
+            >
+            <button type="submit" class="boba-btn blog-newsletter-btn">
+              <span>SUBSCRIBE FREE</span>
+              <i class="bi bi-send-fill" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER (100% IDENTICAL ACROSS ALL PAGES)
+       ======================================================================== -->
+  <footer class="boba-footer" role="contentinfo">
+    <div class="boba-container">
+      
+      <div class="boba-footer-grid">
+        
+        <!-- COLUMN 1 — BRAND SUMMARY -->
+        <div class="boba-footer-brand-col">
+          <a href="index.html" class="boba-brand" aria-label="Boba Bloom Homepage">
+            <div class="boba-logo-icon" aria-hidden="true">
+              <i class="bi bi-cup-straw"></i>
+            </div>
+            <div class="boba-brand-text">
+              <span class="boba-brand-name">BOBA BLOOM</span>
+              <span class="boba-brand-descriptor">BUBBLE TEA &amp; BOBA</span>
+            </div>
+          </a>
+
+          <p class="boba-footer-tagline">
+            Fresh loose-leaf teas, warm caramelized brown sugar tapioca, and plant-based milks. Made with love for your daily smile.
+          </p>
+
+          <div class="boba-footer-newsletter">
+            <p class="newsletter-label">Subscribe for $2 OFF your first order:</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); BobaCart.showToast('Thank you! Use coupon BOBAHAPPY at checkout for 20% off.', 'bi-envelope-check-fill');">
+              <input type="email" placeholder="Enter your email" required aria-label="Email address for discounts">
+              <button type="submit" class="boba-btn boba-btn-sm boba-btn-pink">JOIN</button>
+            </form>
+          </div>
+
+          <div class="boba-footer-socials" aria-label="Social Media Links">
+            <a href="https://instagram.com" class="boba-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+            <a href="https://tiktok.com" class="boba-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i class="bi bi-tiktok"></i></a>
+            <a href="https://facebook.com" class="boba-social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+            <a href="https://pinterest.com" class="boba-social-link" aria-label="Pinterest" target="_blank" rel="noopener noreferrer"><i class="bi bi-pinterest"></i></a>
+          </div>
+        </div>
+
+        <!-- COLUMN 2 — QUICK NAVIGATION -->
+        <div class="boba-footer-col">
+          <h3 class="boba-footer-heading">NAVIGATION</h3>
+          <ul class="boba-footer-links">
+            <li><a href="index.html">Home 1 (Storefront)</a></li>
+            <li><a href="home2.html">Home 2 (Editorial Edit)</a></li>
+            <li><a href="about.html">About Boba Bloom</a></li>
+            <li><a href="index.html#products">Products Catalog</a></li>
+            <li><a href="index.html#categories">Drink Categories</a></li>
+            <li><a href="index.html#brands">Brand Partners</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 3 — SHOPPING & DRINKS -->
+        <div class="boba-footer-col">
+          <h3 class="boba-footer-heading">SHOP &amp; SAVE</h3>
+          <ul class="boba-footer-links">
+            <li><a href="index.html#deals">Boba Deals &amp; Combos</a></li>
+            <li><a href="index.html#accessories">Accessories &amp; Merch</a></li>
+            <li><a href="index.html#gallery">Community Gallery</a></li>
+            <li><a href="blog.html">Brewing Journal</a></li>
+            <li><a href="customize.html">Drink Customizer</a></li>
+            <li><a href="#" onclick="event.preventDefault(); BobaCart.openCart();">View Boba Bag</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 4 — LOCATIONS & HOURS -->
+        <div class="boba-footer-col">
+          <h3 class="boba-footer-heading">STORE LOCATION</h3>
+          <ul class="boba-footer-links">
+            <li><span>123 Blossom Avenue</span></li>
+            <li><span>Downtown Cafe, Suite 4B</span></li>
+            <li><span>Open Daily: 10am - 10pm</span></li>
+            <li><span>Pickup Counter Ready</span></li>
+            <li><a href="contact.html">Store Directions</a></li>
+            <li><a href="contact.html#faqs">Common FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 5 — CONTACT & REWARDS -->
+        <div class="boba-footer-col">
+          <h3 class="boba-footer-heading">SAY HELLO</h3>
+          <ul class="boba-footer-links">
+            <li><a href="contact.html#contact-form">Contact Barista</a></li>
+            <li><a href="contact.html#catering">Event Catering</a></li>
+            <li><a href="contact.html#careers">Join Our Team</a></li>
+            <li><button type="button" class="boba-login-btn" style="background:none; border:none; padding:0; color:inherit; font:inherit; cursor:pointer; text-align:start;">Member Rewards Login</button></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- FOOTER BOTTOM BAR -->
+      <div class="boba-footer-bottom">
+        <div class="boba-footer-copy">
+          &copy; 2026 BOBA BLOOM. ALL RIGHTS RESERVED.
+        </div>
+        <div class="boba-footer-tagline-bottom">
+          A LITTLE SIP OF HAPPINESS.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MODALS, CART DRAWER, TOAST & SCRIPTS
+       ======================================================================== -->
+  
+
+  <!-- ========================================================================
+       ACCESSIBLE LOGIN MODAL
+       ======================================================================== -->
+  <div id="boba-login-modal" class="boba-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+    <div class="boba-modal-dialog">
+      <div class="boba-modal-header">
+        <div class="boba-modal-title-wrap">
+          <div class="boba-logo-icon" style="width: 36px; height: 36px; font-size: 1.15rem;" aria-hidden="true">
+            <i class="bi bi-cup-straw"></i>
+          </div>
+          <div>
+            <h2 id="login-modal-title" class="boba-modal-title">Welcome Back</h2>
+            <p class="boba-modal-subtitle">Sign in to your Boba Bloom account</p>
+          </div>
+        </div>
+        <button type="button" class="boba-modal-close" aria-label="Close login dialog">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <form id="boba-login-form" class="boba-modal-body" onsubmit="event.preventDefault(); alert('Signed in successfully! Welcome to Boba Bloom.'); document.getElementById('boba-login-modal').classList.remove('is-open');">
+        <div class="boba-form-group">
+          <label for="login-email" class="boba-form-label">Email or Username</label>
+          <div class="boba-input-wrapper">
+            <i class="bi bi-envelope boba-input-icon"></i>
+            <input type="text" id="login-email" class="boba-input-control" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <div class="boba-form-group">
+          <label for="login-password" class="boba-form-label">Password</label>
+          <div class="boba-input-wrapper">
+            <i class="bi bi-lock boba-input-icon"></i>
+            <input type="password" id="login-password" class="boba-input-control" placeholder="••••••••" required>
+          </div>
+        </div>
+
+        <div class="boba-login-options">
+          <label class="boba-checkbox-wrap">
+            <input type="checkbox" checked>
+            <span class="boba-checkbox-label" style="font-size: 0.85rem;">Remember me</span>
+          </label>
+          <a href="#" class="boba-forgot-link" onclick="event.preventDefault(); alert('Password reset instructions sent to your registered email.');">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="boba-btn boba-btn-primary boba-btn-submit" style="width: 100%;">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>SIGN IN</span>
+        </button>
+
+        <div class="boba-modal-footer-note">
+          <span>Don't have an account?</span>
+          <a href="#" onclick="event.preventDefault(); alert('Registration open! Welcome to Boba Bloom Rewards.');">Sign Up Free</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/cart.js"></script>
+
+
+  
+  <!-- ========================================================================
+       ACCESSIBLE ARTICLE READER MODAL
+       ======================================================================== -->
+  <div id="boba-article-modal" class="boba-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="article-modal-title">
+    <div class="boba-modal-dialog boba-article-dialog">
+      <div class="boba-modal-header">
+        <div class="boba-modal-title-wrap">
+          <div class="boba-logo-icon" style="width: 36px; height: 36px; font-size: 1.15rem;" aria-hidden="true">
+            <i class="bi bi-journal-text"></i>
+          </div>
+          <div>
+            <div id="article-modal-tag" class="boba-eyebrow" style="display: inline-flex; margin-bottom: 0.35rem; font-size: 0.68rem; padding: 0.2rem 0.55rem;">BREWING CRAFT</div>
+            <h2 id="article-modal-title" class="boba-modal-title" style="font-size: 1.25rem; line-height: 1.3;">Article Title</h2>
+          </div>
+        </div>
+        <button type="button" class="boba-modal-close" id="article-modal-close" aria-label="Close article dialog">
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="article-modal-body-content" id="article-modal-body">
+        <div class="article-modal-img-wrap">
+          <img id="article-modal-img" src="" alt="">
+        </div>
+        <div id="article-modal-text"></div>
+        <div class="article-modal-author-bar">
+          <div class="author-avatar" aria-hidden="true" style="width: 36px; height: 36px; border-radius: 50%; background: var(--color-pink-light); color: var(--color-pink-text); display: flex; align-items: center; justify-content: center; font-size: 1rem;">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div>
+            <div id="article-modal-author" style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Author</div>
+            <div id="article-modal-meta" style="font-size: 0.8rem; color: var(--text-muted);">Published in The Boba Bloom Journal</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Interactive Script: Filtering & Article Reader Modal -->
+  <script>
+    const articlesData = {"1": {"tag": "BREWING CRAFT", "readTime": "4 MIN READ", "title": "Why 90-Minute Slow-Simmered Boba Tastes Infinitely Better", "author": "Mei-Ling Chen \u00b7 Head of Beverage Craft", "img": "assets/images/home2/home2-editorial.webp", "alt": "Artisanal copper pot slow simmering black tapioca pearls in brown sugar molasses", "html": "\n<p>If you've ever had a boba drink where the pearls were either rock-hard in the center or mushy and disintegrating on the outside, you\u2019ve experienced the curse of flash-boiled commercial tapioca. Most quick-service shops use pre-gelatinized pearls cooked in 15 minutes to keep up with rush hours. But at Boba Bloom, our morning ritual starts at 6:30 AM with authentic small-batch slow simmering.</p>\n\n<h3>The Four-Stage Simmering Method</h3>\n<p>True Taiwanese boba requires four distinct thermal phases to achieve what tea connoisseurs refer to as <em>\"Q-Q\" texture</em> \u2014 the perfect bouncy chew that yields gently to the tooth without sticking:</p>\n<ul>\n  <li><strong>Stage 1: Purified Rolling Boil (25 Mins)</strong> \u2014 Raw cassava root pearls are gently scattered into boiling filtered mountain water, continuously stirred in figure-eight motions to prevent clumping.</li>\n  <li><strong>Stage 2: Covered Gentle Simmer (35 Mins)</strong> \u2014 The flame is dialed to a whisper. A heavy copper lid traps steam, allowing the core starch granules to fully hydrate and expand evenly from outside to center.</li>\n  <li><strong>Stage 3: Heatless Steam Braise (30 Mins)</strong> \u2014 The pot is removed from active flame but kept sealed. In this resting phase, the starches gelatinize into translucent, glossy globes.</li>\n  <li><strong>Stage 4: Warm Molasses Bath (Continuous 65\u00b0C)</strong> \u2014 The drained pearls are transferred into hand-melted Tainan brown sugar syrup, gently steeped so deep caramel notes penetrate right to the core.</li>\n</ul>\n\n<h3>The Science of Ice Resistance</h3>\n<p>When warm tapioca pearls meet ice-cold milk, thermal shock causes rapid starch retrogradation \u2014 the process where amylose molecules recrystallize and turn hard. Our extended 90-minute moisture-locking technique creates a protective gel matrix that stays supple, springy, and delicious even after 45 minutes on ice.</p>\n"}, "2": {"tag": "TEA MASTERY", "readTime": "5 MIN READ", "title": "Matcha 101: Ceremonial Grade vs. Culinary Powders", "author": "Kenji Sato \u00b7 Resident Tea Sommelier", "img": "assets/images/about/about-craft.webp", "alt": "Whisking authentic ceremonial grade Uji matcha with bamboo chasen", "html": "\n<p>Walk down any grocery aisle or neighborhood cafe and you'll spot vibrant green \"matcha\" lattes. However, the vast majority of commercial beverages use late-harvest culinary grade powders packed with bitter astringency and masked with heavy corn syrups. Here is what separates genuine ceremonial grade Uji matcha from common powders.</p>\n\n<h3>Shade-Grown Tencha Cultivation</h3>\n<p>Four weeks before spring harvest, tea gardens in Uji, Kyoto are draped under dark black mesh canopies (Kabusen). Cutting off 90% of direct sunlight forces the tea bushes to overproduce chlorophyll and the prized amino acid <em>L-Theanine</em>, resulting in rich umami sweetness and a brilliant electric emerald hue.</p>\n\n<h3>Ceremonial vs. Culinary Comparison</h3>\n<ul>\n  <li><strong>Ceremonial Grade:</strong> Hand-picked first-flush spring leaves (Ichibancha). De-stemmed, de-veined, and slowly stone-milled at 30 grams per hour to avoid heat friction. Naturally sweet, velvety, with zero bitterness.</li>\n  <li><strong>Culinary Grade:</strong> Harvested in late summer or autumn (Nibancha). Ground in industrial steel mills. High in tannins and bitterness, meant primarily for baking cakes rather than smooth drinking.</li>\n</ul>\n\n<h3>The Perfect Froth: Bamboo Chasen Technique</h3>\n<p>At Boba Bloom, we whisk our ceremonial matcha in traditional ceramic bowls using an 80-prong bamboo whisk (Chasen). Whisking in brisk 'W' patterns at 175\u00b0F (79\u00b0C) creates microscopic micro-foam that suspends flawlessly over iced organic oat milk.</p>\n"}, "3": {"tag": "DRINK GUIDES", "readTime": "3 MIN READ", "title": "Finding Your Sweet Spot: 0% to 100% Decoded", "author": "Chloe Alvarez \u00b7 Senior Barista Trainer", "img": "assets/images/customize/customize-sweetness.webp", "alt": "Measuring spoons showing balanced sweetness percentage ratios", "html": "\n<p>Customizing your boba sweetness shouldn't feel like a guessing game. Have you ever ordered 100% sweet only to find the sugar completely overpowering the nuanced floral notes of your tea? Or ordered 0% and found it too dry? Here is our barista guide to finding your ideal sweetness level.</p>\n\n<h3>Sweetness Percentage Breakdown</h3>\n<ul>\n  <li><strong>0% (Unsweetened):</strong> Pure, unadulterated tea flavor. Best for high-grade loose-leaf brews like Four Seasons Oolong or Ceylon Black where natural botanical florals take center stage.</li>\n  <li><strong>30% (Lightly Sweet):</strong> Our baristas\u2019 personal favorite! Adds just enough organic cane syrup to round off sharp edges while keeping tea character bright and crisp.</li>\n  <li><strong>50% (Half Sweet / House Standard):</strong> The golden ratio for classic Milk Teas and Fruit Teas. Perfectly balances creamy milk fat with floral tea aromas.</li>\n  <li><strong>70% (Less Sweet):</strong> For those who love a slightly dessert-forward profile without syrupy heaviness.</li>\n  <li><strong>100% (Standard Indulgence):</strong> Traditional night-market sweetness. Ideal for rich comfort drinks like Taro Delight or Iced Matcha Latte.</li>\n</ul>\n\n<h3>Pro Tip: Account for Your Toppings!</h3>\n<p>Remember that Brown Sugar Boba and Honey Golden Pearls already carry natural sweetness from their warm syrup bath. If you choose brown sugar pearls, we always suggest reducing your cup sweetness to 30% or 50% for flawless equilibrium.</p>\n"}, "4": {"tag": "BREWING CRAFT", "readTime": "4 MIN READ", "title": "From Pasture to Cup: Grass-Fed Dairy & Barista Oat", "author": "David Lin \u00b7 Sourcing Director", "img": "assets/images/about/about-ingredients.webp", "alt": "Farm-fresh organic whole milk and steamed barista oat milk", "html": "\n<p>Many commercial boba shops rely heavily on non-dairy creamer powders derived from hydrogenated palm oils. While shelf-stable, powdered creamers coat the tongue with waxy fat and mask delicate tea aromatics. At Boba Bloom, we believe real tea deserves real milk.</p>\n\n<h3>Pasture-Raised Whole Milk</h3>\n<p>We source 100% pasture-raised whole milk from local family dairy farms. Cold-filtered and gently pasteurized, it retains the natural sweet lactose and beta-casein proteins that produce our signature silky, velvety mouthfeel without feeling heavy or artificial.</p>\n\n<h3>The Plant-Based Revolution: Barista Oat Milk</h3>\n<p>For our vegan and dairy-free community, we use certified gluten-free Swedish oat milk formulated specifically for specialty beverages. Its balanced acidity buffering prevents separation when poured over acidic fruit infusions or high-tannin black teas, delivering unmatched creaminess.</p>\n"}, "5": {"tag": "BOBA CULTURE", "readTime": "6 MIN READ", "title": "The Taichung Origin Story: How Boba Won the World", "author": "Mei-Ling Chen \u00b7 Head of Beverage Craft", "img": "assets/images/about/about-story.webp", "alt": "Vintage teapot and traditional night market tea stall inspiration", "html": "\n<p>Today, bubble tea is a multibillion-dollar global phenomenon found on high streets from Tokyo to New York, London, and Paris. But four decades ago, it was merely an audacious kitchen experiment inside a tea salon in Taichung, Taiwan.</p>\n\n<h3>The Serendipitous Summer of 1988</h3>\n<p>During a hot Taiwanese summer staff meeting at Chun Shui Tang tea house, product development manager Lin Hsiu Hui grew restless. On impulse, she poured her sweet fenyuan (tapioca pudding balls) directly into her glass of iced Assam milk tea and stirred. The entire staff was astonished by the contrasting textures \u2014 the cool liquid tea paired with chewy, warm tapioca was an instant sensory sensation.</p>\n\n<h3>From Local Novelty to Global Community</h3>\n<p>Within weeks, the drink became a runaway sensation among local school students. As Taiwanese expatriates and university students carried the recipe across the Pacific in the 1990s, bubble tea evolved into an indelible cultural touchstone \u2014 a welcoming social hub for youth culture, study sessions, and casual first dates.</p>\n"}, "6": {"tag": "TEA MASTERY", "readTime": "4 MIN READ", "title": "Molecular Gastronomy: The Science Behind Popping Boba", "author": "Kenji Sato \u00b7 Resident Tea Sommelier", "img": "assets/images/home2/home2-collection.webp", "alt": "Colorful burst of fruit juice boba pearls and real fruit garnishes", "html": "\n<p>Unlike traditional chewy tapioca made from slow-cooked cassava starch, popping boba offers an explosion of real fruit juice the moment you press it against the roof of your mouth. The secret behind this magical burst is an elegant culinary technique borrowed from modernist haute cuisine: reverse spherification.</p>\n\n<h3>How Spherification Works</h3>\n<p>First popularized by pioneering chefs in Barcelona, spherification relies on the biochemical reaction between two plant-derived elements:</p>\n<ul>\n  <li><strong>Sodium Alginate:</strong> A natural gelling agent extracted from brown seaweed.</li>\n  <li><strong>Calcium Lactate:</strong> A soluble mineral salt that cross-links with alginate polymer chains.</li>\n</ul>\n<p>When droplets of chilled fruit juice infused with calcium are dropped into a sodium alginate bath, a gossamer-thin, flexible membrane forms instantaneously around the liquid droplet, leaving the interior 100% liquid and ready to pop!</p>\n"}, "7": {"tag": "DRINK GUIDES", "readTime": "5 MIN READ", "title": "Temperature & Time: The Golden Steeping Chart", "author": "David Lin \u00b7 Sourcing Director", "img": "assets/images/customize/customize-base.webp", "alt": "Tea leaves blooming in hot water kettle with temperature thermometer", "html": "\n<p>The most common mistake at home is using boiling 212\u00b0F water on delicate green teas. Boiling water scorches tender tea leaves, leaching bitter catechins and destroying fragrant floral aromas. Master our barista brewing matrix below for restaurant-grade clarity.</p>\n\n<h3>The Boba Bloom Steeping Matrix</h3>\n<ul>\n  <li><strong>Jasmine Floral Green:</strong> 175\u00b0F (79\u00b0C) \u00b7 Steeping Time: 6 minutes. Preserves intoxicating night-blooming jasmine florals with delicate pale golden color.</li>\n  <li><strong>Four Seasons Oolong:</strong> 195\u00b0F (90\u00b0C) \u00b7 Steeping Time: 7 minutes. Unlocks roasted honey notes, orchid florals, and a rich golden-amber liquor.</li>\n  <li><strong>Assam Royal Black:</strong> 205\u00b0F (96\u00b0C) \u00b7 Steeping Time: 8 minutes. Provides the bold, malty backbone essential for pairing with heavy dairy and chewy pearls.</li>\n  <li><strong>Hibiscus Berry Herbal:</strong> 212\u00b0F (100\u00b0C) \u00b7 Steeping Time: 10 minutes. Fully extracts tangy tartness, rich vitamin C, and ruby crimson pigments.</li>\n</ul>\n"}};
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // 1. Category Filtering
+      const filterBtns = document.querySelectorAll('.blog-filter-btn');
+      const cards = document.querySelectorAll('.blog-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+
+          const filter = this.getAttribute('data-filter');
+          cards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 2. Article Reader Modal
+      const modal = document.getElementById('boba-article-modal');
+      const closeBtn = document.getElementById('article-modal-close');
+      const titleEl = document.getElementById('article-modal-title');
+      const tagEl = document.getElementById('article-modal-tag');
+      const imgEl = document.getElementById('article-modal-img');
+      const textEl = document.getElementById('article-modal-text');
+      const authorEl = document.getElementById('article-modal-author');
+      const metaEl = document.getElementById('article-modal-meta');
+
+      function openArticle(articleId) {
+        const article = articlesData[articleId];
+        if (!article) return;
+
+        titleEl.textContent = article.title;
+        tagEl.textContent = article.tag;
+        imgEl.src = article.img;
+        imgEl.alt = article.alt;
+        textEl.innerHTML = article.html;
+        authorEl.textContent = article.author;
+        metaEl.textContent = article.readTime + " · The Boba Bloom Journal";
+
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeArticle() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      // Click triggers
+      document.querySelectorAll('.blog-card-link-trigger').forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          const id = this.getAttribute('data-article');
+          openArticle(id);
+        });
+      });
+
+      // Close handlers
+      if (closeBtn) closeBtn.addEventListener('click', closeArticle);
+      if (modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) closeArticle();
+        });
+      }
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+          closeArticle();
+        }
+      });
+
+      // Auto-open if URL hash matches #post-X or #article-X
+      const hash = window.location.hash;
+      if (hash) {
+        const match = hash.match(/#(post|article)[-_]?(\d+)/i);
+        if (match && articlesData[match[2]]) {
+          setTimeout(() => {
+            openArticle(match[2]);
+          }, 300);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

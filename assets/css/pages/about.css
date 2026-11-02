@@ -36,12 +36,16 @@
 }
 
 .about-section-header .boba-eyebrow {
-  margin-bottom: 1rem;
+  align-self: center;
+  margin-inline: auto;
+  font-size: 0.74rem;
+  padding: 0.25rem 0.72rem;
+  margin-bottom: 0.85rem;
 }
 
 .about-section-title {
   font-size: clamp(2rem, 3.8vw, 3rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.18;
   letter-spacing: -0.015em;
   color: var(--text-primary);
@@ -65,7 +69,7 @@
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   background-color: var(--color-pink-light);
   border: 1px solid rgba(255, 107, 138, 0.25);
   flex-shrink: 0;
@@ -116,7 +120,7 @@
 
 .about-hero-title {
   font-size: clamp(2.3rem, 4.5vw, 3.8rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.14;
   letter-spacing: -0.02em;
   color: var(--text-primary);
@@ -412,7 +416,7 @@
   font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   flex-shrink: 0;
   box-shadow: 0 0 0 4px var(--bg-surface);
 }
@@ -433,7 +437,7 @@
 
 .about-timeline-title {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text-primary);
   margin-bottom: 0.4rem;
@@ -465,6 +469,24 @@
 .about-philosophy-content {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Reduced, compact label sizes for Core Values */
+.about-philosophy-content .boba-eyebrow {
+  align-self: flex-start;
+  width: fit-content;
+  max-width: fit-content;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.24rem 0.68rem;
+  gap: 0.32rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-philosophy-content .boba-eyebrow i {
+  font-size: 0.75rem;
 }
 
 .about-principles-list {
@@ -494,7 +516,7 @@
   font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   background-color: var(--color-pink-light);
   width: 42px;
   height: 42px;
@@ -512,7 +534,7 @@
 
 .about-principle-title {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text-primary);
   margin-bottom: 0.4rem;
@@ -573,7 +595,7 @@
 .about-philosophy-quote-box p {
   font-size: 0.88rem;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.4;
   color: var(--text-primary);
 }
@@ -622,6 +644,24 @@
 .about-craft-content {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Reduced, compact label sizes for Beverage Craft section */
+.about-craft-content .boba-eyebrow {
+  align-self: flex-start;
+  width: fit-content;
+  max-width: fit-content;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.24rem 0.68rem;
+  gap: 0.32rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-craft-content .boba-eyebrow i {
+  font-size: 0.75rem;
 }
 
 .about-craft-list {
@@ -648,13 +688,13 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-pink);
+  color: var(--color-pink-text);
   margin-bottom: 0.35rem;
 }
 
 .about-craft-title {
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text-primary);
   margin-bottom: 0.45rem;
@@ -781,7 +821,7 @@
 
 .about-ingredient-card-title {
   font-size: 1.12rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.35rem;
 }
@@ -858,8 +898,8 @@
 .about-experience-trio-title {
   font-family: var(--font-heading);
   font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--color-pink);
+  font-weight: 600;
+  color: var(--color-pink-text);
   margin-bottom: 0.35rem;
 }
 
@@ -904,11 +944,29 @@
 .about-closing-content {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Reduced, compact label sizes for Time for Boba section */
+.about-closing-content .boba-eyebrow {
+  align-self: flex-start;
+  width: fit-content;
+  max-width: fit-content;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.24rem 0.68rem;
+  gap: 0.32rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-closing-content .boba-eyebrow i {
+  font-size: 0.75rem;
 }
 
 .about-closing-title {
   font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.015em;
   color: var(--text-primary);
@@ -1049,8 +1107,18 @@
     text-align: center;
   }
 
+  .about-philosophy-content,
+  .about-craft-content,
   .about-closing-content {
     align-items: center;
+    text-align: center;
+  }
+
+  .about-philosophy-content .boba-eyebrow,
+  .about-craft-content .boba-eyebrow,
+  .about-closing-content .boba-eyebrow {
+    align-self: center;
+    margin-inline: auto;
   }
 
   .about-closing-desc {

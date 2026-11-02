@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BOBA BLOOM — A Little Sip of Happiness | Bubble Tea & Boba Shop</title>
-  <meta name="description" content="Discover playful flavors, creamy milk teas, and handcrafted boba drinks at Boba Bloom. Made fresh with love to bring a little sip of happiness to your day.">
+  <meta name="description" content="Discover handcrafted bubble tea, slow-cooked brown sugar boba, ceremonial matcha, and artisan drinks at Boba Bloom. Freshly brewed with love for your daily happiness.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
@@ -33,20 +33,37 @@
   <!-- Google Fonts: Fredoka & Nunito -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/cart.css">
   <link rel="stylesheet" href="assets/css/pages/home.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
 
   <!-- ========================================================================
-       GLOBAL NAVBAR
+       TOP ANNOUNCEMENT BAR
+       ======================================================================== -->
+  <div class="boba-announcement-bar" role="region" aria-label="Store Announcement">
+    <div class="boba-container boba-announcement-inner">
+      <span>🧋 <strong>Boba Season Special:</strong> Get 20% OFF your order with code <strong class="code-pill">BOBAHAPPY</strong> • Free delivery on orders $25+</span>
+      <button type="button" class="copy-coupon-btn boba-announcement-copy" data-code="BOBAHAPPY" aria-label="Copy coupon code BOBAHAPPY">
+        <i class="bi bi-copy" aria-hidden="true"></i>
+        <span>Copy Code</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       GLOBAL NAVBAR (100% RULE COMPLIANT)
+       Desktop (1281px+): Logo | All Menus | Dark | RTL | Login
+       Tablet (768px - 1280px): Logo | Dark | RTL | Hamburger
+       Mobile (Below 768px): Logo | Dark | RTL | Hamburger
        ======================================================================== -->
   <header class="boba-navbar" role="banner">
     <div class="boba-container boba-navbar-inner">
@@ -62,22 +79,28 @@
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu (1281px+) -->
+      <!-- Desktop Navigation Menu (1281px+) - Contains ALL Menus -->
       <nav class="boba-nav-menu" aria-label="Primary Navigation">
+        <!-- Home Dropdown -->
         <div class="boba-nav-dropdown">
           <a href="index.html" class="boba-nav-link active" aria-haspopup="true" aria-expanded="false">
             <span>HOME</span>
-            <i class="bi bi-chevron-down" style="font-size: 0.75rem;" aria-hidden="true"></i>
+            <i class="bi bi-chevron-down" style="font-size: 0.72rem;" aria-hidden="true"></i>
           </a>
           <div class="boba-dropdown-menu" role="menu">
             <a href="index.html" class="boba-dropdown-link active" role="menuitem">Home 1</a>
             <a href="home2.html" class="boba-dropdown-link" role="menuitem">Home 2</a>
           </div>
         </div>
+
         <a href="about.html" class="boba-nav-link">ABOUT</a>
-        <a href="menu.html" class="boba-nav-link">CATEGORIES</a>
-        <a href="customize.html" class="boba-nav-link">CUSTOMIZE DRINK</a>
-        <a href="about.html#our-story" class="boba-nav-link">BLOG</a>
+        <a href="#products" class="boba-nav-link">PRODUCTS</a>
+        <a href="#categories" class="boba-nav-link">CATEGORIES</a>
+        <a href="#brands" class="boba-nav-link">BRANDS</a>
+        <a href="#deals" class="boba-nav-link">DEALS</a>
+        <a href="#accessories" class="boba-nav-link">ACCESSORIES</a>
+        <a href="#gallery" class="boba-nav-link">GALLERY</a>
+        <a href="blog.html" class="boba-nav-link">BLOG</a>
         <a href="contact.html" class="boba-nav-link">CONTACT</a>
       </nav>
 
@@ -86,7 +109,7 @@
         
         <!-- Dark Mode Toggle Button -->
         <button type="button" class="boba-icon-btn theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
-          <i class="bi bi-moon-stars-fill"></i>
+          <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
         </button>
 
         <!-- RTL / LTR Direction Toggle Button -->
@@ -94,13 +117,19 @@
           <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
         </button>
 
-        <!-- Desktop Explore Menu CTA Button -->
-        <a href="contact.html#contact-form" class="boba-btn boba-btn-dark boba-navbar-cta">
-          <span>EXPLORE MENU</span>
-          <i class="bi bi-arrow-right" aria-hidden="true"></i>
-        </a>
+        <!-- Shopping Cart Trigger Button with Live Counter Badge -->
+        <button type="button" class="boba-icon-btn boba-cart-btn" aria-label="Open Shopping Bag" title="Shopping Bag">
+          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+          <span class="boba-cart-badge" id="navbar-cart-count">2</span>
+        </button>
 
-        <!-- Mobile/Tablet Hamburger Menu Toggle -->
+        <!-- Desktop Login Button (1281px+) -->
+        <button type="button" class="boba-btn boba-btn-dark boba-navbar-login boba-login-btn">
+          <i class="bi bi-person-circle" aria-hidden="true"></i>
+          <span>LOGIN</span>
+        </button>
+
+        <!-- Mobile & Tablet Hamburger Button (<= 1280px) -->
         <button type="button" class="boba-hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
           <span></span>
           <span></span>
@@ -113,7 +142,8 @@
   </header>
 
   <!-- ========================================================================
-       MOBILE & TABLET DRAWER MENU
+       MOBILE & TABLET DRAWER MENU (100% RULE COMPLIANT)
+       Must contain ALL navigation items, Dark mode toggle, RTL toggle, & Login button
        ======================================================================== -->
   <div class="boba-drawer-backdrop" aria-hidden="true"></div>
   
@@ -129,7 +159,7 @@
         </div>
       </a>
       <button type="button" class="boba-drawer-close" aria-label="Close navigation menu">
-        <i class="bi bi-x-lg"></i>
+        <i class="bi bi-x-lg" aria-hidden="true"></i>
       </button>
     </div>
 
@@ -140,7 +170,7 @@
           <button type="button" class="boba-drawer-link boba-drawer-dropdown-btn active" aria-expanded="true">
             <span class="drawer-link-inner">
               <i class="bi bi-house-door" aria-hidden="true"></i>
-              <span>HOME</span>
+              <span>Home</span>
             </span>
             <i class="bi bi-chevron-down drawer-chevron" aria-hidden="true"></i>
           </button>
@@ -160,34 +190,70 @@
         <a href="about.html" class="boba-drawer-link">
           <span class="drawer-link-inner">
             <i class="bi bi-info-circle" aria-hidden="true"></i>
-            <span>ABOUT</span>
+            <span>About</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Products -->
+        <a href="#products" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-cup-hot" aria-hidden="true"></i>
+            <span>Products</span>
           </span>
           <i class="bi bi-chevron-right" aria-hidden="true"></i>
         </a>
 
         <!-- Categories -->
-        <a href="menu.html" class="boba-drawer-link">
+        <a href="#categories" class="boba-drawer-link">
           <span class="drawer-link-inner">
-            <i class="bi bi-cup-straw" aria-hidden="true"></i>
-            <span>CATEGORIES</span>
+            <i class="bi bi-grid-fill" aria-hidden="true"></i>
+            <span>Categories</span>
           </span>
           <i class="bi bi-chevron-right" aria-hidden="true"></i>
         </a>
 
-        <!-- Customize Drink -->
-        <a href="customize.html" class="boba-drawer-link">
+        <!-- Brands -->
+        <a href="#brands" class="boba-drawer-link">
           <span class="drawer-link-inner">
-            <i class="bi bi-cup-hot" aria-hidden="true"></i>
-            <span>CUSTOMIZE DRINK</span>
+            <i class="bi bi-patch-check" aria-hidden="true"></i>
+            <span>Brands</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Deals -->
+        <a href="#deals" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-tag" aria-hidden="true"></i>
+            <span>Deals</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Accessories -->
+        <a href="#accessories" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-gem" aria-hidden="true"></i>
+            <span>Accessories</span>
+          </span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </a>
+
+        <!-- Gallery -->
+        <a href="#gallery" class="boba-drawer-link">
+          <span class="drawer-link-inner">
+            <i class="bi bi-images" aria-hidden="true"></i>
+            <span>Gallery</span>
           </span>
           <i class="bi bi-chevron-right" aria-hidden="true"></i>
         </a>
 
         <!-- Blog -->
-        <a href="about.html#our-story" class="boba-drawer-link">
+        <a href="blog.html" class="boba-drawer-link">
           <span class="drawer-link-inner">
             <i class="bi bi-journal-text" aria-hidden="true"></i>
-            <span>BLOG</span>
+            <span>Blog</span>
           </span>
           <i class="bi bi-chevron-right" aria-hidden="true"></i>
         </a>
@@ -196,101 +262,235 @@
         <a href="contact.html" class="boba-drawer-link">
           <span class="drawer-link-inner">
             <i class="bi bi-envelope" aria-hidden="true"></i>
-            <span>CONTACT</span>
+            <span>Contact</span>
           </span>
           <i class="bi bi-chevron-right" aria-hidden="true"></i>
         </a>
       </nav>
 
+      <!-- Drawer Divider Line -->
+      <div class="boba-drawer-divider"></div>
+
+      <!-- Theme & Direction Controls inside Drawer -->
       <div class="boba-drawer-controls">
         <span class="boba-drawer-controls-label">Theme &amp; Direction</span>
         <div class="boba-drawer-toggle-group">
           <button type="button" class="boba-icon-btn theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
-            <i class="bi bi-moon-stars-fill"></i>
+            <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
           </button>
           <button type="button" class="boba-icon-btn rtl-toggle-btn" aria-label="Toggle text direction" title="RTL / LTR Toggle">
             <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
           </button>
         </div>
       </div>
-    </div>
 
-    <div class="boba-drawer-footer">
-      <a href="contact.html#contact-form" class="boba-btn boba-btn-primary boba-drawer-btn" style="width: 100%;">
-        <span>EXPLORE MENU</span>
-        <i class="bi bi-arrow-right" aria-hidden="true"></i>
-      </a>
+      <!-- Drawer Login Button -->
+      <div class="boba-drawer-footer">
+        <button type="button" class="boba-btn boba-btn-dark boba-drawer-login-btn boba-login-btn" style="width: 100%;">
+          <i class="bi bi-person-circle" aria-hidden="true"></i>
+          <span>LOGIN</span>
+        </button>
+      </div>
+
     </div>
   </aside>
 
   <!-- ========================================================================
-       MAIN CONTENT (EXACTLY 7 SECTIONS)
+       SLIDE-OUT SHOPPING CART DRAWER
+       ======================================================================== -->
+  <div id="boba-cart-backdrop" class="boba-cart-backdrop" aria-hidden="true"></div>
+
+  <aside id="boba-cart-drawer" class="boba-cart-drawer" aria-label="Shopping Bag Drawer" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <div class="cart-header-title">
+        <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+        <span>YOUR BOBA BAG</span>
+        <span class="cart-header-badge boba-cart-badge">2</span>
+      </div>
+      <button type="button" id="boba-cart-close" class="cart-drawer-close" aria-label="Close Shopping Bag">
+        <i class="bi bi-x-lg" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <!-- Free Delivery Progress Meter -->
+    <div class="cart-shipping-meter">
+      <p id="cart-shipping-text" class="cart-shipping-text">Add <strong>$13.00</strong> more to unlock <strong>Free Delivery</strong>!</p>
+      <div class="cart-shipping-track">
+        <div id="cart-shipping-bar" class="cart-shipping-fill" style="width: 48%;"></div>
+      </div>
+    </div>
+
+    <!-- Scrollable Items List -->
+    <div id="cart-items-list" class="cart-items-container">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <!-- Applied Promo Display -->
+    <div id="cart-applied-promo" class="cart-applied-promo-wrap"></div>
+
+    <!-- Drawer Footer & Checkout -->
+    <div class="cart-drawer-footer">
+      <div class="cart-promo-group">
+        <div class="cart-promo-input-wrap">
+          <i class="bi bi-tag" aria-hidden="true"></i>
+          <input type="text" id="cart-promo-input" placeholder="Promo code (e.g. BOBAHAPPY)" aria-label="Promo code">
+        </div>
+        <button type="button" id="cart-promo-apply" class="boba-btn boba-btn-sm boba-btn-pink">APPLY</button>
+      </div>
+
+      <div class="cart-summary-box">
+        <div class="cart-summary-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal" class="summary-val">$12.00</span>
+        </div>
+        <div id="cart-discount-row" class="cart-summary-row discount-row" style="display: none;">
+          <span>Discount</span>
+          <span id="cart-discount-amount" class="summary-val text-pink">-$0.00</span>
+        </div>
+        <div class="cart-summary-row">
+          <span>Estimated Taxes</span>
+          <span class="summary-val text-muted">Calculated at checkout</span>
+        </div>
+        <div class="cart-summary-divider"></div>
+        <div class="cart-summary-row total-row">
+          <strong>Total</strong>
+          <strong id="cart-total" class="summary-val text-pink">$12.00</strong>
+        </div>
+      </div>
+
+      <button type="button" id="cart-checkout-btn" class="boba-btn boba-btn-primary cart-checkout-btn" style="width: 100%;">
+        <span>PROCEED TO CHECKOUT</span>
+        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </button>
+      <p class="cart-secure-note"><i class="bi bi-shield-check" aria-hidden="true"></i> 100% Freshness Guarantee · Contactless Pickup &amp; Delivery</p>
+    </div>
+  </aside>
+
+  <!-- Floating Quick Cart Bag Button -->
+  <button type="button" class="boba-floating-cart-btn boba-cart-btn" aria-label="Open Cart Bag">
+    <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+    <span>Boba Bag</span>
+    <span class="floating-cart-count boba-cart-badge">2</span>
+  </button>
+
+  <!-- ========================================================================
+       MAIN STOREFRONT CONTENT
        ======================================================================== -->
   <main id="main-content">
 
     <!-- ----------------------------------------------------------------------
-         SECTION 1 — HERO: YOUR HAPPY PLACE, IN A CUP.
+         SECTION 1 — HERO: STOREFRONT OPENING & TRUST PERKS
          ---------------------------------------------------------------------- -->
     <section class="hero-section" aria-labelledby="hero-heading">
       
-      <!-- Decorative background bubbles -->
+      <!-- Decorative background floating bubbles -->
       <div class="boba-bubble boba-bubble-pink animate-float" style="width: 90px; height: 90px; top: 12%; left: 6%;" aria-hidden="true"></div>
       <div class="boba-bubble boba-bubble-mango animate-float-delay" style="width: 60px; height: 60px; bottom: 18%; left: 45%;" aria-hidden="true"></div>
       <div class="boba-bubble boba-bubble-matcha animate-float" style="width: 75px; height: 75px; top: 18%; right: 5%;" aria-hidden="true"></div>
 
-      <div class="boba-container hero-grid">
-        
-        <!-- Hero Left Column: Editorial Copy & CTAs -->
-        <div class="hero-content">
-          <div class="boba-eyebrow">
-            <i class="bi bi-stars" aria-hidden="true"></i>
-            <span>BOBA BLOOM · FRESHLY MADE HAPPY</span>
-          </div>
+      <div class="boba-container">
+        <div class="hero-grid">
           
-          <h1 id="hero-heading" class="hero-title">
-            YOUR HAPPY PLACE, <br>
-            <span class="highlight-pink">IN A CUP.</span>
-          </h1>
-          
-          <p class="hero-text">
-            From creamy milk tea to fruity, refreshing sips, discover little moments of happiness made just the way you love.
-          </p>
+          <!-- Hero Left Column: Editorial Storefront Copy & Action Buttons -->
+          <div class="hero-content">
+            <div class="boba-eyebrow">
+              <i class="bi bi-stars" aria-hidden="true"></i>
+              <span>BOBA BLOOM · FRESH HANDCRAFTED TEAS</span>
+            </div>
+            
+            <h1 id="hero-heading" class="hero-title">
+              YOUR HAPPY PLACE, <br>
+              <span class="highlight-pink">IN A CUP.</span>
+            </h1>
+            
+            <p class="hero-text">
+              Artisan loose-leaf teas brewed every 4 hours, slow-simmered caramelized brown sugar pearls, and velvety plant-based milks. Made fresh to bring joy to your day.
+            </p>
 
-          <div class="hero-btn-group boba-btn-group-mobile-stack">
-            <a href="contact.html#contact-form" class="boba-btn boba-btn-primary">
-              <span>EXPLORE OUR MENU</span>
-              <i class="bi bi-arrow-right" aria-hidden="true"></i>
-            </a>
-            <a href="contact.html#contact-form" class="boba-btn boba-btn-secondary">
-              <span>CREATE YOUR BOBA</span>
-              <i class="bi bi-sliders2" aria-hidden="true"></i>
-            </a>
+            <div class="hero-btn-group boba-btn-group-mobile-stack">
+              <a href="#products" class="boba-btn boba-btn-primary boba-btn-lg">
+                <i class="bi bi-bag-check-fill" aria-hidden="true"></i>
+                <span>Order Now</span>
+              </a>
+              <a href="customize.html" class="boba-btn boba-btn-secondary boba-btn-lg">
+                <i class="bi bi-sliders2" aria-hidden="true"></i>
+                <span>Customize Your Drink</span>
+              </a>
+              <a href="menu.html" class="boba-btn boba-btn-outline boba-btn-lg">
+                <i class="bi bi-book-half" aria-hidden="true"></i>
+                <span>View Menu</span>
+              </a>
+            </div>
+
+            <div class="hero-note">
+              <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+              <span>Ready in 10-15 mins for store pickup or delivery.</span>
+            </div>
           </div>
 
-          <div class="hero-note">
-            <i class="bi bi-sparkle-fill" aria-hidden="true"></i>
-            <span>Sip something lovely.</span>
+          <!-- Hero Right Column: Photorealistic Beverage Showcase -->
+          <div class="hero-image-wrapper">
+            <div class="hero-image-card">
+              <img src="assets/images/home/hero-boba.webp" 
+                   alt="Strawberry milk tea boba drink with chewy tapioca pearls and ice condensation in a clear cup" 
+                   width="800" 
+                   height="600" 
+                   loading="eager" 
+                   fetchpriority="high">
+              
+              <div class="hero-badge">
+                <div class="hero-badge-icon">
+                  <i class="bi bi-cup-straw" aria-hidden="true"></i>
+                </div>
+                <div class="hero-badge-text">
+                  <strong>Featured: Strawberry Cloud</strong>
+                  <span>$5.75 • In Stock &amp; Freshly Cooked Boba</span>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
 
-        <!-- Hero Right Column: Photorealistic Beverage Image -->
-        <div class="hero-image-wrapper">
-          <div class="hero-image-card">
-            <img src="assets/images/home/hero-boba.webp" 
-                 alt="Photorealistic strawberry milk tea boba drink with chewy tapioca pearls and ice condensation in a crystal-clear cup" 
-                 width="800" 
-                 height="600" 
-                 loading="eager" 
-                 fetchpriority="high">
-            
-            <div class="hero-badge">
-              <div class="hero-badge-icon">
-                <i class="bi bi-heart-fill"></i>
-              </div>
-              <div class="hero-badge-text">
-                <strong>Freshly Crafted</strong>
-                <span>Real pearls & creamy tea</span>
-              </div>
+        <!-- Hero Trust Perks Strip (4 Core Guarantees) -->
+        <div class="hero-perks-strip">
+          <div class="hero-perk-item">
+            <div class="hero-perk-icon">
+              <i class="bi bi-clock-history" aria-hidden="true"></i>
+            </div>
+            <div class="hero-perk-text">
+              <h4>Brewed Every 4 Hours</h4>
+              <p>Fresh whole-leaf teas, never powders</p>
+            </div>
+          </div>
+
+          <div class="hero-perk-item">
+            <div class="hero-perk-icon">
+              <i class="bi bi-fire" aria-hidden="true"></i>
+            </div>
+            <div class="hero-perk-text">
+              <h4>Warm Simmered Boba</h4>
+              <p>Slow-cooked in Taiwan black sugar</p>
+            </div>
+          </div>
+
+          <div class="hero-perk-item">
+            <div class="hero-perk-icon">
+              <i class="bi bi-flower1" aria-hidden="true"></i>
+            </div>
+            <div class="hero-perk-text">
+              <h4>100% Plant Milk Friendly</h4>
+              <p>Oatly Oat Milk, Almond &amp; Coconut</p>
+            </div>
+          </div>
+
+          <div class="hero-perk-item">
+            <div class="hero-perk-icon">
+              <i class="bi bi-star-fill" aria-hidden="true"></i>
+            </div>
+            <div class="hero-perk-text">
+              <h4>4.9 / 5 Star Rating</h4>
+              <p>Over 12,000+ satisfied boba lovers</p>
             </div>
           </div>
         </div>
@@ -298,18 +498,18 @@
       </div>
     </section>
 
-    <!-- ----------------------------------------------------------------------
-         SECTION 2 — SIGNATURE SIPS
+        <!-- ----------------------------------------------------------------------
+         SECTION 2 — OUR SIGNATURES — MEET YOUR NEW FAVORITE (From Mockup)
          ---------------------------------------------------------------------- -->
-    <section class="signature-section" aria-labelledby="signature-heading">
+    <section id="signatures" class="signature-section" aria-labelledby="signatures-heading">
       <div class="boba-container">
         
         <header class="section-header-center">
           <div class="boba-eyebrow">
-            <i class="bi bi-cup-hot-fill" aria-hidden="true"></i>
+            <i class="bi bi-stars" aria-hidden="true"></i>
             <span>OUR SIGNATURES</span>
           </div>
-          <h2 id="signature-heading" class="section-title">MEET YOUR NEW FAVORITE.</h2>
+          <h2 id="signatures-heading" class="section-title">MEET YOUR NEW FAVORITE.</h2>
           <p class="section-subtitle">A few feel-good favorites to get you started.</p>
         </header>
 
@@ -319,19 +519,28 @@
           <article class="signature-card">
             <div class="signature-card-img-wrap">
               <img src="assets/images/home/signature-strawberry.webp" 
-                   alt="Strawberry Cloud boba drink with white cream cap and strawberry garnish" 
+                   alt="Strawberry Cloud fresh strawberry layered milk boba drink" 
                    width="600" 
                    height="450" 
                    loading="lazy">
-              <span class="signature-card-tag">Fruity & Creamy</span>
+              <span class="signature-card-tag">Fruity &amp; Creamy</span>
             </div>
             <div class="signature-card-body">
               <h3 class="signature-card-title">Strawberry Cloud</h3>
-              <p class="signature-card-desc">A fruity, creamy strawberry-inspired sip.</p>
-              <a href="menu.html#strawberry-cloud" class="signature-card-link">
-                <span>VIEW DRINK</span>
-                <i class="bi bi-arrow-right" aria-hidden="true"></i>
-              </a>
+              <p class="signature-card-desc">A fruity, creamy strawberry-layered sip with slow-simmered pearls.</p>
+              <div class="signature-pricing-row">
+                <span class="signature-price">$5.75</span>
+                <div class="signature-actions">
+                  <button type="button" class="signature-card-link" onclick="BobaCart.openCustomizeModal({name:'Strawberry Cloud', price:5.75, category:'Milk Tea', image:'assets/images/home/signature-strawberry.webp'})" aria-label="Customize Strawberry Cloud">
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                    <span>Customize Your Drink</span>
+                  </button>
+                  <button type="button" class="boba-btn boba-btn-sm boba-btn-primary boba-quick-add" onclick="BobaCart.addToCart({name:'Strawberry Cloud', price:5.75, image:'assets/images/home/signature-strawberry.webp', sweet:'50%', ice:'Regular Ice', topping:'Brown Sugar Boba'}); BobaCart.openCart();" aria-label="Order Strawberry Cloud Now">
+                    <i class="bi bi-bag-plus-fill" aria-hidden="true"></i>
+                    <span>Order Now</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </article>
 
@@ -339,7 +548,7 @@
           <article class="signature-card">
             <div class="signature-card-img-wrap">
               <img src="assets/images/home/signature-brown-sugar.webp" 
-                   alt="Brown Sugar Bliss boba drink with tiger brown sugar stripes and chewy boba" 
+                   alt="Brown Sugar Bliss caramelized milk tea with tapioca pearls" 
                    width="600" 
                    height="450" 
                    loading="lazy">
@@ -347,11 +556,20 @@
             </div>
             <div class="signature-card-body">
               <h3 class="signature-card-title">Brown Sugar Bliss</h3>
-              <p class="signature-card-desc">Smooth milk tea with rich brown sugar notes and chewy pearls.</p>
-              <a href="menu.html#brown-sugar" class="signature-card-link">
-                <span>VIEW DRINK</span>
-                <i class="bi bi-arrow-right" aria-hidden="true"></i>
-              </a>
+              <p class="signature-card-desc">Smooth milk tea with rich brown sugar notes and chewy tapioca pearls.</p>
+              <div class="signature-pricing-row">
+                <span class="signature-price">$6.25</span>
+                <div class="signature-actions">
+                  <button type="button" class="signature-card-link" onclick="BobaCart.openCustomizeModal({name:'Brown Sugar Bliss', price:6.25, category:'Brown Sugar', image:'assets/images/home/signature-brown-sugar.webp'})" aria-label="Customize Brown Sugar Bliss">
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                    <span>Customize Your Drink</span>
+                  </button>
+                  <button type="button" class="boba-btn boba-btn-sm boba-btn-primary boba-quick-add" onclick="BobaCart.addToCart({name:'Brown Sugar Bliss', price:6.25, image:'assets/images/home/signature-brown-sugar.webp', sweet:'70%', ice:'Regular Ice', topping:'Warm Brown Sugar Boba'}); BobaCart.openCart();" aria-label="Order Brown Sugar Bliss Now">
+                    <i class="bi bi-bag-plus-fill" aria-hidden="true"></i>
+                    <span>Order Now</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </article>
 
@@ -359,19 +577,28 @@
           <article class="signature-card">
             <div class="signature-card-img-wrap">
               <img src="assets/images/home/signature-matcha.webp" 
-                   alt="Matcha Mood layered green tea latte with dark tapioca pearls" 
+                   alt="Matcha Mood ceremonial grade Uji matcha latte boba" 
                    width="600" 
                    height="450" 
                    loading="lazy">
-              <span class="signature-card-tag">Earthy Green</span>
+              <span class="signature-card-tag">Earthy Sweet</span>
             </div>
             <div class="signature-card-body">
               <h3 class="signature-card-title">Matcha Mood</h3>
-              <p class="signature-card-desc">A mellow matcha-inspired drink with a creamy finish.</p>
-              <a href="menu.html#matcha" class="signature-card-link">
-                <span>VIEW DRINK</span>
-                <i class="bi bi-arrow-right" aria-hidden="true"></i>
-              </a>
+              <p class="signature-card-desc">A shallow Matcha-inspired drink with an earthy tone and creamy finish.</p>
+              <div class="signature-pricing-row">
+                <span class="signature-price">$5.95</span>
+                <div class="signature-actions">
+                  <button type="button" class="signature-card-link" onclick="BobaCart.openCustomizeModal({name:'Matcha Mood', price:5.95, category:'Matcha', image:'assets/images/home/signature-matcha.webp'})" aria-label="Customize Matcha Mood">
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                    <span>Customize Your Drink</span>
+                  </button>
+                  <button type="button" class="boba-btn boba-btn-sm boba-btn-primary boba-quick-add" onclick="BobaCart.addToCart({name:'Matcha Mood', price:5.95, image:'assets/images/home/signature-matcha.webp', sweet:'50%', ice:'Less Ice', topping:'Brown Sugar Boba'}); BobaCart.openCart();" aria-label="Order Matcha Mood Now">
+                    <i class="bi bi-bag-plus-fill" aria-hidden="true"></i>
+                    <span>Order Now</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </article>
 
@@ -379,7 +606,7 @@
           <article class="signature-card">
             <div class="signature-card-img-wrap">
               <img src="assets/images/home/signature-mango.webp" 
-                   alt="Mango Sunshine golden fruit tea with juicy popping boba and fresh mint" 
+                   alt="Mango Sunshine tropical jasmine fruit tea with coconut jelly" 
                    width="600" 
                    height="450" 
                    loading="lazy">
@@ -387,62 +614,84 @@
             </div>
             <div class="signature-card-body">
               <h3 class="signature-card-title">Mango Sunshine</h3>
-              <p class="signature-card-desc">A bright, fruity mango-inspired refreshment.</p>
-              <a href="menu.html#fruit-tea" class="signature-card-link">
-                <span>VIEW DRINK</span>
-                <i class="bi bi-arrow-right" aria-hidden="true"></i>
-              </a>
+              <p class="signature-card-desc">A bright, sunny mango-inspired refreshment with floral jasmine notes.</p>
+              <div class="signature-pricing-row">
+                <span class="signature-price">$5.45</span>
+                <div class="signature-actions">
+                  <button type="button" class="signature-card-link" onclick="BobaCart.openCustomizeModal({name:'Mango Sunshine', price:5.45, category:'Fruit Tea', image:'assets/images/home/signature-mango.webp'})" aria-label="Customize Mango Sunshine">
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                    <span>Customize Your Drink</span>
+                  </button>
+                  <button type="button" class="boba-btn boba-btn-sm boba-btn-primary boba-quick-add" onclick="BobaCart.addToCart({name:'Mango Sunshine', price:5.45, image:'assets/images/home/signature-mango.webp', sweet:'50%', ice:'Regular Ice', topping:'Mango Popping Boba'}); BobaCart.openCart();" aria-label="Order Mango Sunshine Now">
+                    <i class="bi bi-bag-plus-fill" aria-hidden="true"></i>
+                    <span>Order Now</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </article>
 
         </div>
 
-        <div class="signature-bottom-cta">
-          <a href="contact.html#contact-form" class="boba-btn boba-btn-primary">
-            <span>VIEW THE FULL MENU</span>
-            <i class="bi bi-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
+      
 
+        <!-- Signature Section Prominent Conversion CTAs -->
+        <div class="signature-bottom-cta" style="margin-top: 3.5rem;">
+          <p class="cta-prompt-text">Looking to explore all 25+ handcrafted teas, signature cheese foams, and artisan toppings?</p>
+          <div class="cta-actions-row">
+            <a href="menu.html" class="boba-btn boba-btn-outline boba-btn-lg">
+              <i class="bi bi-book-half" aria-hidden="true"></i>
+              <span>View Menu</span>
+            </a>
+            <a href="customize.html" class="boba-btn boba-btn-secondary boba-btn-lg">
+              <i class="bi bi-sliders2" aria-hidden="true"></i>
+              <span>Customize Your Drink</span>
+            </a>
+            <a href="#products" class="boba-btn boba-btn-primary boba-btn-lg">
+              <i class="bi bi-bag-check-fill" aria-hidden="true"></i>
+              <span>Order Now</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ----------------------------------------------------------------------
-         SECTION 3 — A WORLD OF FLAVORS
+         SECTION 3 — FLAVOR EXPLORATION & CATEGORIES (#categories) (From Mockup)
          ---------------------------------------------------------------------- -->
-    <section class="flavor-world-section" aria-labelledby="flavors-heading">
+    <section id="categories" class="flavor-world-section" aria-labelledby="categories-heading">
       <div class="boba-container">
         
         <header class="section-header-center">
           <div class="boba-eyebrow">
-            <i class="bi bi-palette-fill" aria-hidden="true"></i>
+            <i class="bi bi-compass-fill" aria-hidden="true"></i>
             <span>FLAVOR EXPLORATION</span>
           </div>
-          <h2 id="flavors-heading" class="section-title">WHAT'S YOUR BOBA MOOD?</h2>
+          <h2 id="categories-heading" class="section-title">WHAT'S YOUR BOBA MOOD?</h2>
           <p class="section-subtitle">Every mood deserves a flavor worth looking forward to.</p>
         </header>
 
         <div class="flavor-collage-grid">
           
-          <!-- Large Photographic Feature -->
+          <!-- Left: High-Impact Beverage Feature Photo -->
           <div class="flavor-feature-media">
             <img src="assets/images/home/flavor-world.webp" 
-                 alt="Assortment of handcrafted bubble tea drinks with fresh tea leaves, strawberries, and tapioca pearls" 
-                 width="800" 
-                 height="600" 
+                 alt="Assorted iced bubble tea flavors lined up with fresh strawberry, mango, and tapioca ingredients" 
+                 width="720" 
+                 height="540" 
                  loading="lazy">
           </div>
 
-          <!-- 4 Distinct Flavor Destinations -->
+          <!-- Right: 2x2 Category Mood Cards (Triggers Catalog Filters) -->
           <div class="flavor-cards-grid">
             
-            <!-- Category 1: Milk Tea -->
-            <a href="menu.html#milk-tea" class="flavor-category-card card-milk-tea">
+            <!-- Category 1: Creamy & Cozy -->
+            <a href="#products" class="flavor-category-card card-milk-tea" onclick="const b=document.querySelector('[data-filter=milk-tea]'); if(b) b.click();">
               <div>
                 <div class="flavor-cat-icon icon-pink">
-                  <i class="bi bi-cup-straw"></i>
+                  <i class="bi bi-cup-straw" aria-hidden="true"></i>
                 </div>
-                <h3 class="flavor-cat-title">CREAMY & COZY</h3>
+                <h3 class="flavor-cat-title">CREAMY &amp; COZY</h3>
                 <p class="flavor-cat-desc">Milk tea favorites crafted for pure comforting bliss.</p>
               </div>
               <span class="flavor-cat-action">
@@ -451,14 +700,14 @@
               </span>
             </a>
 
-            <!-- Category 2: Fruit Tea -->
-            <a href="menu.html#fruit-tea" class="flavor-category-card card-fruit-tea">
+            <!-- Category 2: Fruity & Fresh -->
+            <a href="#products" class="flavor-category-card card-fruit-tea" onclick="const b=document.querySelector('[data-filter=fruit-tea]'); if(b) b.click();">
               <div>
                 <div class="flavor-cat-icon icon-mango">
-                  <i class="bi bi-sun-fill"></i>
+                  <i class="bi bi-sun-fill" aria-hidden="true"></i>
                 </div>
-                <h3 class="flavor-cat-title">FRUITY & FRESH</h3>
-                <p class="flavor-cat-desc">Bright fruit tea options brewed crisp and vibrant.</p>
+                <h3 class="flavor-cat-title">FRUITY &amp; FRESH</h3>
+                <p class="flavor-cat-desc">Bright fruit-tea options served crisp and vibrant.</p>
               </div>
               <span class="flavor-cat-action">
                 <span>Explore Fruit Tea</span>
@@ -466,14 +715,14 @@
               </span>
             </a>
 
-            <!-- Category 3: Matcha -->
-            <a href="menu.html#matcha" class="flavor-category-card card-matcha">
+            <!-- Category 3: Green & Grounded -->
+            <a href="#products" class="flavor-category-card card-matcha" onclick="const b=document.querySelector('[data-filter=matcha]'); if(b) b.click();">
               <div>
                 <div class="flavor-cat-icon icon-matcha">
-                  <i class="bi bi-tree-fill"></i>
+                  <i class="bi bi-tree-fill" aria-hidden="true"></i>
                 </div>
-                <h3 class="flavor-cat-title">GREEN & GROUNDED</h3>
-                <p class="flavor-cat-desc">Matcha-inspired drinks rich in smooth aroma.</p>
+                <h3 class="flavor-cat-title">GREEN &amp; GROUNDED</h3>
+                <p class="flavor-cat-desc">Mind-refreshing matcha rich in rounded aroma.</p>
               </div>
               <span class="flavor-cat-action">
                 <span>Explore Matcha</span>
@@ -481,13 +730,13 @@
               </span>
             </a>
 
-            <!-- Category 4: Brown Sugar -->
-            <a href="menu.html#brown-sugar" class="flavor-category-card card-brown-sugar">
+            <!-- Category 4: Sweet & Indulgent -->
+            <a href="#products" class="flavor-category-card card-brown-sugar" onclick="const b=document.querySelector('[data-filter=brown-sugar]'); if(b) b.click();">
               <div>
                 <div class="flavor-cat-icon icon-lavender">
-                  <i class="bi bi-droplet-half"></i>
+                  <i class="bi bi-droplet-half" aria-hidden="true"></i>
                 </div>
-                <h3 class="flavor-cat-title">SWEET & INDULGENT</h3>
+                <h3 class="flavor-cat-title">SWEET &amp; INDULGENT</h3>
                 <p class="flavor-cat-desc">Brown sugar and dessert-inspired velvety flavors.</p>
               </div>
               <span class="flavor-cat-action">
@@ -500,69 +749,479 @@
 
         </div>
 
+      
+
+        <!-- Categories Section Prominent Conversion CTAs -->
+        <div class="categories-bottom-cta" style="text-align: center; margin-top: 3.5rem;">
+          <p class="cta-prompt-text">Discover every handcrafted flavor brewed fresh daily across all categories.</p>
+          <div class="cta-actions-row">
+            <a href="menu.html" class="boba-btn boba-btn-primary boba-btn-lg">
+              <i class="bi bi-book-half" aria-hidden="true"></i>
+              <span>View Menu</span>
+            </a>
+            <a href="customize.html" class="boba-btn boba-btn-secondary boba-btn-lg">
+              <i class="bi bi-sliders2" aria-hidden="true"></i>
+              <span>Customize Your Drink</span>
+            </a>
+            <a href="#products" class="boba-btn boba-btn-outline boba-btn-lg">
+              <i class="bi bi-bag-check-fill" aria-hidden="true"></i>
+              <span>Order Now</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ----------------------------------------------------------------------
-         SECTION 4 — GOOD INGREDIENTS, HAPPY SIPS
+<!-- ----------------------------------------------------------------------
+         SECTION 3 — PRODUCTS & BEST SELLERS CATALOG (#products)
+         ---------------------------------------------------------------------- -->
+    <section id="products" class="products-section" aria-labelledby="products-heading">
+      <div class="boba-container">
+        
+        <header class="section-header-center">
+          <div class="boba-eyebrow">
+            <i class="bi bi-cup-hot-fill" aria-hidden="true"></i>
+            <span>OUR MENU CATALOG</span>
+          </div>
+          <h2 id="products-heading" class="section-title">HANDCRAFTED BEST SELLERS</h2>
+          <p class="section-subtitle">Pick your drink, customize sweetness, ice, and toppings, or click Quick Add.</p>
+        </header>
+
+        <!-- Category Filter Tabs -->
+        <div class="category-filter-bar" role="tablist" aria-label="Product categories">
+          <button type="button" class="category-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+            <i class="bi bi-stars" aria-hidden="true"></i>
+            <span>All Items (8)</span>
+          </button>
+          <button type="button" class="category-filter-btn" data-filter="milk-tea" role="tab" aria-selected="false">
+            <i class="bi bi-cup-straw" aria-hidden="true"></i>
+            <span>Milk Tea</span>
+          </button>
+          <button type="button" class="category-filter-btn" data-filter="fruit-tea" role="tab" aria-selected="false">
+            <i class="bi bi-sun-fill" aria-hidden="true"></i>
+            <span>Fruit Tea</span>
+          </button>
+          <button type="button" class="category-filter-btn" data-filter="brown-sugar" role="tab" aria-selected="false">
+            <i class="bi bi-droplet-half" aria-hidden="true"></i>
+            <span>Brown Sugar</span>
+          </button>
+          <button type="button" class="category-filter-btn" data-filter="matcha" role="tab" aria-selected="false">
+            <i class="bi bi-tree-fill" aria-hidden="true"></i>
+            <span>Matcha</span>
+          </button>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div class="products-catalog-grid">
+          
+          <!-- Product Card 1: Strawberry Cloud -->
+          <article class="boba-product-card" data-category="milk-tea" data-default-options="Large · 50% Sweet · Less Ice · Brown Sugar Boba">
+            <div class="product-img-wrap">
+              <img src="assets/images/home/signature-strawberry.webp" 
+                   alt="Strawberry Cloud Cream Cap with real strawberry fruit purée and tapioca pearls" 
+                   loading="lazy">
+              <span class="product-badge">Customer Favorite</span>
+            </div>
+            <div class="product-card-body">
+              <div class="product-meta-row">
+                <span class="product-category-tag">Milk Tea &amp; Cap</span>
+                <div class="product-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <strong>4.9</strong>
+                  <span>(420)</span>
+                </div>
+              </div>
+              <h3 class="product-title">Strawberry Cloud Cream Cap</h3>
+              <p class="product-desc">Real strawberry fruit purée, jasmine green tea, and velvety salted cream foam cap.</p>
+              
+              <div class="product-flavor-notes">
+                <span class="flavor-chip">Fresh Strawberry</span>
+                <span class="flavor-chip">Chewy Boba</span>
+                <span class="flavor-chip">Cream Cap</span>
+              </div>
+
+              <div class="product-card-footer">
+                <span class="product-price">$5.75</span>
+                <div class="product-actions">
+                                    <button type="button" class="boba-btn boba-btn-sm boba-btn-outline boba-customize-btn" data-product-key="strawberry-cloud" title="Customize Your Drink">
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                    <span>Customize Your Drink</span>
+                  </button>
+                  <button type="button" class="boba-btn boba-btn-sm boba-btn-primary boba-quick-add" aria-label="Order Quick Add to Bag Now" title="Order Now">
+                    <i class="bi bi-bag-plus-fill" aria-hidden="true"></i>
+                    <span>Order Now</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 2: Tiger Brown Sugar -->
+          <article class="boba-product-card" data-category="brown-sugar" data-default-options="Regular · 70% Sweet · Regular Ice · Warm Boba">
+            <div class="product-img-wrap">
+              <img src="assets/images/home/signature-brown-sugar.webp" 
+                   alt="Tiger Brown Sugar Boba with rich caramel stripes and fresh whole milk" 
+                   loading="lazy">
+              <span class="product-badge">Best Seller</span>
+            </div>
+            <div class="product-card-body">
+              <div class="product-meta-row">
+                <span class="product-category-tag">Brown Sugar</span>
+                <div class="product-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <strong>5.0</strong>
+                  <span>(680)</span>
+                </div>
+              </div>
+              <h3 class="product-title">Tiger Brown Sugar Boba</h3>
+              <p class="product-desc">Slow-simmered caramelized Taiwanese pearls, organic milk, and torched caramel topping.</p>
+              
+              <div class="product-flavor-notes">
+                <span class="flavor-chip">Brown Sugar Boba</span>
+                <span class="flavor-chip">Organic Milk</span>
+                <span class="flavor-chip">Caffeine-Free</span>
+              </div>
+
+              <div class="product-card-footer">
+                <span class="product-price">$6.25</span>
+                <div class="product-actions">
+                                    <button type="button" class="boba-btn boba-btn-sm boba-btn-outline boba-customize-btn" data-product-key="brown-sugar" title="Customize Your Drink">
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                    <span>Customize Your Drink</span>
+                  </button>
+                  <button type="button" class="boba-btn boba-btn-sm boba-btn-primary boba-quick-add" aria-label="Order Quick Add to Bag Now" title="Order Now">
+                    <i class="bi bi-bag-plus-fill" aria-hidden="true"></i>
+                    <span>Order Now</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 3: Ceremonial Uji Matcha -->
+          <article class="boba-product-card" data-category="matcha" data-default-options="Large · 50% Sweet · Less Ice · Honey Boba">
+            <div class="product-img-wrap">
+              <img src="assets/images/home/signature-matcha.webp" 
+                   alt="Ceremonial Uji Matcha Latte with stone ground green tea and oat milk" 
+                   loading="lazy">
+              <span class="product-badge">Kyoto Ceremonial</span>
+            </div>
+            <div class="product-card-body">
+              <div class="product-meta-row">
+                <span class="product-category-tag">Matcha Series</span>
+                <div class="product-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <strong>4.9</strong>
+                  <span>(310)</span>
+                </div>
+              </div>
+              <h3 class="product-title">Ceremonial Uji Matcha Latte</h3>
+              <p class="product-desc">First-harvest Kyoto ceremonial matcha stone-ground fresh, layered with oat milk &amp; honey boba.</p>
+              
+              <div class="product-flavor-notes">
+                <span class="flavor-chip">Uji Matcha</span>
+                <span class="flavor-chip">Oatly Oat Milk</span>
+                <span class="flavor-chip">Antioxidants</span>
+              </div>
+
+              <div class="product-card-footer">
+                <span class="product-price">$5.95</span>
+                <div class="product-actions">
+                                    <button type="button" class="boba-btn boba-btn-sm boba-btn-outline boba-customize-btn" data-product-key="matcha-mood" title="Customize Your Drink">
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                    <span>Customize Your Drink</span>
+                  </button>
+                  <button type="button" class="boba-btn boba-btn-sm boba-btn-primary boba-quick-add" aria-label="Order Quick Add to Bag Now" title="Order Now">
+                    <i class="bi bi-bag-plus-fill" aria-hidden="true"></i>
+                    <span>Order Now</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 4: Mango Sunshine -->
+          <article class="boba-product-card" data-category="fruit-tea" data-default-options="Regular · 30% Sweet · Less Ice · Popping Boba">
+            <div class="product-img-wrap">
+              <img src="assets/images/home/signature-mango.webp" 
+                   alt="Mango Sunshine Popping Tea with golden mango and bursting popping pearls" 
+                   loading="lazy">
+              <span class="product-badge">Summer Refresh</span>
+            </div>
+            <div class="product-card-body">
+              <div class="product-meta-row">
+                <span class="product-category-tag">Fruit &amp; Sparkling</span>
+                <div class="product-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <strong>4.8</strong>
+                  <span>(295)</span>
+                </div>
+              </div>
+              <h3 class="product-title">Mango Sunshine Popping Tea</h3>
+              <p class="product-desc">Alphonso mango purée with high-mountain four seasons oolong and bursting mango popping pearls.</p>
+              
+              <div class="product-flavor-notes">
+                <span class="flavor-chip">Alphonso Mango</span>
+                <span class="flavor-chip">Popping Pearls</span>
+                <span class="flavor-chip">Vegan</span>
+              </div>
+
+              <div class="product-card-footer">
+                <span class="product-price">$5.45</span>
+                <div class="product-actions">
+                                    <button type="button" class="boba-btn boba-btn-sm boba-btn-outline boba-customize-btn" data-product-key="mango-sunshine" title="Customize Your Drink">
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                    <span>Customize Your Drink</span>
+                  </button>
+                  <button type="button" class="boba-btn boba-btn-sm boba-btn-primary boba-quick-add" aria-label="Order Quick Add to Bag Now" title="Order Now">
+                    <i class="bi bi-bag-plus-fill" aria-hidden="true"></i>
+                    <span>Order Now</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 5: Taro Lavender Velvet -->
+          <article class="boba-product-card" data-category="milk-tea" data-default-options="Large · 50% Sweet · Less Ice · Tapioca">
+            <div class="product-img-wrap">
+              <img src="assets/images/customize/base-taro.webp" 
+                   alt="Taro Lavender Velvet milk tea with real purple taro paste and tapioca pearls" 
+                   loading="lazy">
+              <span class="product-badge">Cafe Specialty</span>
+            </div>
+            <div class="product-card-body">
+              <div class="product-meta-row">
+                <span class="product-category-tag">Milk Tea</span>
+                <div class="product-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <strong>4.9</strong>
+                  <span>(380)</span>
+                </div>
+              </div>
+              <h3 class="product-title">Taro Lavender Velvet</h3>
+              <p class="product-desc">Real slow-roasted purple taro paste, infused with coconut milk and slow-cooked boba.</p>
+              
+              <div class="product-flavor-notes">
+                <span class="flavor-chip">Real Taro Root</span>
+                <span class="flavor-chip">Coconut Milk</span>
+                <span class="flavor-chip">Naturally Sweet</span>
+              </div>
+
+              <div class="product-card-footer">
+                <span class="product-price">$5.85</span>
+                <div class="product-actions">
+                                    <button type="button" class="boba-btn boba-btn-sm boba-btn-outline boba-customize-btn" data-product-key="taro-velvet" title="Customize Your Drink">
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                    <span>Customize Your Drink</span>
+                  </button>
+                  <button type="button" class="boba-btn boba-btn-sm boba-btn-primary boba-quick-add" aria-label="Order Quick Add to Bag Now" title="Order Now">
+                    <i class="bi bi-bag-plus-fill" aria-hidden="true"></i>
+                    <span>Order Now</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 6: Roasted Iron Goddess Oolong -->
+          <article class="boba-product-card" data-category="milk-tea" data-default-options="Regular · 50% Sweet · Less Ice · Grass Jelly">
+            <div class="product-img-wrap">
+              <img src="assets/images/menu/menu-milk-tea.webp" 
+                   alt="Roasted Iron Goddess Oolong Tea with herbal grass jelly and black tapioca" 
+                   loading="lazy">
+              <span class="product-badge">Staff Pick</span>
+            </div>
+            <div class="product-card-body">
+              <div class="product-meta-row">
+                <span class="product-category-tag">Classic Brew</span>
+                <div class="product-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <strong>4.8</strong>
+                  <span>(210)</span>
+                </div>
+              </div>
+              <h3 class="product-title">Roasted Iron Goddess Oolong</h3>
+              <p class="product-desc">Charcoal-roasted Tieguanyin oolong with fresh cream milk, herbal grass jelly, and brown boba.</p>
+              
+              <div class="product-flavor-notes">
+                <span class="flavor-chip">Charcoal Roasted</span>
+                <span class="flavor-chip">Grass Jelly</span>
+                <span class="flavor-chip">Rich Aroma</span>
+              </div>
+
+              <div class="product-card-footer">
+                <span class="product-price">$5.25</span>
+                <div class="product-actions">
+                                    <button type="button" class="boba-btn boba-btn-sm boba-btn-outline boba-customize-btn" data-product-key="roasted-oolong" title="Customize Your Drink">
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                    <span>Customize Your Drink</span>
+                  </button>
+                  <button type="button" class="boba-btn boba-btn-sm boba-btn-primary boba-quick-add" aria-label="Order Quick Add to Bag Now" title="Order Now">
+                    <i class="bi bi-bag-plus-fill" aria-hidden="true"></i>
+                    <span>Order Now</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 7: White Peach Lychee Sparkler -->
+          <article class="boba-product-card" data-category="fruit-tea" data-default-options="Large · 30% Sweet · Regular Ice · Crystal Boba">
+            <div class="product-img-wrap">
+              <img src="assets/images/customize/base-peach.webp" 
+                   alt="White Peach Lychee Sparkler fruit tea with crystal agar boba" 
+                   loading="lazy">
+              <span class="product-badge">New Arrival</span>
+            </div>
+            <div class="product-card-body">
+              <div class="product-meta-row">
+                <span class="product-category-tag">Fruit Tea</span>
+                <div class="product-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <strong>4.9</strong>
+                  <span>(170)</span>
+                </div>
+              </div>
+              <h3 class="product-title">White Peach Lychee Sparkler</h3>
+              <p class="product-desc">Sweet white peach nectar, floral lychee pieces, crystal agar boba, and sparkling cold tea.</p>
+              
+              <div class="product-flavor-notes">
+                <span class="flavor-chip">White Peach</span>
+                <span class="flavor-chip">Crystal Agar</span>
+                <span class="flavor-chip">Sparkling</span>
+              </div>
+
+              <div class="product-card-footer">
+                <span class="product-price">$5.50</span>
+                <div class="product-actions">
+                                    <button type="button" class="boba-btn boba-btn-sm boba-btn-outline boba-customize-btn" data-product-key="peach-lychee" title="Customize Your Drink">
+                    <i class="bi bi-sliders2" aria-hidden="true"></i>
+                    <span>Customize Your Drink</span>
+                  </button>
+                  <button type="button" class="boba-btn boba-btn-sm boba-btn-primary boba-quick-add" aria-label="Order Quick Add to Bag Now" title="Order Now">
+                    <i class="bi bi-bag-plus-fill" aria-hidden="true"></i>
+                    <span>Order Now</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 8: Boba Bloom Home DIY Kit -->
+          <article class="boba-product-card" data-category="brown-sugar" data-default-options="10 Servings Pack · 2 Syrups · 10 Straws">
+            <div class="product-img-wrap">
+              <img src="assets/images/home/fresh-ingredients.webp" 
+                   alt="Boba Bloom Home DIY Party Kit with raw tapioca pearls, black tea, and wide straws" 
+                   loading="lazy">
+              <span class="product-badge">At-Home Kit</span>
+            </div>
+            <div class="product-card-body">
+              <div class="product-meta-row">
+                <span class="product-category-tag">DIY &amp; Kits</span>
+                <div class="product-rating">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <strong>5.0</strong>
+                  <span>(520)</span>
+                </div>
+              </div>
+              <h3 class="product-title">Boba Bloom Home DIY Party Kit</h3>
+              <p class="product-desc">Complete kit for 10 cups at home: artisan uncooked pearls, Taiwan black tea, syrups &amp; straws.</p>
+              
+              <div class="product-flavor-notes">
+                <span class="flavor-chip">10 Cups</span>
+                <span class="flavor-chip">Raw Tapioca</span>
+                <span class="flavor-chip">Recipe Guide</span>
+              </div>
+
+              <div class="product-card-footer">
+                <span class="product-price">$19.99</span>
+                <div class="product-actions">
+                  <button type="button" class="boba-btn boba-btn-sm boba-btn-outline boba-customize-btn" data-product-key="diy-kit" title="View Kit Details">
+                    <i class="bi bi-box-seam" aria-hidden="true"></i>
+                    <span>Details</span>
+                  </button>
+                  <button type="button" class="boba-quick-add" aria-label="Quick add DIY Kit to bag" title="Quick Add to Bag">
+                    <i class="bi bi-bag-plus-fill" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="signature-bottom-cta">
+          <a href="customize.html" class="boba-btn boba-btn-primary">
+            <span>OPEN 3D DRINK CUSTOMIZER</span>
+            <i class="bi bi-sliders2" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+        <!-- ----------------------------------------------------------------------
+         SECTION 5 — CRAFT & QUALITY — MADE WITH A LITTLE EXTRA LOVE (From Mockup)
          ---------------------------------------------------------------------- -->
     <section class="ingredients-section" aria-labelledby="ingredients-heading">
-      <div class="boba-container ingredients-grid">
+      <div class="boba-container">
         
-        <!-- Large Culinary Photograph -->
-        <div class="ingredients-media-card">
-          <img src="assets/images/home/fresh-ingredients.webp" 
-               alt="Carefully curated fresh ingredients including tapioca pearls, matcha powder whisk, fresh milk, and organic tea leaves" 
-               width="800" 
-               height="600" 
-               loading="lazy">
-        </div>
-
-        <!-- Editorial Content & 4 Ideas -->
-        <div class="ingredients-content">
-          <div class="boba-eyebrow">
-            <i class="bi bi-flower1" aria-hidden="true"></i>
-            <span>CRAFT & QUALITY</span>
+        <div class="ingredients-grid">
+          
+          <!-- Left: Kitchen Counter Ingredients Showcase -->
+          <div class="ingredients-media-card">
+            <img src="assets/images/home/fresh-ingredients.webp" 
+                 alt="Kitchen workspace with ceremonial matcha bowl, bamboo whisk, fresh fruit, whole tea leaves, and simmered boba" 
+                 width="720" 
+                 height="540" 
+                 loading="lazy">
           </div>
-          
-          <h2 id="ingredients-heading" class="section-title">MADE WITH A LITTLE EXTRA LOVE.</h2>
-          
-          <p class="section-subtitle">
-            Great little moments start with thoughtful choices, playful flavors, and a drink made to suit your taste.
-          </p>
 
-          <div class="ingredients-list">
+          <!-- Right: Craft Pillars Content -->
+          <div class="ingredients-content">
+            <div class="boba-eyebrow">
+              <i class="bi bi-award-fill" aria-hidden="true"></i>
+              <span>CRAFT &amp; QUALITY</span>
+            </div>
             
-            <div class="ingredient-item">
-              <div class="ingredient-icon-box">
-                <i class="bi bi-compass-fill"></i>
-              </div>
-              <h4>FLAVOR TO EXPLORE</h4>
-              <p>Find a drink that fits your mood and sparks your curiosity.</p>
-            </div>
+            <h2 id="ingredients-heading" class="section-title">MADE WITH A LITTLE EXTRA LOVE.</h2>
+            <p class="section-subtitle">Great little moments start with thoughtful choices, playful flavors, and a drink made to suit your taste.</p>
 
-            <div class="ingredient-item">
-              <div class="ingredient-icon-box">
-                <i class="bi bi-circle-fill"></i>
+            <div class="ingredients-list">
+              
+              <div class="ingredient-item">
+                <div class="ingredient-icon-box">
+                  <i class="bi bi-stars" aria-hidden="true"></i>
+                </div>
+                <h4>FLAVOR TO EXPLORE</h4>
+                <p>Find a mix that fits your mood and sparks your curiosity.</p>
               </div>
-              <h4>TEXTURE TO LOVE</h4>
-              <p>Discover different toppings and slow-cooked chewy pearls.</p>
-            </div>
 
-            <div class="ingredient-item">
-              <div class="ingredient-icon-box">
-                <i class="bi bi-droplet-fill"></i>
+              <div class="ingredient-item">
+                <div class="ingredient-icon-box">
+                  <i class="bi bi-circle-fill" aria-hidden="true"></i>
+                </div>
+                <h4>TEXTURE TO LOVE</h4>
+                <p>Choose different toppings and slow-cooked chewy pearls.</p>
               </div>
-              <h4>YOUR KIND OF SWEET</h4>
-              <p>Explore the available sweetness settings for balanced sips.</p>
-            </div>
 
-            <div class="ingredient-item">
-              <div class="ingredient-icon-box">
-                <i class="bi bi-emoji-smile-fill"></i>
+              <div class="ingredient-item">
+                <div class="ingredient-icon-box">
+                  <i class="bi bi-droplet-half" aria-hidden="true"></i>
+                </div>
+                <h4>YOUR KIND OF SWEET</h4>
+                <p>Explore the available sweetness settings for balanced sips.</p>
               </div>
-              <h4>A FRESH LITTLE MOMENT</h4>
-              <p>Enjoy a refreshing break in your day that makes you smile.</p>
+
+              <div class="ingredient-item">
+                <div class="ingredient-icon-box">
+                  <i class="bi bi-sun" aria-hidden="true"></i>
+                </div>
+                <h4>A FRESH LITTLE MOMENT</h4>
+                <p>Enjoy a refreshing break in your day that feels just yours.</p>
+              </div>
+
             </div>
 
           </div>
@@ -573,29 +1232,27 @@
     </section>
 
     <!-- ----------------------------------------------------------------------
-         SECTION 5 — MAKE IT YOURS (CUSTOMIZATION TEASER)
+         SECTION 6 — CUSTOMIZE YOUR SIP — YOUR CUP. YOUR RULES (From Mockup)
          ---------------------------------------------------------------------- -->
     <section class="custom-preview-section" aria-labelledby="custom-heading">
       <div class="boba-container">
         
         <div class="custom-preview-box">
           
+          <!-- Left: 4 Step Builder Preview -->
           <div class="custom-preview-content">
             <div class="boba-eyebrow">
-              <i class="bi bi-sliders" aria-hidden="true"></i>
+              <i class="bi bi-sliders2" aria-hidden="true"></i>
               <span>CUSTOMIZE YOUR SIP</span>
             </div>
             
             <h2 id="custom-heading" class="section-title">YOUR CUP. YOUR RULES.</h2>
-            
-            <p class="section-subtitle">
-              Choose your base, find your sweetness, set your ice, and finish with the toppings you love.
-            </p>
+            <p class="section-subtitle">Choose your base, find your sweetness, set your ice, and finish with the toppings you love.</p>
 
             <div class="custom-steps-grid">
               
               <div class="custom-step-card">
-                <div class="step-num">1</div>
+                <span class="step-num">1</span>
                 <div class="step-content">
                   <h4>PICK YOUR BASE</h4>
                   <p>Green tea, black tea, oat milk, or fruit infusion.</p>
@@ -603,7 +1260,7 @@
               </div>
 
               <div class="custom-step-card">
-                <div class="step-num">2</div>
+                <span class="step-num">2</span>
                 <div class="step-content">
                   <h4>CHOOSE YOUR SWEETNESS</h4>
                   <p>0%, 30%, 50%, 70%, or 100% sweetness.</p>
@@ -611,7 +1268,7 @@
               </div>
 
               <div class="custom-step-card">
-                <div class="step-num">3</div>
+                <span class="step-num">3</span>
                 <div class="step-content">
                   <h4>SET YOUR ICE</h4>
                   <p>Regular ice, less ice, or warm sip.</p>
@@ -619,7 +1276,7 @@
               </div>
 
               <div class="custom-step-card">
-                <div class="step-num">4</div>
+                <span class="step-num">4</span>
                 <div class="step-content">
                   <h4>ADD YOUR TOPPINGS</h4>
                   <p>Brown sugar boba, popping pearls, or jellies.</p>
@@ -628,17 +1285,29 @@
 
             </div>
 
-            <a href="contact.html#contact-form" class="boba-btn boba-btn-primary">
-              <span>BUILD YOUR BOBA</span>
-              <i class="bi bi-arrow-right" aria-hidden="true"></i>
-            </a>
+            <div class="cta-actions-row" style="justify-content: flex-start; margin-top: 2rem;">
+              <a href="customize.html" class="boba-btn boba-btn-primary boba-btn-lg">
+                <i class="bi bi-sliders2" aria-hidden="true"></i>
+                <span>Customize Your Drink</span>
+              </a>
+              <a href="#products" class="boba-btn boba-btn-secondary boba-btn-lg">
+                <i class="bi bi-bag-check-fill" aria-hidden="true"></i>
+                <span>Order Now</span>
+              </a>
+              <a href="menu.html" class="boba-btn boba-btn-outline boba-btn-lg">
+                <i class="bi bi-book-half" aria-hidden="true"></i>
+                <span>View Menu</span>
+              </a>
+            </div>
+
           </div>
 
+          <!-- Right: Pouring Milk Boba Photo -->
           <div class="custom-preview-media">
             <img src="assets/images/home/happy-moments.webp" 
-                 alt="Step by step bubble tea customization in a modern sunny cafe" 
-                 width="800" 
-                 height="600" 
+                 alt="Hands pouring creamy milk into a tall glass of iced boba tea with dark brown sugar syrup marbling" 
+                 width="720" 
+                 height="540" 
                  loading="lazy">
           </div>
 
@@ -647,36 +1316,116 @@
       </div>
     </section>
 
-    <!-- ----------------------------------------------------------------------
-         SECTION 6 — LITTLE SIPS, BIG SMILES
+<!-- ----------------------------------------------------------------------
+         SECTION 4 — DAILY DEALS & COMBOS (#deals)
          ---------------------------------------------------------------------- -->
-    <section class="lifestyle-section" aria-labelledby="lifestyle-heading">
-      <div class="boba-container lifestyle-grid">
+    <section id="deals" class="deals-section" aria-labelledby="deals-heading">
+      <div class="boba-container">
         
-        <!-- Lifestyle Photography -->
-        <div class="lifestyle-media-wrapper">
-          <img src="assets/images/home/home-closing.webp" 
-               alt="Friends sharing colorful bubble tea drinks in a warm, welcoming cafe atmosphere" 
-               width="800" 
-               height="600" 
-               loading="lazy">
+        <header class="section-header-center">
+          <div class="boba-eyebrow">
+            <i class="bi bi-tag-fill" aria-hidden="true"></i>
+            <span>SIP &amp; SAVE</span>
+          </div>
+          <h2 id="deals-heading" class="section-title">DAILY DEALS &amp; BOBA BUNDLES</h2>
+          <p class="section-subtitle">Delicious deals designed to share with friends, family, or your study group.</p>
+        </header>
+
+        <div class="deals-grid">
+          
+          <!-- Deal 1 -->
+          <article class="boba-deal-card">
+            <span class="deal-highlight-badge">Save $3.00</span>
+            <div class="deal-card-header">
+              <div class="deal-icon-box">
+                <i class="bi bi-people-fill" aria-hidden="true"></i>
+              </div>
+              <h3 class="deal-card-title">Boba Lovers Duo</h3>
+              <p class="deal-card-desc">Perfect pair for an afternoon sweet treat. Choose any 2 large signature drinks.</p>
+            </div>
+            <ul class="deal-items-list">
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> 2x Large Drinks of your choice</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> 2x Free Toppings included</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Custom ice &amp; sweetness levels</li>
+            </ul>
+            <div class="deal-pricing-row">
+              <span class="deal-current-price">$10.99</span>
+              <span class="deal-orig-price">$13.99</span>
+              <span class="deal-savings">22% OFF</span>
+            </div>
+            <button type="button" class="boba-btn boba-btn-primary" onclick="BobaCart.addToCart({ id: 'deal-duo', title: 'Boba Lovers Duo (2 Large Drinks + 2 Toppings)', image: 'assets/images/home/signature-strawberry.webp', price: 10.99, quantity: 1, options: '2 Large Drinks · Free Toppings Included' });">
+              <i class="bi bi-bag-plus-fill" aria-hidden="true"></i>
+              <span>ORDER DUO PACK</span>
+            </button>
+          </article>
+
+          <!-- Deal 2 -->
+          <article class="boba-deal-card">
+            <span class="deal-highlight-badge">Daily 2-5 PM</span>
+            <div class="deal-card-header">
+              <div class="deal-icon-box">
+                <i class="bi bi-brightness-high-fill" aria-hidden="true"></i>
+              </div>
+              <h3 class="deal-card-title">Happy Hour 20% Off</h3>
+              <p class="deal-card-desc">Get 20% off all fruit teas and sparkling refreshers every weekday afternoon.</p>
+            </div>
+            <ul class="deal-items-list">
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Valid on all Fruit Tea selections</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Free popping boba upgrade</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Use code <strong>BOBAHAPPY</strong></li>
+            </ul>
+            <div class="deal-pricing-row">
+              <span class="deal-current-price">20% OFF</span>
+              <span class="deal-orig-price">Any Fruit Drink</span>
+              <span class="deal-savings">Code Ready</span>
+            </div>
+            <button type="button" class="boba-btn boba-btn-primary copy-coupon-btn" data-code="BOBAHAPPY">
+              <i class="bi bi-copy" aria-hidden="true"></i>
+              <span>COPY CODE 'BOBAHAPPY'</span>
+            </button>
+          </article>
+
+          <!-- Deal 3 -->
+          <article class="boba-deal-card">
+            <span class="deal-highlight-badge">Family &amp; Party</span>
+            <div class="deal-card-header">
+              <div class="deal-icon-box">
+                <i class="bi bi-balloon-fill" aria-hidden="true"></i>
+              </div>
+              <h3 class="deal-card-title">Party &amp; Study Pack</h3>
+              <p class="deal-card-desc">Hosting friends or cramming for exams? Fuel the group with 4 drinks + sweet waffles.</p>
+            </div>
+            <ul class="deal-items-list">
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> 4x Regular Signature Bobas</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> 2x Fresh Belgian Egg Waffles</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Free delivery included</li>
+            </ul>
+            <div class="deal-pricing-row">
+              <span class="deal-current-price">$24.99</span>
+              <span class="deal-orig-price">$32.00</span>
+              <span class="deal-savings">SAVE $7.01</span>
+            </div>
+            <button type="button" class="boba-btn boba-btn-primary" onclick="BobaCart.addToCart({ id: 'deal-party', title: 'Party & Study Pack (4 Drinks + 2 Waffles)', image: 'assets/images/home/flavor-world.webp', price: 24.99, quantity: 1, options: '4 Regular Drinks · 2 Waffles · Free Delivery' });">
+              <i class="bi bi-bag-plus-fill" aria-hidden="true"></i>
+              <span>ORDER PARTY PACK</span>
+            </button>
+          </article>
+
         </div>
 
-        <!-- Lifestyle Editorial Message Card -->
-        <div class="lifestyle-content-card">
-          <div class="lifestyle-quote-mark" aria-hidden="true">
-            <i class="bi bi-quote"></i>
+        <!-- Coupon Callout Banner -->
+        <div class="boba-promo-banner">
+          <div class="promo-banner-text">
+            <h3>Get 20% Off Your Entire Online Order Today</h3>
+            <p>Enter promo code <strong>BOBAHAPPY</strong> at checkout for an instant 20% discount on all drinks and accessories.</p>
           </div>
-          
-          <h2 id="lifestyle-heading" class="section-title">MAKE ROOM FOR A HAPPY MOMENT.</h2>
-          
-          <p>
-            An afternoon pick-me-up, a catch-up with a friend, or a new flavor just because. Sometimes a little sip is all it takes to brighten the moment.
-          </p>
-
-          <div class="lifestyle-highlight">
-            <i class="bi bi-heart-pulse-fill" aria-hidden="true"></i>
-            <span>Every sip brings a little joy to your day.</span>
+          <div class="promo-code-box">
+            <span>CODE:</span>
+            <strong>BOBAHAPPY</strong>
+            <button type="button" class="boba-btn boba-btn-sm boba-btn-light copy-coupon-btn" data-code="BOBAHAPPY" aria-label="Copy promo code">
+              <i class="bi bi-copy" aria-hidden="true"></i>
+              <span>COPY</span>
+            </button>
           </div>
         </div>
 
@@ -684,11 +1433,469 @@
     </section>
 
     <!-- ----------------------------------------------------------------------
-         SECTION 7 — CLOSING CTA: YOUR NEXT HAPPY SIP
+         SECTION 5 — ACCESSORIES & MERCHANDISE (#accessories)
+         ---------------------------------------------------------------------- -->
+    <section id="accessories" class="accessories-section" aria-labelledby="accessories-heading">
+      <div class="boba-container">
+        
+        <header class="section-header-center">
+          <div class="boba-eyebrow">
+            <i class="bi bi-gem" aria-hidden="true"></i>
+            <span>BOBA LIFESTYLE</span>
+          </div>
+          <h2 id="accessories-heading" class="section-title">SIP IN STYLE: ACCESSORIES &amp; MERCH</h2>
+          <p class="section-subtitle">Eco-friendly reusable boba tumblers, wide glass straws, and cute collectibles.</p>
+        </header>
+
+        <div class="accessories-grid">
+          
+          <!-- Item 1: Insulated Boba Glass Tumbler -->
+          <article class="boba-accessory-card">
+            <div class="accessory-img-wrap">
+              <img src="assets/images/menu/menu-cover.webp" alt="Insulated Glass Boba Tumbler with bamboo lid and straw" loading="lazy">
+              <span class="product-badge">Eco Choice</span>
+            </div>
+            <div class="accessory-body">
+              <h3 class="accessory-title">24oz Insulated Glass Boba Tumbler</h3>
+              <p class="accessory-desc">Double-walled borosilicate glass, leak-resistant bamboo lid, and wide glass straw with cleaner.</p>
+              <div class="accessory-footer">
+                <span class="accessory-price">$15.99</span>
+                <button type="button" class="boba-btn boba-btn-sm boba-btn-primary" onclick="BobaCart.addToCart({ id: 'acc-tumbler', title: '24oz Glass Boba Tumbler', image: 'assets/images/menu/menu-cover.webp', price: 15.99, quantity: 1, options: '24oz · Bamboo Lid · Wide Straw Included' });">
+                  <i class="bi bi-bag-plus" aria-hidden="true"></i>
+                  <span>Add to Bag</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 2: Kawaii Boba Plushie -->
+          <article class="boba-accessory-card">
+            <div class="accessory-img-wrap">
+              <img src="assets/images/home2/home2-collection.webp" alt="Kawaii Boba Plushie with smiling face" loading="lazy">
+              <span class="product-badge">Best Seller</span>
+            </div>
+            <div class="accessory-body">
+              <h3 class="accessory-title">Kawaii Smiling Boba Plushie (25cm)</h3>
+              <p class="accessory-desc">Ultra-soft squishy plush with adorable smiling face and 3D tapioca pearls. Hand-washable.</p>
+              <div class="accessory-footer">
+                <span class="accessory-price">$12.99</span>
+                <button type="button" class="boba-btn boba-btn-sm boba-btn-primary" onclick="BobaCart.addToCart({ id: 'acc-plushie', title: 'Kawaii Boba Plushie (25cm)', image: 'assets/images/home2/home2-collection.webp', price: 12.99, quantity: 1, options: '25cm Brown Sugar Milk Tea Plushie' });">
+                  <i class="bi bi-bag-plus" aria-hidden="true"></i>
+                  <span>Add to Bag</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 3: Canvas Boba Tote Carrier -->
+          <article class="boba-accessory-card">
+            <div class="accessory-img-wrap">
+              <img src="assets/images/home2/home2-mood-cozy.webp" alt="Eco Canvas Boba Cup Holder Tote" loading="lazy">
+              <span class="product-badge">Everyday Carry</span>
+            </div>
+            <div class="accessory-body">
+              <h3 class="accessory-title">Canvas Insulated Boba Cup Carrier</h3>
+              <p class="accessory-desc">Hands-free canvas drink tote with straw holder pocket. Keeps condensation off your hands.</p>
+              <div class="accessory-footer">
+                <span class="accessory-price">$7.99</span>
+                <button type="button" class="boba-btn boba-btn-sm boba-btn-primary" onclick="BobaCart.addToCart({ id: 'acc-tote', title: 'Canvas Boba Cup Carrier Tote', image: 'assets/images/home2/home2-mood-cozy.webp', price: 7.99, quantity: 1, options: 'Natural Cotton Canvas · Fits 16oz-24oz' });">
+                  <i class="bi bi-bag-plus" aria-hidden="true"></i>
+                  <span>Add to Bag</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 4: Artisan Tapioca Pearl Maker Kit -->
+          <article class="boba-accessory-card">
+            <div class="accessory-img-wrap">
+              <img src="assets/images/menu/menu-toppings.webp" alt="Artisan Tapioca Pearl DIY Refill Pack" loading="lazy">
+              <span class="product-badge">Home Brew</span>
+            </div>
+            <div class="accessory-body">
+              <h3 class="accessory-title">Artisan Tapioca Pearl DIY Refill (500g)</h3>
+              <p class="accessory-desc">Authentic Taiwanese raw tapioca pearls. Ready in just 15 minutes of boiling. Makes 20 cups.</p>
+              <div class="accessory-footer">
+                <span class="accessory-price">$9.50</span>
+                <button type="button" class="boba-btn boba-btn-sm boba-btn-primary" onclick="BobaCart.addToCart({ id: 'acc-pearls', title: 'Artisan Tapioca Pearls (500g Pack)', image: 'assets/images/menu/menu-toppings.webp', price: 9.50, quantity: 1, options: '500g Raw Boba Pearls · Taiwan Black Sugar' });">
+                  <i class="bi bi-bag-plus" aria-hidden="true"></i>
+                  <span>Add to Bag</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 6 — BRAND SOURCING & TEA PARTNERS (#brands)
+         ---------------------------------------------------------------------- -->
+    <section id="brands" class="brands-section" aria-labelledby="brands-heading">
+      <div class="boba-container">
+        
+        <header class="section-header-center">
+          <div class="boba-eyebrow">
+            <i class="bi bi-patch-check-fill" aria-hidden="true"></i>
+            <span>ETHICAL SOURCING</span>
+          </div>
+          <h2 id="brands-heading" class="section-title">FROM HARVEST TO CUP: OUR PARTNERS</h2>
+          <p class="section-subtitle">We partner directly with sustainable estates, artisanal mills, and organic dairies.</p>
+        </header>
+
+        <div class="brands-grid">
+          
+          <div class="boba-brand-card">
+            <div class="brand-icon-box">
+              <i class="bi bi-flower2" aria-hidden="true"></i>
+            </div>
+            <h3 class="brand-card-title">Sun Moon Lake</h3>
+            <span class="brand-origin">Nantou, Taiwan</span>
+            <p class="brand-desc">Organic hand-picked black tea and alpine oolong grown at 1,200m altitude.</p>
+          </div>
+
+          <div class="boba-brand-card">
+            <div class="brand-icon-box">
+              <i class="bi bi-tree-fill" aria-hidden="true"></i>
+            </div>
+            <h3 class="brand-card-title">Uji Matcha Guild</h3>
+            <span class="brand-origin">Kyoto, Japan</span>
+            <p class="brand-desc">Ceremonial grade stone-ground matcha shaded for 25 days before spring harvest.</p>
+          </div>
+
+          <div class="boba-brand-card">
+            <div class="brand-icon-box">
+              <i class="bi bi-circle-fill" aria-hidden="true"></i>
+            </div>
+            <h3 class="brand-card-title">Kaohsiung Tapioca</h3>
+            <span class="brand-origin">Kaohsiung, Taiwan</span>
+            <p class="brand-desc">Hand-rolled pure cassava starch with zero artificial gums, cooked fresh every 3 hours.</p>
+          </div>
+
+          <div class="boba-brand-card">
+            <div class="brand-icon-box">
+              <i class="bi bi-cup-hot" aria-hidden="true"></i>
+            </div>
+            <h3 class="brand-card-title">Oatly Barista</h3>
+            <span class="brand-origin">Malmö, Sweden</span>
+            <p class="brand-desc">Certified organic oat milk that creates velvety micro-foam without dairy allergies.</p>
+          </div>
+
+          <div class="boba-brand-card">
+            <div class="brand-icon-box">
+              <i class="bi bi-heart-fill" aria-hidden="true"></i>
+            </div>
+            <h3 class="brand-card-title">Clover Sonoma</h3>
+            <span class="brand-origin">California, USA</span>
+            <p class="brand-desc">Pasture-raised, hormone-free organic whole milk from certified humane family farms.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+        <!-- ----------------------------------------------------------------------
+         SECTION 10 — LIFESTYLE MOMENT — MAKE ROOM FOR A HAPPY MOMENT (From Mockup)
+         ---------------------------------------------------------------------- -->
+    <section class="lifestyle-section" aria-labelledby="lifestyle-heading">
+      <div class="boba-container">
+        
+        <div class="lifestyle-grid">
+          
+          <!-- Left: Lifestyle photo of friends enjoying drinks in cafe -->
+          <div class="lifestyle-media-wrapper">
+            <img src="assets/images/home/home-closing.webp" 
+                 alt="Two smiling friends sharing conversation and laughter over colorful bubble tea drinks in a bright cafe" 
+                 width="720" 
+                 height="540" 
+                 loading="lazy">
+          </div>
+
+          <!-- Right: Warm quote and brand moment card -->
+          <div class="lifestyle-content-card">
+            <div class="lifestyle-quote-mark" aria-hidden="true">“</div>
+            <h2 id="lifestyle-heading" class="lifestyle-title">MAKE ROOM FOR A HAPPY MOMENT.</h2>
+            <p>An afternoon pick-me-up, a catch-up with a friend, or a new flavor just because. Sometimes a little sip is all it takes to brighten the moment.</p>
+            <div class="lifestyle-highlight">
+              <i class="bi bi-heart-fill" aria-hidden="true"></i>
+              <span>Every sip brings a little joy to your day.</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+<!-- ----------------------------------------------------------------------
+         SECTION 7 — COMMUNITY BOBA GALLERY (#gallery)
+         ---------------------------------------------------------------------- -->
+    <section id="gallery" class="gallery-section" aria-labelledby="gallery-heading">
+      <div class="boba-container">
+        
+        <header class="section-header-center">
+          <div class="boba-eyebrow">
+            <i class="bi bi-instagram" aria-hidden="true"></i>
+            <span>#SIPHAPPINESS</span>
+          </div>
+          <h2 id="gallery-heading" class="section-title">SPOTTED IN THE WILD: OUR COMMUNITY</h2>
+          <p class="section-subtitle">Tag @BobaBloom on Instagram to be featured on our wall &amp; win free boba for a month!</p>
+        </header>
+
+        <div class="gallery-grid">
+          
+          <div class="boba-gallery-item">
+            <img src="assets/images/home2/home2-moment.webp" alt="Customer enjoying boba drink in sunny cafe" loading="lazy">
+            <div class="gallery-hover-overlay">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+              <span class="gallery-handle">@chloe.sips</span>
+              <span class="gallery-likes"><i class="bi bi-heart-fill"></i> 1,420 likes</span>
+              <p>Brown sugar boba is pure heaven ✨</p>
+            </div>
+          </div>
+
+          <div class="boba-gallery-item">
+            <img src="assets/images/home2/home2-cover.webp" alt="Boba cups arranged aesthetically with straw" loading="lazy">
+            <div class="gallery-hover-overlay">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+              <span class="gallery-handle">@boba.daily</span>
+              <span class="gallery-likes"><i class="bi bi-heart-fill"></i> 2,890 likes</span>
+              <p>Matcha mood all weekend long 🍵</p>
+            </div>
+          </div>
+
+          <div class="boba-gallery-item">
+            <img src="assets/images/home/happy-moments.webp" alt="Friends laughing over colorful boba drinks" loading="lazy">
+            <div class="gallery-hover-overlay">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+              <span class="gallery-handle">@foodie_alex</span>
+              <span class="gallery-likes"><i class="bi bi-heart-fill"></i> 980 likes</span>
+              <p>Study dates made infinitely sweeter 🧋</p>
+            </div>
+          </div>
+
+          <div class="boba-gallery-item">
+            <img src="assets/images/home/flavor-world.webp" alt="Four colorful boba drinks lined up on wooden table" loading="lazy">
+            <div class="gallery-hover-overlay">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+              <span class="gallery-handle">@urban_tastes</span>
+              <span class="gallery-likes"><i class="bi bi-heart-fill"></i> 3,110 likes</span>
+              <p>Which color would you pick first? 🍓🥭</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 8 — BOBA JOURNAL & BREWING GUIDES (#blog)
+         ---------------------------------------------------------------------- -->
+    <section id="blog" class="blog-section" aria-labelledby="blog-heading">
+      <div class="boba-container">
+        
+        <header class="section-header-center">
+          <div class="boba-eyebrow">
+            <i class="bi bi-journal-text" aria-hidden="true"></i>
+            <span>THE BOBA JOURNAL</span>
+          </div>
+          <h2 id="blog-heading" class="section-title">BREWING SECRETS &amp; TEA GUIDES</h2>
+          <p class="section-subtitle">Deep dive into tea leaves, tapioca simmering techniques, and perfect flavor pairings.</p>
+        </header>
+
+        <div class="blog-grid">
+          
+          <!-- Blog Card 1 -->
+          <article class="boba-blog-card">
+            <div class="blog-img-wrap">
+              <img src="assets/images/home2/home2-editorial.webp" alt="Slow cooking brown sugar boba in copper pot" loading="lazy">
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <i class="bi bi-clock" aria-hidden="true"></i>
+                <span>4 MIN READ · BREWING CRAFT</span>
+              </div>
+              <h3 class="blog-title">Why 90-Minute Slow-Simmered Boba Tastes Infinitely Better</h3>
+              <p class="blog-excerpt">Quick-cooking tapioca never develops that deep molasses core. Here is how our baristas achieve that melt-in-your-mouth chewy texture.</p>
+              <a href="blog.html#post-1" class="blog-link">
+                <span>READ BREWING STORY</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog Card 2 -->
+          <article class="boba-blog-card">
+            <div class="blog-img-wrap">
+              <img src="assets/images/about/about-craft.webp" alt="Whisking Kyoto ceremonial matcha" loading="lazy">
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <i class="bi bi-clock" aria-hidden="true"></i>
+                <span>5 MIN READ · TEA MASTERY</span>
+              </div>
+              <h3 class="blog-title">Matcha 101: Ceremonial Grade vs. Culinary Powders</h3>
+              <p class="blog-excerpt">Not all green powder is created equal. Learn why shade-grown first-harvest Tencha leaves produce vibrant emerald color without bitterness.</p>
+              <a href="blog.html#post-2" class="blog-link">
+                <span>READ MATCHA GUIDE</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog Card 3 -->
+          <article class="boba-blog-card">
+            <div class="blog-img-wrap">
+              <img src="assets/images/customize/customize-sweetness.webp" alt="Sweetness level measuring spoons" loading="lazy">
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <i class="bi bi-clock" aria-hidden="true"></i>
+                <span>3 MIN READ · ORDERING TIPS</span>
+              </div>
+              <h3 class="blog-title">Finding Your Sweet Spot: 0% to 100% Sweetness Guide</h3>
+              <p class="blog-excerpt">Unsure whether to order 30% or 50% sweet? Our barista breakdown helps you match sweetness perfectly to your chosen tea base.</p>
+              <a href="blog.html#post-3" class="blog-link">
+                <span>VIEW SWEETNESS GUIDE</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="blog.html" class="boba-btn boba-btn-outline" style="padding: 0.75rem 1.85rem;">
+            <span>EXPLORE THE BOBA JOURNAL</span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 9 — REVIEWS & TESTIMONIALS
+         ---------------------------------------------------------------------- -->
+    <section class="reviews-section" aria-labelledby="reviews-heading">
+      <div class="boba-container">
+        
+        <header class="section-header-center">
+          <div class="boba-eyebrow">
+            <i class="bi bi-heart-fill" aria-hidden="true"></i>
+            <span>COMMUNITY LOVE</span>
+          </div>
+          <h2 id="reviews-heading" class="section-title">WHAT OUR REGULARS ARE SAYING</h2>
+          <p class="section-subtitle">Real reviews from verified bubble tea lovers across the neighborhood.</p>
+        </header>
+
+        <div class="reviews-grid">
+          
+          <div class="boba-review-card">
+            <div class="review-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="review-text">"The Tiger Brown Sugar Boba is the best I've tasted outside Taipei. The tapioca is warm, bouncy, and actually infused with cane sugar, not syrup soaked."</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">JL</div>
+              <div>
+                <h4 class="reviewer-name">Jessica Lin</h4>
+                <span class="reviewer-badge"><i class="bi bi-patch-check-fill"></i> Verified Regular · Ordered 34 times</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="boba-review-card">
+            <div class="review-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="review-text">"As someone lactose-intolerant, their Oatly matcha latte with popping boba is an absolute lifesaver. Plus ordering online for 10-minute pickup is so convenient!"</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">MR</div>
+              <div>
+                <h4 class="reviewer-name">Marcus Reed</h4>
+                <span class="reviewer-badge"><i class="bi bi-patch-check-fill"></i> Verified Regular · Ordered 18 times</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="boba-review-card">
+            <div class="review-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="review-text">"The Strawberry Cloud with cheese foam is insane. Real fruit seeds, floral jasmine tea, and perfectly salted cream cap. My daily treat!"</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">SP</div>
+              <div>
+                <h4 class="reviewer-name">Sophia Patel</h4>
+                <span class="reviewer-badge"><i class="bi bi-patch-check-fill"></i> Verified Regular · Ordered 45 times</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 10 — STORE PICKUP & LOCATION STRIP (#contact)
+         ---------------------------------------------------------------------- -->
+    <section class="store-strip-section" aria-labelledby="store-strip-heading">
+      <div class="boba-container">
+        
+        <h2 id="store-strip-heading" class="visually-hidden">Store Location and Pickup Information</h2>
+        
+        <div class="store-strip-box">
+          <div class="store-info-item">
+            <div class="store-info-icon">
+              <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+            </div>
+            <div class="store-info-text">
+              <h4>Storefront Location</h4>
+              <p>123 Blossom Avenue, Suite 4B · Downtown Cafe</p>
+            </div>
+          </div>
+
+          <div class="store-info-item">
+            <div class="store-info-icon">
+              <i class="bi bi-clock-fill" aria-hidden="true"></i>
+            </div>
+            <div class="store-info-text">
+              <h4>Fresh Brewing Hours</h4>
+              <p>Monday – Sunday: 10:00 AM – 10:00 PM</p>
+            </div>
+          </div>
+
+          <div class="store-info-item">
+            <div class="store-info-icon">
+              <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+            </div>
+            <div class="store-info-text">
+              <h4>Order Phone &amp; Pickup</h4>
+              <p>(555) 234-BOBA · Pickup counter ready in 15 mins</p>
+            </div>
+          </div>
+
+          <div>
+            <a href="contact.html" class="boba-btn boba-btn-dark">
+              <span>GET DIRECTIONS</span>
+              <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         SECTION 11 — CLOSING CTA BANNER
          ---------------------------------------------------------------------- -->
     <section class="closing-cta-section" aria-labelledby="closing-heading">
       
-      <!-- Subtle decorative floating bubble accents -->
       <div class="boba-bubble boba-bubble-mango animate-float" style="width: 70px; height: 70px; top: 15%; left: 10%;" aria-hidden="true"></div>
       <div class="boba-bubble boba-bubble-matcha animate-float-delay" style="width: 85px; height: 85px; bottom: 20%; right: 8%;" aria-hidden="true"></div>
 
@@ -697,23 +1904,27 @@
           
           <div class="boba-eyebrow" style="background-color: rgba(255, 255, 255, 0.25); color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.4);">
             <i class="bi bi-cup-straw" aria-hidden="true"></i>
-            <span>READY FOR REFRESHMENT?</span>
+            <span>READY FOR YOUR HAPPINESS SIP?</span>
           </div>
 
-          <h2 id="closing-heading">YOUR NEXT FAVORITE IS WAITING.</h2>
+          <h2 id="closing-heading">YOUR CUP IS WAITING.</h2>
           
           <p>
-            Something creamy, fruity, or wonderfully chewy? Your next happy sip starts here.
+            Skip the counter line and order ahead for quick in-store pickup, or get ice-cold fresh boba delivered straight to your door.
           </p>
 
-          <div class="closing-cta-buttons boba-btn-group-mobile-stack">
-            <a href="contact.html#contact-form" class="boba-btn boba-btn-primary">
-              <span>EXPLORE THE MENU</span>
-              <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          <div class="closing-cta-buttons">
+            <a href="#products" class="boba-btn boba-btn-primary boba-btn-lg">
+              <i class="bi bi-bag-check-fill" aria-hidden="true"></i>
+              <span>Order Now</span>
             </a>
-            <a href="contact.html#contact-form" class="boba-btn boba-btn-outline-white">
-              <span>CREATE YOUR BOBA</span>
+            <a href="customize.html" class="boba-btn boba-btn-secondary boba-btn-lg">
               <i class="bi bi-sliders2" aria-hidden="true"></i>
+              <span>Customize Your Drink</span>
+            </a>
+            <a href="menu.html" class="boba-btn boba-btn-outline-white boba-btn-lg">
+              <i class="bi bi-book-half" aria-hidden="true"></i>
+              <span>View Menu</span>
             </a>
           </div>
 
@@ -723,94 +1934,93 @@
 
   </main>
 
-  <!-- ========================================================================
+    <!-- ========================================================================
        GLOBAL FOOTER
        ======================================================================== -->
   <footer class="boba-footer" role="contentinfo">
-    <!-- Decorative subtle background bubble accents -->
-    <div class="boba-footer-bubble" style="width: 120px; height: 120px; bottom: -40px; right: 2%; background: radial-gradient(circle, rgba(255, 107, 138, 0.15), transparent 70%);" aria-hidden="true"></div>
-    <div class="boba-footer-bubble" style="width: 90px; height: 90px; top: -30px; left: 3%; background: radial-gradient(circle, rgba(255, 209, 102, 0.12), transparent 70%);" aria-hidden="true"></div>
-
     <div class="boba-container">
       
       <div class="boba-footer-grid">
         
-        <!-- COLUMN 1 — BRAND -->
-        <div class="boba-footer-brand">
+        <!-- COLUMN 1 — BRAND SUMMARY -->
+        <div class="boba-footer-brand-col">
           <a href="index.html" class="boba-brand" aria-label="Boba Bloom Homepage">
             <div class="boba-logo-icon" aria-hidden="true">
               <i class="bi bi-cup-straw"></i>
             </div>
             <div class="boba-brand-text">
               <span class="boba-brand-name">BOBA BLOOM</span>
-              <span class="boba-brand-descriptor">BUBBLE TEA & BOBA</span>
+              <span class="boba-brand-descriptor">BUBBLE TEA &amp; BOBA</span>
             </div>
           </a>
+
           <p class="boba-footer-tagline">
-            A little sip of happiness.
+            Fresh loose-leaf teas, warm caramelized brown sugar tapioca, and plant-based milks. Made with love for your daily smile.
           </p>
-          <p class="boba-footer-desc">
-            Handcrafted bubble teas, playful flavors, and little moments of happiness.
-          </p>
-          <div class="boba-footer-social" aria-label="Follow Boba Bloom on social media">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="boba-social-btn" aria-label="Follow us on Instagram" title="Instagram">
-              <i class="bi bi-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="boba-social-btn" aria-label="Follow us on Facebook" title="Facebook">
-              <i class="bi bi-facebook"></i>
-            </a>
+
+          <div class="boba-footer-newsletter">
+            <p class="newsletter-label">Subscribe for $2 OFF your first order:</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); BobaCart.showToast('Thank you! Use coupon BOBAHAPPY at checkout for 20% off.', 'bi-envelope-check-fill');">
+              <input type="email" placeholder="Enter your email" required aria-label="Email address for discounts">
+              <button type="submit" class="boba-btn boba-btn-sm boba-btn-pink">JOIN</button>
+            </form>
+          </div>
+
+          <div class="boba-footer-socials" aria-label="Social Media Links">
+            <a href="https://instagram.com" class="boba-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+            <a href="https://tiktok.com" class="boba-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i class="bi bi-tiktok"></i></a>
+            <a href="https://facebook.com" class="boba-social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+            <a href="https://pinterest.com" class="boba-social-link" aria-label="Pinterest" target="_blank" rel="noopener noreferrer"><i class="bi bi-pinterest"></i></a>
           </div>
         </div>
 
-        <!-- COLUMN 2 — EXPLORE -->
+        <!-- COLUMN 2 — QUICK NAVIGATION -->
         <div class="boba-footer-col">
-          <h3 class="boba-footer-heading">EXPLORE</h3>
+          <h3 class="boba-footer-heading">NAVIGATION</h3>
           <ul class="boba-footer-links">
-            <li><a href="index.html">Home 1</a></li>
-            <li><a href="home2.html">Home 2</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="customize.html">Customize Your Drink</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">Home 1 (Storefront)</a></li>
+            <li><a href="home2.html">Home 2 (Editorial Edit)</a></li>
+            <li><a href="about.html">About Boba Bloom</a></li>
+            <li><a href="index.html#products">Products Catalog</a></li>
+            <li><a href="index.html#categories">Drink Categories</a></li>
+            <li><a href="index.html#brands">Brand Partners</a></li>
           </ul>
         </div>
 
-        <!-- COLUMN 3 — OUR DRINKS -->
+        <!-- COLUMN 3 — SHOPPING & DRINKS -->
         <div class="boba-footer-col">
-          <h3 class="boba-footer-heading">OUR DRINKS</h3>
+          <h3 class="boba-footer-heading">SHOP &amp; SAVE</h3>
           <ul class="boba-footer-links">
-            <li><a href="menu.html#milk-tea">Milk Tea</a></li>
-            <li><a href="menu.html#fruit-tea">Fruit Tea</a></li>
-            <li><a href="menu.html#matcha">Matcha</a></li>
-            <li><a href="menu.html#brown-sugar">Brown Sugar</a></li>
-            <li><a href="menu.html#toppings">Toppings</a></li>
-            <li><a href="menu.html#signature">Signature Drinks</a></li>
+            <li><a href="index.html#deals">Boba Deals &amp; Combos</a></li>
+            <li><a href="index.html#accessories">Accessories &amp; Merch</a></li>
+            <li><a href="index.html#gallery">Community Gallery</a></li>
+            <li><a href="blog.html">Brewing Journal</a></li>
+            <li><a href="customize.html">Drink Customizer</a></li>
+            <li><a href="#" onclick="event.preventDefault(); BobaCart.openCart();">View Boba Bag</a></li>
           </ul>
         </div>
 
-        <!-- COLUMN 4 — YOUR BOBA -->
+        <!-- COLUMN 4 — LOCATIONS & HOURS -->
         <div class="boba-footer-col">
-          <h3 class="boba-footer-heading">YOUR BOBA</h3>
+          <h3 class="boba-footer-heading">STORE LOCATION</h3>
           <ul class="boba-footer-links">
-            <li><a href="customize.html#drink-builder">Build Your Drink</a></li>
-            <li><a href="customize.html#sweetness">Sweetness Options</a></li>
-            <li><a href="customize.html#ice-level">Ice Levels</a></li>
-            <li><a href="customize.html#toppings">Toppings Guide</a></li>
-            <li><a href="customize.html#base">Tea Base Choices</a></li>
-            <li><a href="customize.html#dairy-free">Dairy-Free Options</a></li>
+            <li><span>123 Blossom Avenue</span></li>
+            <li><span>Downtown Cafe, Suite 4B</span></li>
+            <li><span>Open Daily: 10am - 10pm</span></li>
+            <li><span>Pickup Counter Ready</span></li>
+            <li><a href="contact.html">Store Directions</a></li>
+            <li><a href="contact.html#faqs">Common FAQs</a></li>
           </ul>
         </div>
 
-        <!-- COLUMN 5 — SAY HELLO -->
+        <!-- COLUMN 5 — CONTACT & REWARDS -->
         <div class="boba-footer-col">
           <h3 class="boba-footer-heading">SAY HELLO</h3>
           <ul class="boba-footer-links">
-            <li><a href="contact.html#contact-form">Contact Us</a></li>
-            <li><a href="contact.html#store-locator">Store Locator</a></li>
-            <li><a href="contact.html#faqs">FAQs</a></li>
-            <li><a href="contact.html#careers">Careers</a></li>
-            <li><a href="contact.html#catering">Catering & Events</a></li>
-            <li><a href="contact.html#feedback">Feedback & Support</a></li>
+            <li><a href="contact.html#contact-form">Contact Barista</a></li>
+            <li><a href="contact.html#catering">Event Catering</a></li>
+            <li><a href="contact.html#careers">Join Our Team</a></li>
+            <li><button type="button" class="boba-login-btn" style="background:none; border:none; padding:0; color:inherit; font:inherit; cursor:pointer; text-align:start;">Member Rewards Login</button></li>
           </ul>
         </div>
 
@@ -830,6 +2040,294 @@
   </footer>
 
   <!-- ========================================================================
+       QUICK DRINK CUSTOMIZER MODAL
+       ======================================================================== -->
+  <div id="boba-customize-modal" class="boba-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="custom-modal-title">
+    <div class="boba-modal-dialog custom-modal-dialog">
+      <div class="boba-modal-header">
+        <div class="boba-modal-title-wrap">
+          <span id="custom-modal-cat" class="boba-eyebrow" style="margin-bottom: 0;">Milk Tea</span>
+          <h2 id="custom-modal-title" class="boba-modal-title">Customize Your Drink</h2>
+        </div>
+        <button type="button" id="custom-modal-close" class="boba-modal-close" aria-label="Close Customizer">
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="custom-modal-split">
+        <div class="custom-modal-preview">
+          <img id="custom-modal-img" src="assets/images/home/signature-strawberry.webp" alt="Drink preview">
+          <p id="custom-modal-desc" class="custom-modal-drink-desc">Handcrafted fresh strawberry purée with sea salt cream cap.</p>
+          <div class="custom-base-price-tag">
+            <span>Base:</span> <strong id="custom-modal-price">$5.75</strong>
+          </div>
+        </div>
+
+        <form id="custom-drink-form" class="custom-modal-form">
+          <!-- Step 1: Size -->
+          <div class="custom-field-section">
+            <label class="custom-field-label"><i class="bi bi-cup" aria-hidden="true"></i> Cup Size</label>
+            <div class="custom-pill-radios">
+              <label class="custom-pill-option">
+                <input type="radio" name="custom-size" value="regular" checked>
+                <span>Regular 16oz (+$0.00)</span>
+              </label>
+              <label class="custom-pill-option">
+                <input type="radio" name="custom-size" value="large">
+                <span>Large 24oz (+$0.75)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 2: Sweetness -->
+          <div class="custom-field-section">
+            <label class="custom-field-label"><i class="bi bi-droplet-half" aria-hidden="true"></i> Sweetness Level</label>
+            <div class="custom-pill-radios grid-5">
+              <label class="custom-pill-option">
+                <input type="radio" name="custom-sweetness" value="0% Unsweetened">
+                <span>0%</span>
+              </label>
+              <label class="custom-pill-option">
+                <input type="radio" name="custom-sweetness" value="30% Light">
+                <span>30%</span>
+              </label>
+              <label class="custom-pill-option">
+                <input type="radio" name="custom-sweetness" value="50% Half Sweet" checked>
+                <span>50%</span>
+              </label>
+              <label class="custom-pill-option">
+                <input type="radio" name="custom-sweetness" value="70% Less Sweet">
+                <span>70%</span>
+              </label>
+              <label class="custom-pill-option">
+                <input type="radio" name="custom-sweetness" value="100% Regular">
+                <span>100%</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 3: Ice Level -->
+          <div class="custom-field-section">
+            <label class="custom-field-label"><i class="bi bi-snow" aria-hidden="true"></i> Ice Level</label>
+            <div class="custom-pill-radios grid-4">
+              <label class="custom-pill-option">
+                <input type="radio" name="custom-ice" value="No Ice">
+                <span>No Ice</span>
+              </label>
+              <label class="custom-pill-option">
+                <input type="radio" name="custom-ice" value="Less Ice" checked>
+                <span>Less Ice</span>
+              </label>
+              <label class="custom-pill-option">
+                <input type="radio" name="custom-ice" value="Regular Ice">
+                <span>Regular</span>
+              </label>
+              <label class="custom-pill-option">
+                <input type="radio" name="custom-ice" value="Warm Drink">
+                <span>Warm</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 4: Milk Choice -->
+          <div class="custom-field-section">
+            <label class="custom-field-label"><i class="bi bi-cup-hot" aria-hidden="true"></i> Milk Choice</label>
+            <div class="custom-pill-radios">
+              <label class="custom-pill-option">
+                <input type="radio" name="custom-milk" value="Organic Fresh Milk" checked>
+                <span>Organic Whole Milk</span>
+              </label>
+              <label class="custom-pill-option">
+                <input type="radio" name="custom-milk" value="Oatly Barista Oat Milk">
+                <span>Oat Milk (+$0.50)</span>
+              </label>
+              <label class="custom-pill-option">
+                <input type="radio" name="custom-milk" value="Organic Almond Milk">
+                <span>Almond Milk (+$0.50)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 5: Toppings -->
+          <div class="custom-field-section">
+            <label class="custom-field-label"><i class="bi bi-stars" aria-hidden="true"></i> Add Chewy Toppings (+$0.75 each)</label>
+            <div class="custom-checkbox-grid">
+              <label class="custom-checkbox-pill">
+                <input type="checkbox" name="custom-toppings" value="Brown Sugar Boba" data-price="0.75" checked>
+                <span>Brown Sugar Boba</span>
+              </label>
+              <label class="custom-checkbox-pill">
+                <input type="checkbox" name="custom-toppings" value="Lychee Popping Boba" data-price="0.75">
+                <span>Lychee Popping Pearls</span>
+              </label>
+              <label class="custom-checkbox-pill">
+                <input type="checkbox" name="custom-toppings" value="Grass Jelly" data-price="0.75">
+                <span>Herbal Grass Jelly</span>
+              </label>
+              <label class="custom-checkbox-pill">
+                <input type="checkbox" name="custom-toppings" value="Egg Custard Pudding" data-price="0.75">
+                <span>Egg Custard Pudding</span>
+              </label>
+              <label class="custom-checkbox-pill">
+                <input type="checkbox" name="custom-toppings" value="Sea Salt Cheese Foam" data-price="1.00">
+                <span>Sea Salt Cheese Cap (+$1)</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="custom-modal-actions" style="margin-top: 1rem;">
+            <button type="submit" id="custom-modal-add-btn" class="boba-btn boba-btn-primary" style="width: 100%;">
+              <i class="bi bi-bag-plus" aria-hidden="true"></i>
+              <span>Add to Bag • $5.75</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       CHECKOUT & ORDER TRACKING MODAL
+       ======================================================================== -->
+  <div id="boba-checkout-modal" class="boba-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="checkout-modal-title">
+    <div class="boba-modal-dialog checkout-modal-dialog">
+      <div class="boba-modal-header">
+        <div class="boba-modal-title-wrap">
+          <div class="boba-logo-icon" style="width: 36px; height: 36px;" aria-hidden="true">
+            <i class="bi bi-bag-check-fill"></i>
+          </div>
+          <div>
+            <h2 id="checkout-modal-title" class="boba-modal-title">Complete Your Boba Order</h2>
+            <p class="boba-modal-subtitle">Fast, fresh &amp; prepared with love</p>
+          </div>
+        </div>
+        <button type="button" id="checkout-modal-close" class="boba-modal-close" aria-label="Close Checkout">
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <!-- Checkout Form View -->
+      <div id="checkout-form-view" class="checkout-view-pane">
+        <div class="checkout-summary-strip">
+          <div class="checkout-summary-head">
+            <strong>Order Items</strong>
+            <span id="checkout-total-val" class="checkout-strip-price">$12.00</span>
+          </div>
+          <ul id="checkout-items-summary" class="checkout-items-mini-list">
+            <!-- Injected by JS -->
+          </ul>
+        </div>
+
+        <form id="checkout-order-form" class="boba-modal-body">
+          <div class="checkout-type-tabs">
+            <label class="checkout-type-tab">
+              <input type="radio" name="order-type" value="pickup" checked>
+              <span><i class="bi bi-shop" aria-hidden="true"></i> Store Pickup (15 Mins)</span>
+            </label>
+            <label class="checkout-type-tab">
+              <input type="radio" name="order-type" value="delivery">
+              <span><i class="bi bi-bicycle" aria-hidden="true"></i> Local Delivery</span>
+            </label>
+          </div>
+
+          <div class="boba-form-row">
+            <div class="boba-form-group">
+              <label class="boba-form-label" for="checkout-name">Your Full Name</label>
+              <div class="boba-input-wrapper">
+                <i class="bi bi-person boba-input-icon" aria-hidden="true"></i>
+                <input type="text" id="checkout-name" class="boba-input-control" placeholder="Jane Doe" required>
+              </div>
+            </div>
+
+            <div class="boba-form-group">
+              <label class="boba-form-label" for="checkout-phone">Phone Number</label>
+              <div class="boba-input-wrapper">
+                <i class="bi bi-telephone boba-input-icon" aria-hidden="true"></i>
+                <input type="tel" id="checkout-phone" class="boba-input-control" placeholder="(555) 234-5678" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="boba-form-group">
+            <label class="boba-form-label" for="checkout-address">Delivery Address / Pickup Location</label>
+            <div class="boba-input-wrapper">
+              <i class="bi bi-geo-alt boba-input-icon" aria-hidden="true"></i>
+              <input type="text" id="checkout-address" class="boba-input-control" placeholder="123 Blossom Avenue, Suite 4B (or Store Counter)" required>
+            </div>
+          </div>
+
+          <div class="boba-form-group">
+            <label class="boba-form-label" for="checkout-notes">Special Barista Instructions</label>
+            <textarea id="checkout-notes" class="boba-textarea-control" rows="2" placeholder="e.g. Extra ice in separate cup, extra napkins..."></textarea>
+          </div>
+
+          <div class="checkout-payment-box">
+            <label class="boba-form-label">Payment Method</label>
+            <div class="payment-methods-grid">
+              <label class="payment-pill">
+                <input type="radio" name="pay-method" value="apple-pay" checked>
+                <span><i class="bi bi-apple" aria-hidden="true"></i> Apple Pay / Google Pay</span>
+              </label>
+              <label class="payment-pill">
+                <input type="radio" name="pay-method" value="card">
+                <span><i class="bi bi-credit-card" aria-hidden="true"></i> Credit / Debit Card</span>
+              </label>
+              <label class="payment-pill">
+                <input type="radio" name="pay-method" value="cash">
+                <span><i class="bi bi-cash-stack" aria-hidden="true"></i> Pay at Store Counter</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="boba-btn boba-btn-primary boba-btn-submit" style="width: 100%; margin-top: 1rem;">
+            <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+            <span>PLACE BOBA ORDER</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Checkout Success View -->
+      <div id="checkout-success-view" class="checkout-success-pane" style="display: none;">
+        <div class="success-icon-wrap">
+          <i class="bi bi-cup-straw" aria-hidden="true"></i>
+        </div>
+        <h3 class="success-title">Order Placed Successfully!</h3>
+        <p class="success-subtitle">Our baristas are brewing your drinks fresh with slow-simmered pearls.</p>
+        
+        <div class="success-order-box">
+          <span class="order-ref-label">Order Reference:</span>
+          <strong id="order-confirmation-num" class="order-ref-number">#BB-7821</strong>
+          <span class="order-eta">Estimated preparation time: <strong>12-15 minutes</strong></span>
+        </div>
+
+        <div class="order-tracker-timeline">
+          <div class="tracker-step step-done">
+            <div class="tracker-dot"><i class="bi bi-check"></i></div>
+            <span>Order Received</span>
+          </div>
+          <div class="tracker-step step-active">
+            <div class="tracker-dot"><i class="bi bi-droplet-half"></i></div>
+            <span>Brewing Tea</span>
+          </div>
+          <div class="tracker-step">
+            <div class="tracker-dot"><i class="bi bi-cup-hot"></i></div>
+            <span>Adding Pearls</span>
+          </div>
+          <div class="tracker-step">
+            <div class="tracker-dot"><i class="bi bi-bag-check"></i></div>
+            <span>Ready for Sip</span>
+          </div>
+        </div>
+
+        <button type="button" class="boba-btn boba-btn-pink" onclick="BobaCart.closeCheckoutModal();" style="margin-top: 1.5rem;">
+          <span>BACK TO STORE</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================
        ACCESSIBLE LOGIN MODAL
        ======================================================================== -->
   <div id="boba-login-modal" class="boba-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
@@ -845,15 +2343,15 @@
           </div>
         </div>
         <button type="button" class="boba-modal-close" aria-label="Close login dialog">
-          <i class="bi bi-x-lg"></i>
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
         </button>
       </div>
 
-      <form id="boba-login-form" class="boba-modal-body" onsubmit="event.preventDefault(); alert('Signed in successfully! Welcome to Boba Bloom.'); document.getElementById('boba-login-modal').classList.remove('is-open');">
+      <form id="boba-login-form" class="boba-modal-body" onsubmit="event.preventDefault(); BobaCart.showToast('Signed in successfully! Welcome to Boba Bloom Rewards.', 'bi-person-check-fill'); document.getElementById('boba-login-modal').classList.remove('is-open');">
         <div class="boba-form-group">
           <label for="login-email" class="boba-form-label">Email or Username</label>
           <div class="boba-input-wrapper">
-            <i class="bi bi-envelope boba-input-icon"></i>
+            <i class="bi bi-envelope boba-input-icon" aria-hidden="true"></i>
             <input type="text" id="login-email" class="boba-input-control" placeholder="you@example.com" required>
           </div>
         </div>
@@ -861,7 +2359,7 @@
         <div class="boba-form-group">
           <label for="login-password" class="boba-form-label">Password</label>
           <div class="boba-input-wrapper">
-            <i class="bi bi-lock boba-input-icon"></i>
+            <i class="bi bi-lock boba-input-icon" aria-hidden="true"></i>
             <input type="password" id="login-password" class="boba-input-control" placeholder="••••••••" required>
           </div>
         </div>
@@ -871,17 +2369,17 @@
             <input type="checkbox" checked>
             <span class="boba-checkbox-label" style="font-size: 0.85rem;">Remember me</span>
           </label>
-          <a href="#" class="boba-forgot-link" onclick="event.preventDefault(); alert('Password reset instructions sent to your registered email.');">Forgot password?</a>
+          <a href="#" class="boba-forgot-link" onclick="event.preventDefault(); BobaCart.showToast('Password reset instructions sent to your registered email.', 'bi-envelope-at');">Forgot password?</a>
         </div>
 
         <button type="submit" class="boba-btn boba-btn-primary boba-btn-submit" style="width: 100%;">
-          <i class="bi bi-box-arrow-in-right"></i>
+          <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
           <span>SIGN IN</span>
         </button>
 
         <div class="boba-modal-footer-note">
           <span>Don't have an account?</span>
-          <a href="#" onclick="event.preventDefault(); alert('Registration open! Welcome to Boba Bloom Rewards.');">Sign Up Free</a>
+          <a href="#" onclick="event.preventDefault(); BobaCart.showToast('Registration open! Welcome to Boba Bloom Rewards.', 'bi-stars');">Sign Up Free</a>
         </div>
       </form>
     </div>
@@ -890,5 +2388,6 @@
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/cart.js"></script>
 </body>
 </html>
